@@ -79,5 +79,7 @@ After your pull request is successfully merged above, update your master branch 
 git checkout master
 git pull origin master
 
+Hello World!
+
 ```
 
