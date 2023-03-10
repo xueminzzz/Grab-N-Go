@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "644801981196",
+    "project_id": "grabngo-fdd9c",
+    "storage_bucket": "grabngo-fdd9c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:644801981196:android:6d1c72e0e02a2678fe7729",
+        "android_client_info": {
+          "package_name": "com.example.grabngo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "644801981196-ghkeu9rrlne8fmqmejv5d9f91g276umf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCR_Zre-VeLDpPCmf-cIHQCaswzOF1wxKU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "644801981196-ghkeu9rrlne8fmqmejv5d9f91g276umf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
