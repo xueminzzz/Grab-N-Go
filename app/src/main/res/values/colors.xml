@@ -12,5 +12,6 @@
     <color name="signup_btn_background">#f49619</color>
     <color name="translucent_gray1">#1A444444</color>
     <color name="translucent_gray2">#66444444</color>
+    <color name="translucent_yellow">#CCFFECBA</color>
 </resources>
 

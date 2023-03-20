@@ -33,9 +33,9 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
                 android:text="@string/user_name"
-                android:textStyle="bold"
                 android:textColor="#000000"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -64,14 +64,14 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="130dp"
                 android:background="@drawable/search_button"
-                android:text="Search..."
-                android:textColor="@color/translucent_gray2"
-                android:textSize="12sp"
-                android:textAlignment="center"
                 android:paddingStart="8dp"
                 android:paddingTop="8dp"
                 android:paddingEnd="230dp"
-                android:paddingBottom="8dp"/>
+                android:paddingBottom="8dp"
+                android:text="Search..."
+                android:textAlignment="center"
+                android:textColor="@color/translucent_gray2"
+                android:textSize="12sp" />
 
             <ImageView
                 android:id="@+id/imageView6"
@@ -79,12 +79,43 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="134dp"
+                android:contentDescription="search icon"
                 app:layout_constraintBottom_toBottomOf="@id/button2"
                 app:layout_constraintEnd_toStartOf="@id/button2"
                 app:layout_constraintStart_toStartOf="@id/button2"
                 app:layout_constraintTop_toTopOf="@id/button2"
-                app:srcCompat="@drawable/search_icon"
-                android:contentDescription="search icon"/>
+                app:srcCompat="@drawable/search_icon" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button"
+                android:layout_width="350dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/button2"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/select_store_tab" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button3"
+                android:layout_width="350dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/button"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/select_store_tab" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button5"
+                android:layout_width="350dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/button3"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="476dp"
+                android:background="@drawable/select_store_tab" />
 
         </RelativeLayout>
 
