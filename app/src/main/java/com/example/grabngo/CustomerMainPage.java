@@ -2,5 +2,5 @@ package com.example.grabngo;
 
 import android.app.Activity;
 
-public class ChooseTime extends Activity {
+public class CustomerMainPage extends Activity {
 }
