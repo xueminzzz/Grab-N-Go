@@ -7,9 +7,13 @@
     android:background="@color/signup_btn_background"
     tools:context=".CustomerMainPage">
 
+<!-- This page is the main page customer will view when they login -->
+<!-- There will be an auto pop-up for customer to choose their pick-up time before they can continue -->
+<!-- After choosing their pick-up time customers will be directed to the choose store page -->
+
     <LinearLayout
 
-        android:id="@+id/linearlayout"
+        android:id="@+id/background"
         android:layout_width="416dp"
         android:layout_height="650dp"
         android:background="@drawable/background_customer_page"
@@ -73,6 +77,7 @@
                 android:textSize="12sp" />
 
             <ImageView
+                android:id="@+id/SearchIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/SearchTab"
@@ -91,7 +96,7 @@
                 app:srcCompat="@drawable/search_icon" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/CardView1"
+                android:id="@+id/Store1Tab"
                 android:layout_width="350dp"
                 android:layout_height="100dp"
                 android:layout_marginStart="24dp"
@@ -143,7 +148,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/CardView2"
+                android:id="@+id/Store2Tab"
                 android:layout_width="350dp"
                 android:layout_height="100dp"
                 android:layout_marginStart="24dp"
@@ -195,7 +200,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/CardView3"
+                android:id="@+id/Store3Tab"
                 android:layout_width="350dp"
                 android:layout_height="100dp"
                 android:layout_marginStart="24dp"
