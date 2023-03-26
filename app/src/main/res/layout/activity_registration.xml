@@ -160,13 +160,16 @@
                     android:layout_height="40dp"
                     android:layout_marginLeft="15dp"
                     android:layout_weight="1"
-                    android:background="@drawable/button_disabled"
+                    android:background="@drawable/button_enabled"
                     android:drawableLeft="@drawable/white_email"
                     android:padding="10dp"
                     android:text="Email"
                     android:textColor="#FFFFFF"/>
+
             </LinearLayout>
+
         </LinearLayout>
+
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
