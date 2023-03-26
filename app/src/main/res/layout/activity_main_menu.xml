@@ -97,7 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="25dp"
-            android:background="@drawable/button_shape"
+            android:background="@drawable/button_disabled"
             android:drawableLeft="@drawable/white_signup"
             android:paddingStart="10dp"
             android:text="Signup"

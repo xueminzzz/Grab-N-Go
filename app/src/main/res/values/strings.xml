@@ -4,6 +4,14 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="user_name">Hi, Xue Min!</string>
+    <string name="store_name">Dong Sheng Chicken Rice</string>
+    <string name="menu_item_1_price">$5.00</string>
+    <string name="menu_item_quantity">0</string>
+    <string name="menu_item_2_price">$5.00</string>
+    <string name="menu_item_3_price">$7.00</string>
+    <string name="menu_item_1_name">Steamed White Chicken Rice</string>
+    <string name="menu_item_3_name">Roasted Chicken Rice Set Meal</string>
+    <string name="menu_item_2_name">Roasted Chicken Rice</string>
 
     <string-array name="Stores">
         <item>Muslim</item>

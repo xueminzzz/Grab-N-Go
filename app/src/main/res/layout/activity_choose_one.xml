@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="60dp"
-            android:background="@drawable/button_shape"
+            android:background="@drawable/button_disabled"
             android:drawableLeft="@drawable/white_customer"
             android:gravity="center|center_horizontal"
             android:paddingStart="10dp"
