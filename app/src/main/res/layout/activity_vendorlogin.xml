@@ -67,7 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="30dp"
-            android:background="@drawable/button_shape"
+            android:background="@drawable/button_disabled"
             android:text="Login"
             android:textColor="#FFFF"
             android:textSize="18sp" />

@@ -160,7 +160,7 @@
                     android:layout_height="40dp"
                     android:layout_marginLeft="15dp"
                     android:layout_weight="1"
-                    android:background="@drawable/button_shape"
+                    android:background="@drawable/button_disabled"
                     android:drawableLeft="@drawable/white_email"
                     android:padding="10dp"
                     android:text="Email"
