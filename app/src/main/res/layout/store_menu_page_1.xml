@@ -10,7 +10,7 @@
     <!-- This page is after choose_store_page_1 or choose_store_page_2 -->
     <!-- Customers will first choose to either add or minus the quantity -->
     <!-- Only after they increase the quantity by at least one, there will be an arrow appearing to allow them to continue -->
-    <!-- Customers will then be directed to store_menu_page_2-->
+    <!-- Customers will then be directed to the add-on page -->
 
     <LinearLayout
 
@@ -28,7 +28,6 @@
         app:layout_constraintVertical_bias="1.0">
 
         <RelativeLayout
-
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -162,6 +161,15 @@
                     android:background="@android:color/transparent"
                     android:src="@drawable/minus_button" />
 
+                <ImageButton
+                    android:id="@+id/ArrowButton1"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="320dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/arrow_button" />
 
             </androidx.cardview.widget.CardView>
 
@@ -235,6 +243,16 @@
                     android:layout_marginTop="69dp"
                     android:background="@android:color/transparent"
                     android:src="@drawable/minus_button" />
+
+                <ImageButton
+                    android:id="@+id/ArrowButton2"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="320dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/arrow_button" />
 
             </androidx.cardview.widget.CardView>
 
@@ -321,6 +339,16 @@
                     android:layout_marginTop="69dp"
                     android:background="@android:color/transparent"
                     android:src="@drawable/minus_button" />
+
+                <ImageButton
+                    android:id="@+id/ArrowButton3"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="320dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/arrow_button" />
 
             </androidx.cardview.widget.CardView>
 

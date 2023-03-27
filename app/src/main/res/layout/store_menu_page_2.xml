@@ -161,6 +161,16 @@
                     android:background="@android:color/transparent"
                     android:src="@drawable/minus_button" />
 
+                <ImageButton
+                    android:id="@+id/ArrowButton1"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="320dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/arrow_button" />
+
 
             </androidx.cardview.widget.CardView>
 
@@ -236,7 +246,8 @@
                     android:src="@drawable/minus_button" />
 
                 <ImageButton
-                    android:id="@+id/ArrowButton"
+                    android:id="@+id/ArrowButton2"
+                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="320dp"
@@ -329,6 +340,16 @@
                     android:layout_marginTop="69dp"
                     android:background="@android:color/transparent"
                     android:src="@drawable/minus_button" />
+
+                <ImageButton
+                    android:id="@+id/ArrowButton3"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="320dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/arrow_button" />
 
             </androidx.cardview.widget.CardView>
 
