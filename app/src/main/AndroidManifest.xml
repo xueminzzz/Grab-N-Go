@@ -12,16 +12,22 @@
         android:theme="@style/Theme.GrabNGo"
         tools:targetApi="31">
         <activity
-            android:name=".Registration"
+            android:name=".VendorMainPage"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".CustomerMainPage"
             android:exported="false" />
         <activity
-            android:name=".VendorRegistration"
+            android:name=".CustomerRegistration"
+            android:exported="false" />
+        <activity
+            android:name=".Customerlogin"
             android:exported="false" />
         <activity
             android:name=".Vendorlogin"
+            android:exported="false" />
+        <activity
+            android:name=".VendorRegistration"
             android:exported="false" />
         <activity
             android:name=".ChooseOne"
