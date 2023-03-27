@@ -73,6 +73,7 @@ public class StoreMenuPage1 extends Activity implements View.OnClickListener {
                 break;
             case R.id.ArrowButton1:
                 view.getContext().startActivity(addon);
+                break;
             case R.id.AddButton2:
                 quantity = findViewById(R.id.MenuItem2Quantity);
                 count = Integer.valueOf(quantity.getText().toString());
@@ -100,6 +101,7 @@ public class StoreMenuPage1 extends Activity implements View.OnClickListener {
                 break;
             case R.id.ArrowButton2:
                 view.getContext().startActivity(addon);
+                break;
             case R.id.AddButton3:
                 quantity = findViewById(R.id.MenuItem3Quantity);
                 count = Integer.valueOf(quantity.getText().toString());
@@ -127,6 +129,7 @@ public class StoreMenuPage1 extends Activity implements View.OnClickListener {
                 break;
             case R.id.ArrowButton3:
                 view.getContext().startActivity(addon);
+                break;
             default:
                 break;
         }
