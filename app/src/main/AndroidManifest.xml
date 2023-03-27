@@ -12,6 +12,15 @@
         android:theme="@style/Theme.GrabNGo"
         tools:targetApi="31">
         <activity
+            android:name=".StoreMenuPage1"
+            android:exported="false" />
+        <activity
+            android:name=".ChooseStorePage2"
+            android:exported="false" />
+        <activity
+            android:name=".ChooseStorePage1"
+            android:exported="false" />
+        <activity
             android:name=".VendorMainPage"
             android:exported="false" />
         <activity

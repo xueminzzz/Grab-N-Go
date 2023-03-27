@@ -286,9 +286,9 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:text="To continue, please select a pick-up time"
-                        android:textStyle="bold"
                         android:textAlignment="center"
-                        android:textColor="#000000" />
+                        android:textColor="#000000"
+                        android:textStyle="bold" />
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/SelectTimeList"
@@ -297,8 +297,8 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_margin="60dp"
                         app:cardBackgroundColor="@color/white"
-                        app:strokeColor="@color/black"
-                        app:elevation="0dp">
+                        app:elevation="0dp"
+                        app:strokeColor="@color/black">
 
                         <ImageButton
                             android:id="@+id/Time1230PM"
