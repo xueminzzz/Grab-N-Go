@@ -38,7 +38,7 @@
             android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/vendor"
+            android:id="@+id/connectvendorbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -52,7 +52,7 @@
             android:textColor="#FFFDFD" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/customer"
+            android:id="@+id/connectcustomerbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

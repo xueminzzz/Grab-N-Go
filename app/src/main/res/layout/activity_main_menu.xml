@@ -43,7 +43,7 @@
             app:srcCompat="@drawable/title_logo" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/signwithemail"
+            android:id="@+id/signwithemailbtn"
             android:layout_width="228dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -93,7 +93,7 @@
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/Signup"
+            android:id="@+id/signupbtn"
             android:layout_width="228dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

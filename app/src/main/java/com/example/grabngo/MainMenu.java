@@ -12,7 +12,7 @@ import android.widget.ImageView;
 
 public class MainMenu extends AppCompatActivity {
 
-    Button signinemail,signup;
+    Button signinwithemail_btn,signup_btn;
     ImageView bgimage;
 
     @Override
@@ -67,20 +67,20 @@ public class MainMenu extends AppCompatActivity {
 
             }
         });
-        signinemail=(Button)findViewById(R.id.signwithemail);
-        signup=(Button)findViewById(R.id.Signup);
+        signinwithemail_btn=(Button)findViewById(R.id.signwithemailbtn);
+        signup_btn=(Button)findViewById(R.id.signupbtn);
 
-        signinemail.setOnClickListener((new View.OnClickListener() {
+        signinwithemail_btn.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent signemail = new Intent(MainMenu.this, ChooseOne.class);
-                signemail.putExtra("Home","Email");
-                startActivity(signemail);
+                Intent signinwithemail = new Intent(MainMenu.this, ChooseOne.class);
+                signinwithemail.putExtra("Home","Email");
+                startActivity(signinwithemail);
                 finish();
 
             }
         }));
-        signup.setOnClickListener(new View.OnClickListener() {
+        signup_btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
