@@ -12,43 +12,52 @@
         android:theme="@style/Theme.GrabNGo"
         tools:targetApi="31">
         <activity
-            android:name=".AddOnPage1"
+            android:name=".controllers.OrderConfirmationPage"
             android:exported="false" />
         <activity
-            android:name=".StoreMenuPage1"
+            android:name=".controllers.ViewCartPage"
             android:exported="false" />
         <activity
-            android:name=".ChooseStorePage2"
+            android:name=".controllers.AddOnPage2"
             android:exported="false" />
         <activity
-            android:name=".ChooseStorePage1"
+            android:name=".controllers.AddOnPage1"
             android:exported="false" />
         <activity
-            android:name=".VendorMainPage"
+            android:name=".controllers.StoreMenuPage1"
             android:exported="false" />
         <activity
-            android:name=".CustomerMainPage"
+            android:name=".controllers.ChooseStorePage2"
             android:exported="false" />
         <activity
-            android:name=".CustomerRegistration"
+            android:name=".controllers.ChooseStorePage1"
             android:exported="false" />
         <activity
-            android:name=".Customerlogin"
+            android:name=".controllers.VendorMainPage"
             android:exported="false" />
         <activity
-            android:name=".Vendorlogin"
+            android:name=".controllers.CustomerMainPage"
             android:exported="false" />
         <activity
-            android:name=".VendorRegistration"
+            android:name=".controllers.CustomerRegistration"
             android:exported="false" />
         <activity
-            android:name=".ChooseOne"
+            android:name=".controllers.Customerlogin"
             android:exported="false" />
         <activity
-            android:name=".MainMenu"
+            android:name=".controllers.Vendorlogin"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".controllers.VendorRegistration"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.ChooseOne"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.MainMenu"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

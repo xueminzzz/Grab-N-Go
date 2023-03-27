@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/signup_btn_background"
-    tools:context=".ChooseStorePage1">
+    tools:context=".controllers.ChooseStorePage1">
 
     <!-- This page is after main_customer_page -->
     <!-- Stores that are not available at that time will be greyed out and cannot be selected -->

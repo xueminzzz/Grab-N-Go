@@ -1,13 +1,13 @@
-package com.example.grabngo;
+package com.example.grabngo.controllers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
+
+import com.example.grabngo.R;
 
 public class MainActivity extends AppCompatActivity {
 

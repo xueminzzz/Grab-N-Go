@@ -1,4 +1,4 @@
-package com.example.grabngo;
+package com.example.grabngo.controllers;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +7,8 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
+
+import com.example.grabngo.R;
 
 public class ChooseStorePage1 extends Activity {
     public void onCreate(@Nullable Bundle savedInstanceState) {

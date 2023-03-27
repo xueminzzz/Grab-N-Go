@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/signup_btn_background"
-    tools:context=".StoreMenuPage2">
+    tools:context=".controllers.StoreMenuPage2">
 
     <!-- This page is after store_menu-page_1 -->
     <!-- Customers will be prompted to click on the arrow button -->
