@@ -9,7 +9,7 @@ public class Order {
     private int order_amount;
     private int order_timeslot;
     private boolean activate_lunchbox;
-    private ArrayList food_list;
+    private ArrayList food_list; // example like [chickenrice: {1, -1, 0, 1}, mixedrice: {-1, -1, 0}] <- list of food items with associated add-on booleans for builder class
 
     public Order() {
     }

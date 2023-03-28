@@ -18,7 +18,7 @@
             android:name=".controllers.ViewCartPage"
             android:exported="false" />
         <activity
-            android:name=".controllers.ConfirmAddOnpPage"
+            android:name=".controllers.ConfirmAddOnPage"
             android:exported="false" />
         <activity
             android:name=".controllers.AddOnPage"

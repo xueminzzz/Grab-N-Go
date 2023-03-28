@@ -11,6 +11,15 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import com.example.grabngo.R;
 
+// TODO: Unsure of some below
+// Function: For users to view their food cart
+// Input: StallID?, TimeSlot?, FoodBuilder object with info like food id and add-ons? (setContentView to layout/activity_choose_one.xml
+// Output: Order object with above info? (redirect page)
+// Sent/Read from DB: Unsure
+// Prev Page Link: ConfirmAddOnPage.java
+// Next Page Link: OrderConfirmationPage.java
+// Java Concepts/OOP: Intent(?) Anything to do with the Order object?
+
 public class ViewCartPage extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
