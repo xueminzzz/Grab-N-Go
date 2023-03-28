@@ -5,16 +5,15 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/signup_btn_background"
-    tools:context=".AddOnPage2">
+    tools:context=".controllers.AddOnPage">
 
-    <!-- This page is after add_on_page_1 -->
+    <!-- This page is after store_menu_page_x -->
     <!-- Customers will only be allowed to proceed after checking one of the boxes -->
-    <!-- There will be a pop-up to prompt users to choose whether to continue shopping or view cart -->
-    <!-- They will then be directed to view_cart_page or back to choose_store_page -->
+    <!-- They will then be directed to add_on_page_2 -->
 
     <LinearLayout
 
-        android:id="@+id/AddOnPage2"
+        android:id="@+id/AddOnPage1"
         android:layout_width="416dp"
         android:layout_height="650dp"
         android:background="@drawable/background_customer_page"
@@ -112,14 +111,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="230dp" />
 
-                <ImageView
-                    android:id="@+id/Tick"
-                    android:layout_width="19dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="310dp"
-                    android:layout_marginTop="11dp"
-                    android:src="@drawable/tick" />
-
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -199,15 +190,54 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/CucumberAddOnTab"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="380dp"
+                android:layout_marginEnd="24dp"
+                app:cardBackgroundColor="@color/logo_background"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp">
+
+                <TextView
+                    android:id="@+id/Cucumber"
+                    android:layout_width="179dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Cucumber"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/CucumberAddOnPrice"
+                    android:layout_width="179dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="240dp"
+                    android:layout_marginTop="15dp"
+                    android:text="+$0.5"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <CheckBox
+                    android:id="@+id/CucumberCheckBox"
+                    android:layout_width="179dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="230dp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:id="@+id/NoAddOnTab"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="24dp"
+                android:layout_marginTop="440dp"
                 android:layout_marginEnd="24dp"
-                android:layout_marginTop="380dp"
+                app:cardBackgroundColor="@color/logo_background"
                 app:cardCornerRadius="10dp"
-                app:cardElevation="10dp"
-                app:cardBackgroundColor="@color/logo_background">
+                app:cardElevation="10dp">
 
                 <TextView
                     android:id="@+id/NoAddOn"
@@ -216,18 +246,19 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="15dp"
                     android:text="No Add-On"
-                    android:textSize="15dp"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
 
-                <CheckBox android:id="@+id/NoAddOnCheckBox"
+                <CheckBox
+                    android:id="@+id/NoAddOnCheckBox"
                     android:layout_width="179dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="230dp"/>
+                    android:layout_marginLeft="230dp" />
 
             </androidx.cardview.widget.CardView>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/ProceedButton"
+                android:id="@+id/PlaceOrderButton1"
                 android:layout_width="313dp"
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/NoAddOnTab"
@@ -236,68 +267,8 @@
                 android:layout_marginStart="40dp"
                 android:layout_marginEnd="40dp"
                 android:layout_marginTop="580dp"
-                android:background="@drawable/button_enabled"
+                android:background="@drawable/button_disabled"
                 android:text="Proceed" />
-
-            <RelativeLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:elevation="10dp">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/SelectNextActionPopUp"
-                    android:layout_width="250dp"
-                    android:layout_height="150dp"
-                    android:layout_centerInParent="true"
-                    app:cardBackgroundColor="#FFFFFF"
-                    app:cardCornerRadius="20dp">
-
-                    <ImageButton
-                        android:id="@+id/ContinueShoppingTab"
-                        android:layout_width="200dp"
-                        android:layout_height="40dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="-20dp"
-                        android:background="@android:color/transparent"
-                        android:src="@drawable/button_enabled" />
-
-                    <ImageButton
-                        android:id="@+id/ViewCartTab"
-                        android:layout_width="200dp"
-                        android:layout_height="40dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="25dp"
-                        android:background="@android:color/transparent"
-                        android:src="@drawable/button_enabled" />
-
-                    <TextView
-                        android:id="@+id/FixedText11"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="-20dp"
-                        android:text="Continue Shopping"
-                        android:textStyle="bold"
-                        android:textColor="#000000"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
-
-                    <TextView
-                        android:id="@+id/FixedText12"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="25dp"
-                        android:text="View Cart"
-                        android:textStyle="bold"
-                        android:textColor="#000000"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
-
-                </androidx.cardview.widget.CardView>
-
-            </RelativeLayout>
 
         </RelativeLayout>
 

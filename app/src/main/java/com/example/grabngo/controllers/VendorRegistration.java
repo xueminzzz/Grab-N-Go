@@ -1,4 +1,4 @@
-package com.example.grabngo;
+package com.example.grabngo.controllers;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -12,8 +12,8 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Spinner;
 
+import com.example.grabngo.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
@@ -24,6 +24,17 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
+// TODO: Unsure of some below (ask Radhi)
+// TODO: Edit comment to reflect Function, Input, Output,
+//  Sent/Read from DB, Link to Prev or Next Page, Java Concepts Used
+//  Example below!
+// Function: For users to choose whether they would like to enter as vendor or customer
+// Input: None (setContentView to layout/activity_choose_one.xml
+// Output: None (redirect page)
+// Sent/Read from DB: None
+// Prev Page Link: MainMenu.java
+// Next Page Link: Vendorlogin/VendorRegistration/Customerlogin/CustomerRegistration
+// Java Concepts/OOP: Intent(?)
 public class VendorRegistration extends AppCompatActivity {
 
     TextInputLayout Fname, Lname, Email, Pass, cfpass;

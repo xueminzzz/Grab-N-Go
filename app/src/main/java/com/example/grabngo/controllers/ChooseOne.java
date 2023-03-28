@@ -1,4 +1,4 @@
-package com.example.grabngo;
+package com.example.grabngo.controllers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-//for users to choose whether they would like to enter as vendor or customer
+import com.example.grabngo.R;
+
+// TODO: Unsure of some below
+// Function: For users to choose whether they would like to enter as vendor or customer
+// Input: None (setContentView to layout/activity_choose_one.xml
+// Output: None (redirect page)
+// Sent/Read from DB: None
+// Prev Page Link: MainMenu.java
+// Next Page Link: Vendorlogin/VendorRegistration/Customerlogin/CustomerRegistration
+// Java Concepts/OOP: Intent(?)
+
 public class ChooseOne extends AppCompatActivity {
 
     Button connectvendor_btn, connectcustomer_btn;

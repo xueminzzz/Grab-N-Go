@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/signup_btn_background"
-    tools:context=".OrderConfirmationPage">
+    tools:context=".controllers.OrderConfirmationPage">
 
     <!-- This page is after view_cart_page -->
     <!-- Customers can view their order summary here -->

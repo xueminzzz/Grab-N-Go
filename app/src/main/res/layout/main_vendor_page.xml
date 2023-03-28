@@ -5,9 +5,9 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/signup_btn_background"
-    tools:context=".VendorMainPage">
+    tools:context=".controllers.VendorMainPage">
 
-    <!-- This page is the main page vendor will view when they login -->
+<!-- This page is the main page vendor will view when they login -->
     <!-- There will be an auto pop-up for vendor to choose which time they would like to prepare orders for -->
     <!-- After choosing their pick-up time vendors will be directed to the orders_for_specified_time_page_1 -->
 

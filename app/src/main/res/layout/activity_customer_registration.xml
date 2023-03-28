@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/yellow_bg_pastel"
-    tools:context=".CustomerRegistration">
+    tools:context=".controllers.CustomerRegistration">
 
     <ScrollView
         android:layout_width="280dp"
