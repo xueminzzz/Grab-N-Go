@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".CompleteOrderPage">
+
+    <!-- This page is after vendors click into a specific order in orders_for_specified_time_page_1 -->
+    <!-- Once vendors finish preparing the order, the will click on complete order -->
+    <!-- They will then be directed back to orders_for_specified_time_page_2 to proceed with the next order -->
+
+    <include layout="@layout/vendor_page_base_layout"
+        android:id="@+id/complete_order_page"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/OrderNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_marginStart="24dp"
+            android:textSize="40dp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:text="@string/order_number" />
+
+        <TextView
+            android:id="@+id/OrderName1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:layout_marginStart="24dp"
+            android:textSize="35dp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:text="@string/order_name_1" />
+
+        <TextView
+            android:id="@+id/OrderPrice1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/AddOn1Price"
+            android:layout_marginTop="165dp"
+            android:text="@string/order_price_1"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/FixedText14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="220dp"
+            android:layout_marginStart="24dp"
+            android:textSize="25dp"
+            android:textColor="#000000"
+            android:text="Add-Ons" />
+
+        <TextView
+            android:id="@+id/AddOn1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="280dp"
+            android:layout_marginStart="40dp"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:text="1. Cheese Tofu" />
+
+        <TextView
+            android:id="@+id/AddOn1Price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="280dp"
+            android:layout_marginStart="300dp"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:text="@string/add_on_1_price" />
+
+        <TextView
+            android:id="@+id/FixedText15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="450dp"
+            android:layout_marginStart="24dp"
+            android:textSize="25dp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:text="Total" />
+
+        <TextView
+            android:id="@+id/TotalPrice1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="450dp"
+            android:layout_marginStart="300dp"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:text="@string/total_price_1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ProceedButton"
+            android:layout_width="313dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="580dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/button_enabled"
+            android:text="Complete Order" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
