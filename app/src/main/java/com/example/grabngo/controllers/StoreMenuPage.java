@@ -51,7 +51,7 @@ public class StoreMenuPage extends Activity implements View.OnClickListener {
 
         int overall_count = count1 + count2 + count3;
 
-        Intent addon = new Intent(view.getContext(), AddOnPage1.class);
+        Intent addon = new Intent(view.getContext(), AddOnPage.class);
 
         switch (view.getId()) {
             case R.id.AddButton1:

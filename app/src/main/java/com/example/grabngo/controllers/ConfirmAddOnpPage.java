@@ -10,11 +10,11 @@ import androidx.annotation.Nullable;
 
 import com.example.grabngo.R;
 
-public class AddOnPage2 extends Activity {
+public class ConfirmAddOnpPage extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_on_page_2);
+        setContentView(R.layout.confirm_add_on_page);
 
         ImageButton continuebtn = (ImageButton) findViewById(R.id.ContinueShoppingTab);
         ImageButton confirmbtn = (ImageButton) findViewById(R.id.ViewCartTab);
