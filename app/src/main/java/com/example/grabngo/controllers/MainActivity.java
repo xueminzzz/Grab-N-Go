@@ -18,7 +18,7 @@ import com.example.grabngo.R;
 // Output: None (redirect page)
 // Sent/Read from DB: None
 // Prev Page Link: None
-// Next Page Link: Vendorlogin/VendorRegistration/Customerlogin/CustomerRegistration
+// Next Page Link: MainMenu.java
 // Java Concepts/OOP: Intent(?)
 
 public class MainActivity extends AppCompatActivity {
