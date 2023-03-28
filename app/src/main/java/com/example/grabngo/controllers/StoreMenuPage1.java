@@ -1,14 +1,15 @@
-package com.example.grabngo;
+package com.example.grabngo.controllers;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+
+import com.example.grabngo.R;
 
 public class StoreMenuPage1 extends Activity implements View.OnClickListener {
     @Override

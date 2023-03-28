@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/signup_btn_background"
-    tools:context=".CustomerMainPage">
+    tools:context=".controllers.CustomerMainPage">
 
 <!-- This page is the main page customer will view when they login -->
 <!-- There will be an auto pop-up for customer to choose their pick-up time before they can continue -->

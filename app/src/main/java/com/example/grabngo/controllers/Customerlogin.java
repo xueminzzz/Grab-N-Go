@@ -1,4 +1,4 @@
-package com.example.grabngo;
+package com.example.grabngo.controllers;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,39 +12,40 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
+import com.example.grabngo.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Vendorlogin extends AppCompatActivity {
-
+public class Customerlogin extends AppCompatActivity {
 
     TextInputLayout email, pass;
-    Button vSignIn_btn;
-    TextView vendornewacc_btn;
+    Button cSignIn_btn;
+    TextView cnewacc_btn;
     FirebaseAuth FAuth;
     String em;
     String pwd;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vendorlogin);
+        setContentView(R.layout.activity_customerlogin);
+
+
 
         try {
             email = (TextInputLayout) findViewById(R.id.Lemail);
             pass = (TextInputLayout) findViewById(R.id.Lpassword);
-            vSignIn_btn = (Button) findViewById(R.id.vlogin);
-            vendornewacc_btn = (TextView) findViewById(R.id.vnewaccountbtn);
-
+            cSignIn_btn = (Button) findViewById(R.id.clogin);
+            cnewacc_btn = (TextView) findViewById(R.id.cnewaccountbtn);
 
 
             FAuth = FirebaseAuth.getInstance();
 
-            vSignIn_btn.setOnClickListener(new View.OnClickListener() {
+            cSignIn_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
@@ -52,7 +53,7 @@ public class Vendorlogin extends AppCompatActivity {
                     pwd = pass.getEditText().getText().toString().trim();
                     if (isValid()) {
 
-                        final ProgressDialog mDialog = new ProgressDialog(Vendorlogin.this);
+                        final ProgressDialog mDialog = new ProgressDialog(Customerlogin.this);
                         mDialog.setCanceledOnTouchOutside(false);
                         mDialog.setCancelable(false);
                         mDialog.setMessage("Logging in...");
@@ -62,24 +63,20 @@ public class Vendorlogin extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-
                                     mDialog.dismiss();
                                     if (FAuth.getCurrentUser().isEmailVerified()) {
-                                        mDialog.dismiss();
-                                        Toast.makeText(Vendorlogin.this, "You are logged in", Toast.LENGTH_SHORT).show();
-                                        Intent z = new Intent(Vendorlogin.this, VendorMainPage.class);
+                                        Toast.makeText(Customerlogin.this, "You are logged in", Toast.LENGTH_SHORT).show();
+                                        Intent z = new Intent(Customerlogin.this, CustomerMainPage.class);
                                         startActivity(z);
                                         finish();
-
-
                                     } else {
-                                        ReusableCodeForAll.ShowAlert(Vendorlogin.this, "", "Please Verify your Email");
+                                        ReusableCodeForAll.ShowAlert(Customerlogin.this,"","Please Verify your Email");
                                     }
 
                                 } else {
 
                                     mDialog.dismiss();
-                                    ReusableCodeForAll.ShowAlert(Vendorlogin.this, "Error", task.getException().getMessage());
+                                    ReusableCodeForAll.ShowAlert(Customerlogin.this,"Error",task.getException().getMessage());
                                 }
                             }
                         });
@@ -88,49 +85,54 @@ public class Vendorlogin extends AppCompatActivity {
                 }
             });
 
-            vendornewacc_btn.setOnClickListener(new View.OnClickListener() {
+            cnewacc_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
-                    Intent Register = new Intent(Vendorlogin.this, VendorRegistration.class);
+                    Intent Register = new Intent(Customerlogin.this, CustomerRegistration.class);
                     startActivity(Register);
-                    finish();
 
                 }
             });
 
 
-        } catch (Exception e) {
+
+        }catch (Exception e){
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 
     String emailpattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-
     public boolean isValid() {
         email.setErrorEnabled(false);
         email.setError("");
         pass.setErrorEnabled(false);
         pass.setError("");
 
-        boolean isvalidemail = false, isvalidpassword = false, isvalid = false;
-        if (TextUtils.isEmpty(em)) {
+        boolean isvalidemail=false,isvalidpassword=false,isvalid=false;
+        if (TextUtils.isEmpty(em))
+        {
             email.setErrorEnabled(true);
             email.setError("Email is required");
-        } else {
-            if (em.matches(emailpattern)) {
-                isvalidemail = true;
-            } else {
+        }
+        else {
+            if (em.matches(emailpattern))
+            {
+                isvalidemail=true;
+            }
+            else {
                 email.setErrorEnabled(true);
                 email.setError("Enter a valid Email Address");
             }
 
         }
-        if (TextUtils.isEmpty(pwd)) {
+        if (TextUtils.isEmpty(pwd))
+        {
             pass.setErrorEnabled(true);
             pass.setError("Password is required");
-        } else {
-            isvalidpassword = true;
+        }
+        else {
+            isvalidpassword=true;
         }
         isvalid = (isvalidemail && isvalidpassword) ? true : false;
         return isvalid;

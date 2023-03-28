@@ -1,4 +1,4 @@
-package com.example.grabngo;
+package com.example.grabngo.controllers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.example.grabngo.R;
 
 public class MainMenu extends AppCompatActivity {
 

@@ -5,9 +5,9 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/signup_btn_background"
-    tools:context=".AddOnPage1">
+    tools:context=".controllers.AddOnPage1">
 
-    <!-- This page is after store_menu_page_2 -->
+    <!-- This page is after store_menu_page_x -->
     <!-- Customers will only be allowed to proceed after checking one of the boxes -->
     <!-- They will then be directed to add_on_page_2 -->
 
@@ -218,7 +218,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/PlaceOrderButton"
+                android:id="@+id/PlaceOrderButton1"
                 android:layout_width="313dp"
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/NoAddOnTab"
