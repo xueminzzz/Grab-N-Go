@@ -17,7 +17,7 @@ import com.example.grabngo.R;
 // Input: None (setContentView to layout/activity_choose_one.xml
 // Output: None (redirect page)
 // Sent/Read from DB: None
-// Prev Page Link: MainMenu.java
+// Prev Page Link: None
 // Next Page Link: Vendorlogin/VendorRegistration/Customerlogin/CustomerRegistration
 // Java Concepts/OOP: Intent(?)
 
