@@ -20,7 +20,7 @@ public class ChooseStorePage2 extends Activity {
         store1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent chickenRiceStore = new Intent(view.getContext(), StoreMenuPage1.class);
+                Intent chickenRiceStore = new Intent(view.getContext(), StoreMenuPage.class);
                 view.getContext().startActivity(chickenRiceStore);
             }
         });

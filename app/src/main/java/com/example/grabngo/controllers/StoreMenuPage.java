@@ -11,11 +11,11 @@ import androidx.annotation.Nullable;
 
 import com.example.grabngo.R;
 
-public class StoreMenuPage1 extends Activity implements View.OnClickListener {
+public class StoreMenuPage extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.store_menu_page_1);
+        setContentView(R.layout.store_menu_page);
 
         // BUTTON HANDLER
         // I tried to do out of normal and its still pretty repetitive and long

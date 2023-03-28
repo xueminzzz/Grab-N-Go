@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/signup_btn_background"
-    tools:context=".controllers.StoreMenuPage1">
+    tools:context=".controllers.StoreMenuPage">
 
     <!-- This page is after choose_store_page_1 or choose_store_page_2 -->
     <!-- Customers will first choose to either add or minus the quantity -->

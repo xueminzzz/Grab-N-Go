@@ -24,7 +24,7 @@
             android:name=".controllers.AddOnPage1"
             android:exported="false" />
         <activity
-            android:name=".controllers.StoreMenuPage1"
+            android:name=".controllers.StoreMenuPage"
             android:exported="false" />
         <activity
             android:name=".controllers.ChooseStorePage2"
