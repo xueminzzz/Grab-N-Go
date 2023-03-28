@@ -13,6 +13,17 @@ import androidx.core.content.ContextCompat;
 
 import com.example.grabngo.R;
 
+// TODO: Unsure of some below
+// Function: For users to choose add-ons or remove ingredients from food
+// Input: StallID?, FoodID? TimeSlot? from extra Intent (setContentView to layout/add_on_page.xml
+// Output: StallID?, FoodID?, TimeSlot?, Add-OnsList? (If using FoodBuilder, list of "boolean states" {-1, 0, 1} - -1 indicate remove, 0 indicate no change, 1 indicate add-on to food)
+// Sent/Read from DB: Unsure (If can, retrieve eligible add-ons for food based off FoodID?)
+// Prev Page Link: MainMenu.java
+// Next Page Link: Vendorlogin/VendorRegistration/Customerlogin/CustomerRegistration
+// Java Concepts/OOP: Intent(?)
+
+// TODO: BASIC CHECKBOX FUNCTIONALITY: Add indeterminate state for removing ingredients (minus sign in checkbox)
+// Link to resource: https://m2.material.io/components/checkboxes#behavior
 public class AddOnPage extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -95,7 +106,7 @@ public class AddOnPage extends Activity {
         proceedbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent nextAdd = new Intent(view.getContext(), ConfirmAddOnpPage.class);
+                Intent nextAdd = new Intent(view.getContext(), ConfirmAddOnPage.class);
                 view.getContext().startActivity(nextAdd);
             }
         });

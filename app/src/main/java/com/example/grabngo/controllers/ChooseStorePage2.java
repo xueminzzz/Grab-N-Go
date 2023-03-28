@@ -10,6 +10,14 @@ import androidx.cardview.widget.CardView;
 
 import com.example.grabngo.R;
 
+// TODO: Unsure of some below
+// Function: For users to choose stores (only 2 are available in this page)
+// Input: TimeSlot? from extra Intent (setContentView to layout/choose_store_page_1.xml)
+// Output: TimeSlot? StallID?
+// Sent/Read from DB: Unsure (If can, retrieve available stores?)
+// Prev Page Link: MainCustomerPage.java
+// Next Page Link: StoreMenuPage.java (Chicken Rice stall only available)
+// Java Concepts/OOP: Intent(?)
 public class ChooseStorePage2 extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

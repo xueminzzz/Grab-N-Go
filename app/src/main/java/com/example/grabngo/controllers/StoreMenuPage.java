@@ -11,6 +11,15 @@ import androidx.annotation.Nullable;
 
 import com.example.grabngo.R;
 
+// TODO: Unsure of some below
+// Function: For users to choose food item from selected store
+// Input: TimeSlot? StallID? (setContentView to layout/store_menu_page.xml
+// Output: TimeSlot? StallID? FoodID? (redirect page)
+// Sent/Read from DB: None
+// Prev Page Link: ChooseStorePage1/2.java
+// Next Page Link: AddOnPage
+// Java Concepts/OOP: Intent(?)
+
 public class StoreMenuPage extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

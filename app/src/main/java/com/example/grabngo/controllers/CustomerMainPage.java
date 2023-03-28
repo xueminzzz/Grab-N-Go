@@ -9,6 +9,15 @@ import android.widget.ImageButton;
 
 import com.example.grabngo.R;
 
+// TODO: Unsure of some below
+// Function: For users to choose which timeslot to order for
+// Input: None (setContentView to layout/activity_choose_one.xml
+// Output: TimeSlot? (redirect page)
+// Sent/Read from DB: None
+// Prev Page Link: Customerlogin.java
+// Next Page Link: ChooseStorePage1/2.java
+// Java Concepts/OOP: Intent(?)
+
 public class CustomerMainPage extends AppCompatActivity {
 
     @Override
