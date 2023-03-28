@@ -11,11 +11,11 @@ import androidx.annotation.Nullable;
 
 import com.example.grabngo.R;
 
-public class StoreMenuPage1 extends Activity implements View.OnClickListener {
+public class StoreMenuPage extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.store_menu_page_1);
+        setContentView(R.layout.store_menu_page);
 
         // BUTTON HANDLER
         // I tried to do out of normal and its still pretty repetitive and long
@@ -42,31 +42,37 @@ public class StoreMenuPage1 extends Activity implements View.OnClickListener {
     }
 
     public void onClick(View view) {
-        TextView quantity;
-        int count = 0;
+        TextView quantity1 = findViewById(R.id.MenuItem1Quantity);
+        int count1 = Integer.valueOf(quantity1.getText().toString());
+        TextView quantity2 = findViewById(R.id.MenuItem2Quantity);
+        int count2 = Integer.valueOf(quantity2.getText().toString());
+        TextView quantity3 = findViewById(R.id.MenuItem3Quantity);
+        int count3 = Integer.valueOf(quantity3.getText().toString());
+
+        int overall_count = count1 + count2 + count3;
+
         Intent addon = new Intent(view.getContext(), AddOnPage1.class);
 
         switch (view.getId()) {
             case R.id.AddButton1:
-                quantity = findViewById(R.id.MenuItem1Quantity);
-                count = Integer.valueOf(quantity.getText().toString());
-                count++;
-                quantity.setText(String.valueOf(count));
-                if (count > 0) {
+                if (overall_count < 1) {
+                    overall_count++;
+                    count1++;
+                    quantity1.setText(String.valueOf(count1));
+                }
+                if (count1 > 0) {
                     findViewById(R.id.ArrowButton1).setVisibility(View.VISIBLE);
                 } else {
                     findViewById(R.id.ArrowButton1).setVisibility(View.GONE);
                 }
                 break;
             case R.id.MinusButton1:
-                quantity = findViewById(R.id.MenuItem1Quantity);
-                count = Integer.valueOf(quantity.getText().toString());
-                count--;
-                if (count < 0) {
-                    count = 0;
+                if (count1 > 0) {
+                    overall_count--;
+                    count1--;
+                    quantity1.setText(String.valueOf(count1));
                 }
-                quantity.setText(String.valueOf(count));
-                if (count > 0) {
+                if (count1 > 0) {
                     findViewById(R.id.ArrowButton1).setVisibility(View.VISIBLE);
                 } else {
                     findViewById(R.id.ArrowButton1).setVisibility(View.GONE);
@@ -76,25 +82,24 @@ public class StoreMenuPage1 extends Activity implements View.OnClickListener {
                 view.getContext().startActivity(addon);
                 break;
             case R.id.AddButton2:
-                quantity = findViewById(R.id.MenuItem2Quantity);
-                count = Integer.valueOf(quantity.getText().toString());
-                count++;
-                quantity.setText(String.valueOf(count));
-                if (count > 0) {
+                if (overall_count < 1) {
+                    overall_count++;
+                    count2++;
+                    quantity2.setText(String.valueOf(count2));
+                }
+                if (count2 > 0) {
                     findViewById(R.id.ArrowButton2).setVisibility(View.VISIBLE);
                 } else {
                     findViewById(R.id.ArrowButton2).setVisibility(View.GONE);
                 }
                 break;
             case R.id.MinusButton2:
-                quantity = findViewById(R.id.MenuItem2Quantity);
-                count = Integer.valueOf(quantity.getText().toString());
-                count--;
-                if (count < 0) {
-                    count = 0;
+                if (count2 > 0) {
+                    overall_count--;
+                    count2--;
+                    quantity2.setText(String.valueOf(count2));
                 }
-                quantity.setText(String.valueOf(count));
-                if (count > 0) {
+                if (count2 > 0) {
                     findViewById(R.id.ArrowButton2).setVisibility(View.VISIBLE);
                 } else {
                     findViewById(R.id.ArrowButton2).setVisibility(View.GONE);
@@ -104,25 +109,24 @@ public class StoreMenuPage1 extends Activity implements View.OnClickListener {
                 view.getContext().startActivity(addon);
                 break;
             case R.id.AddButton3:
-                quantity = findViewById(R.id.MenuItem3Quantity);
-                count = Integer.valueOf(quantity.getText().toString());
-                count++;
-                quantity.setText(String.valueOf(count));
-                if (count > 0) {
+                if (overall_count < 1) {
+                    overall_count++;
+                    count3++;
+                    quantity3.setText(String.valueOf(count3));
+                }
+                if (count3 > 0) {
                     findViewById(R.id.ArrowButton3).setVisibility(View.VISIBLE);
                 } else {
                     findViewById(R.id.ArrowButton3).setVisibility(View.GONE);
                 }
                 break;
             case R.id.MinusButton3:
-                quantity = findViewById(R.id.MenuItem3Quantity);
-                count = Integer.valueOf(quantity.getText().toString());
-                count--;
-                if (count < 0) {
-                    count = 0;
+                if (count3 > 0) {
+                    overall_count--;
+                    count3--;
+                    quantity3.setText(String.valueOf(count3));
                 }
-                quantity.setText(String.valueOf(count));
-                if (count > 0) {
+                if (count3 > 0) {
                     findViewById(R.id.ArrowButton3).setVisibility(View.VISIBLE);
                 } else {
                     findViewById(R.id.ArrowButton3).setVisibility(View.GONE);
