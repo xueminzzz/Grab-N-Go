@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 
 import com.example.grabngo.R;
+import com.example.grabngo.test.TestStoreMenuPage;
 
 // TODO: Unsure of some below
 // Function: For users to choose stores (all are available in this page)
@@ -31,7 +32,7 @@ public class ChooseStorePage1 extends Activity {
         store1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent chickenRiceStore = new Intent(view.getContext(), StoreMenuPage.class);
+                Intent chickenRiceStore = new Intent(view.getContext(), TestStoreMenuPage.class);  //changed to test, change back to StoreMenuPage
                 view.getContext().startActivity(chickenRiceStore);
             }
         });

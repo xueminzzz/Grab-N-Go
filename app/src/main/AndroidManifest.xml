@@ -23,8 +23,9 @@
         <activity
             android:name=".controllers.AddOnPage"
             android:exported="false" />
+        <!-- Change below back to StoreMenuPage -->
         <activity
-            android:name=".controllers.StoreMenuPage"
+            android:name=".test.TestStoreMenuPage"
             android:exported="false" />
         <activity
             android:name=".controllers.ChooseStorePage2"
