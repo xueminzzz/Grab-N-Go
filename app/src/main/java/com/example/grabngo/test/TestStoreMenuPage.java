@@ -1,4 +1,4 @@
-package com.example.grabngo.controllers;
+package com.example.grabngo.test;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.example.grabngo.R;
+import com.example.grabngo.controllers.AddOnPage;
 import com.example.grabngo.models.Food;
 
 // TODO: Unsure of some below
@@ -22,7 +23,7 @@ import com.example.grabngo.models.Food;
 // Next Page Link: AddOnPage
 // Java Concepts/OOP: Intent(?)
 
-public class StoreMenuPage extends Activity implements View.OnClickListener {
+public class TestStoreMenuPage extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +52,26 @@ public class StoreMenuPage extends Activity implements View.OnClickListener {
         addon2.setOnClickListener(this);
         addon3.setOnClickListener(this);
 
+        Log.d("TEST!", "TESTING TESTING TESTING TESTING TESTING!");
+
+        // Testing FoodBuilder
+        Food chickenrice1 = new Food.FoodBuilder("Steamed Chicken Rice", 4.80)
+                .setAddMeat(true).build();
+
+        Food chickenrice2 = new Food.FoodBuilder("Roasted Chicken Rice", 5.80)
+                .setAddEgg(true).build();
+
+        Food chickenrice3 = new Food.FoodBuilder("Roasted Chicken Rice Set Meal", 9.90)
+                .build();
+
+        Log.d("Test FoddBuilder OBJECT 1", chickenrice1.getFood_name() + " " + chickenrice1.getFood_price() +
+                "\nAdd Meat? " + chickenrice1.isAddMeat() + " Add Egg? " + chickenrice1.isAddEgg() + " Add Tofu? " + chickenrice1.isAddTofu());
+
+        Log.d("Test FoddBuilder OBJECT 2", chickenrice2.getFood_name() + " " + chickenrice2.getFood_price() +
+                "\nAdd Meat? " + chickenrice2.isAddMeat() + " Add Egg? " + chickenrice2.isAddEgg() + " Add Tofu? " + chickenrice2.isAddTofu());
+
+        Log.d("Test FoddBuilder OBJECT 3", chickenrice3.getFood_name() + " " + chickenrice3.getFood_price() +
+                "\nAdd Meat? " + chickenrice3.isAddMeat() + " Add Egg? " + chickenrice3.isAddEgg() + " Add Tofu? " + chickenrice3.isAddTofu());
     }
 
     public void onClick(View view) {
