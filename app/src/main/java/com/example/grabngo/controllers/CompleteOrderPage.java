@@ -1,4 +1,4 @@
-package com.example.grabngo;
+package com.example.grabngo.controllers;
 
 import android.app.Activity;
 

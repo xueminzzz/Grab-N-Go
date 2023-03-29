@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/signup_btn_background"
-    tools:context=".OrdersforSpecifiedTimePage2">
+    tools:context=".controllers.OrdersforSpecifiedTimePage2">
 
     <!-- This page is after the complete_order_page -->
     <!-- When vendors complete one order, it will be greyed out and total orders count will be updated -->

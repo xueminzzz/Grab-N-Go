@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/signup_btn_background"
-    tools:context=".OrdersforNextTimeSlotPage">
+    tools:context=".controllers.OrdersforNextTimeSlotPage">
 
     <!-- This page is after the orders_for_specified_time_page_2 -->
     <!-- When vendors complete all orders, there will be a pop-up to ask them to choose next timeslot -->

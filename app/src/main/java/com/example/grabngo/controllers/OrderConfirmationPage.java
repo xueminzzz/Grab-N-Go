@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 
 import com.example.grabngo.R;
+import com.example.grabngo.test.TestFirebaseDB;
 
 // TODO: Unsure of some below
 // Function: For users to confirm their order
@@ -21,5 +22,8 @@ public class OrderConfirmationPage extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.order_confirmation_page);
+
+        // Test Firebase push
+        TestFirebaseDB.main();
     }
 }
