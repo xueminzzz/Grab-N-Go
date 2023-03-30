@@ -58,6 +58,29 @@
             android:name=".controllers.MainMenu"
             android:exported="false" />
         <activity
+            android:name=".controllers.OrdersforSpecifiedTimePage1"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name=".controllers.OrdersforSpecifiedTimePage1_1PM"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.OrdersforSpecifiedTimePage1_130PM"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.OrdersforSpecifiedTimePage1_2PM"
+            android:exported="false" />
+
+        <activity
+            android:name=".controllers.OrdersforSpecifiedTimePage2"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.OrdersforNextTimeSlotPage"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.CompleteOrderPage"
+            android:exported="false" />
+        <activity
             android:name=".controllers.MainActivity"
             android:exported="true">
             <intent-filter>
