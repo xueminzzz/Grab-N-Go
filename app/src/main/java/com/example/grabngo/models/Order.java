@@ -22,7 +22,11 @@ public class Order {
         for (int i = 0; i < food_list.size(); i++) {
             Object food_item = food_list.get(i);
 
-            this.total_price += ((Food) food_item).getFood_price();
+            if (food_item instanceof Food) {
+                this.total_price += ((Food) food_item).getFood_price();
+            } else {
+                this.total_price += ((Food2) food_item).getFood_price();
+            }
         }
     }
 

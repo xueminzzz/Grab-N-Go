@@ -20,7 +20,7 @@ public class FirebaseDB {
         for (int i = 0; i < order.getFood_list().size(); i++) {
             Object food_item = order.getFood_list().get(i);
 
-            mDatabase.child("Order").child("order"+order.getOrder_id()).child("food"+i).setValue(food_item);
+            mDatabase.child("Order").child("order"+order.getOrder_id()).child("list_of_food").child("food"+i).setValue(food_item);
         }
     }
 }
