@@ -9,12 +9,23 @@ package com.example.grabngo.test;
 public class RoastedChickenRice extends ChickenRice{
     public RoastedChickenRice(RoastedChickenRiceBuilder roastedChickenRiceBuilder) {
         super(roastedChickenRiceBuilder);
-        //TODO I can't update the name to be roasted chicken rice:(
         this.setFoodName("Roasted Chicken Rice");
         this.setFoodId(2);
     }
 
 
-    static class RoastedChickenRiceBuilder extends ChickenRice.ChickenRiceBuilder {}
+    static class RoastedChickenRiceBuilder extends ChickenRice.ChickenRiceBuilder {
+        public RoastedChickenRice build(){
+            return new RoastedChickenRice(this);
+        }
+    }
+    @Override
+    public void setFoodName(String foodName) {
+        super.setFoodName(foodName);
+    }
+
+
+
+
 }
 

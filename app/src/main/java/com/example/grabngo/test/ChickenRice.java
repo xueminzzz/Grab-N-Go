@@ -11,7 +11,7 @@ package com.example.grabngo.test;
  *
  */
 
-public class ChickenRice extends FoodV2 {
+ public class ChickenRice extends FoodV2 {
 
     // Builder attributes
     private boolean isAddMeat;
@@ -22,10 +22,10 @@ public class ChickenRice extends FoodV2 {
     public ChickenRice(ChickenRiceBuilder chickenRiceBuilder) {
         super("Chicken Rice", 0, 4.00, "Stall-Chicken Rice");
 
-        this.isAddMeat= chickenRiceBuilder.isAddMeat;
-        this.isAddEgg= chickenRiceBuilder.isAddEgg;
-        this.isAddTofu= chickenRiceBuilder.isAddTofu;
-        //this.setFoodName("Chicken Rice-test"); //Somehow this can update the foodname, but in RoastedChickenRice the setFoodName doesnt work
+        this.isAddMeat = chickenRiceBuilder.isAddMeat;
+        this.isAddEgg = chickenRiceBuilder.isAddEgg;
+        this.isAddTofu = chickenRiceBuilder.isAddTofu;
+        this.setFoodName("Chicken Rice-test"); //Somehow this can update the foodname, but in RoastedChickenRice the setFoodName doesnt work
     }
 
 
@@ -42,16 +42,16 @@ public class ChickenRice extends FoodV2 {
     }
 
 
-    static class ChickenRiceBuilder  {
-        public ChickenRiceBuilder(){}
+    abstract static class ChickenRiceBuilder {
+        public ChickenRiceBuilder() {
+        }
 
         private boolean isAddMeat;
         private boolean isAddEgg;
         private boolean isAddTofu;
 
 
-
-        public ChickenRiceBuilder setAddMeat(boolean addMeat){
+        public ChickenRiceBuilder setAddMeat(boolean addMeat) {
             this.isAddMeat = addMeat;
             return this;
         }
@@ -67,9 +67,10 @@ public class ChickenRice extends FoodV2 {
         }
 
         public ChickenRice build(){
-            return new ChickenRice(this);
-        }
-
+         return new ChickenRice(this);
+         }
+        //public ChickenRice build(){return new ChickenRice(this);}
+        //}
     }
 }
 
