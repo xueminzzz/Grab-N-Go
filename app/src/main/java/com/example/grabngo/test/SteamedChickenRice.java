@@ -10,8 +10,11 @@ public class SteamedChickenRice extends ChickenRice {
     }
 
 
-    static class SteamedChickenRiceBuilder extends ChickenRiceBuilder{}
+    static class SteamedChickenRiceBuilder extends ChickenRiceBuilder{
+        public SteamedChickenRice build(){
+            return new SteamedChickenRice(this);
+        }
+    }
 }
-
 
 
