@@ -12,6 +12,7 @@
 
 package com.example.grabngo.test;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class Order {
@@ -21,7 +22,7 @@ public class Order {
 
     private double timeSlot;
 
-    private double totalPrice;
+    private BigDecimal totalPrice = new BigDecimal(0);
 
     private ArrayList<Object> foodOrdered = new ArrayList<Object>();
 
@@ -41,12 +42,17 @@ public class Order {
         if (order instanceof ChickenRice) {
             ChickenRice subObj = (ChickenRice) order;
             foodOrdered.add(subObj);
-            totalPrice = totalPrice + subObj.getNetPrice();
+            totalPrice = totalPrice.add(subObj.getNetPrice());
+        }
+        if (order instanceof Noodle) {
+            Noodle subObj = (Noodle) order;
+            foodOrdered.add(subObj);
+            totalPrice = totalPrice.add(subObj.getNetPrice());
         }
     }
 
-    public double getTotalPrice() {
-        return totalPrice;
+    public BigDecimal getTotalPrice() {
+        return totalPrice.setScale(2,BigDecimal.ROUND_HALF_UP);
     }
 
     public int getOrderId() {
