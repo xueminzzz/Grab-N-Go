@@ -23,7 +23,7 @@ public class Order {
 
     private double totalPrice;
 
-    private ArrayList<FoodV2> foodOrdered = new ArrayList<FoodV2>();
+    private ArrayList<Object> foodOrdered = new ArrayList<Object>();
 
     public Order() {
         this.orderId = 0;
@@ -37,9 +37,12 @@ public class Order {
         this.timeSlot = timeSlot;
     }
 
-    public void addOrder(FoodV2 order) {
-        foodOrdered.add(order);
-        totalPrice = totalPrice + order.getBasePrice();
+    public void addOrder(Object order) {
+        if (order instanceof ChickenRice) {
+            ChickenRice subObj = (ChickenRice) order;
+            foodOrdered.add(subObj);
+            totalPrice = totalPrice + subObj.getNetPrice();
+        }
     }
 
     public double getTotalPrice() {
@@ -58,7 +61,7 @@ public class Order {
         return timeSlot;
     }
 
-    public ArrayList<FoodV2> getFoodOrdered() {
+    public ArrayList<Object> getFoodOrdered() {
         return foodOrdered;
     }
 
