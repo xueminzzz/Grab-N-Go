@@ -8,14 +8,22 @@ public class TestOrder {
         Order order1 = new Order(1,1,12.0);
         order1.addOrder(steamed1);
         System.out.println("steamed1 price" + order1.getTotalPrice());
-        for (FoodV2 item : order1.getFoodOrdered()) {
-            System.out.println(item.getFoodName() + "     " + item.getBasePrice());
+        for (Object item : order1.getFoodOrdered()) {
+            if (item instanceof ChickenRice) {
+                ChickenRice subObj = (ChickenRice) item;
+                System.out.println(subObj.getFoodName() + "     " + subObj.getNetPrice());
+                System.out.println(subObj.isAddEgg());
+            }
         }
 
         order1.addOrder(roasted1);
         System.out.println("steamed1 + roasted1 price" + order1.getTotalPrice());
-        for (FoodV2 item : order1.getFoodOrdered()) {
-            System.out.println(item.getFoodName() + "     " + item.getBasePrice());
+        for (Object item : order1.getFoodOrdered()) {
+            if (item instanceof ChickenRice) {
+                ChickenRice subObj = (ChickenRice) item;
+                System.out.println(subObj.getFoodName() + "     " + subObj.getNetPrice());
+                System.out.println(subObj.isAddEgg());
+            }
         }
     }
 }
