@@ -36,7 +36,11 @@ public class CustomerMainPage extends AppCompatActivity {
         timeslot1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //TODO change to reference to string file
+
+
                 Intent all_avail = new Intent(view.getContext(), ChooseStorePage1.class);
+                all_avail.putExtra("timeSlot", "12.30PM");
                 view.getContext().startActivity(all_avail);
             }
         });
@@ -45,6 +49,7 @@ public class CustomerMainPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent all_avail = new Intent(view.getContext(), ChooseStorePage1.class);
+                all_avail.putExtra("timeSlot", "1PM");
                 view.getContext().startActivity(all_avail);
             }
         });
@@ -53,6 +58,7 @@ public class CustomerMainPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent all_avail = new Intent(view.getContext(), ChooseStorePage2.class);
+                all_avail.putExtra("timeSlot", "1.30PM");
                 view.getContext().startActivity(all_avail);
             }
         });
@@ -61,6 +67,7 @@ public class CustomerMainPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent all_avail = new Intent(view.getContext(), ChooseStorePage2.class);
+                all_avail.putExtra("timeSlot", "2PM");
                 view.getContext().startActivity(all_avail);
             }
         });

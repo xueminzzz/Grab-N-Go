@@ -3,6 +3,7 @@ package com.example.grabngo.controllers;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.Nullable;
@@ -28,11 +29,19 @@ public class ChooseStorePage1 extends Activity {
         CardView store1 = findViewById(R.id.ChickenRiceStoreTab);
         //CardView store2 = findViewById(R.id.BanmianStoreTab);
         //CardView store3 = findViewById(R.id.MixedRiceStoreTab);
+        //Intent intent = getIntent();
+        //String timeSlot = intent.getStringExtra("timeSlot");
+        //Log.d("TEST INTENT", timeSlot);
 
         store1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = getIntent();
+                String timeSlot = intent.getStringExtra("timeSlot");
+                Log.d("TEST INTENT", timeSlot);
                 Intent chickenRiceStore = new Intent(view.getContext(), TestStoreMenuPage.class);  //changed to test, change back to StoreMenuPage
+                chickenRiceStore.putExtra("stallName", "Chicken Rice Stall");
+                chickenRiceStore.putExtra("timeSlot", timeSlot);
                 view.getContext().startActivity(chickenRiceStore);
             }
         });

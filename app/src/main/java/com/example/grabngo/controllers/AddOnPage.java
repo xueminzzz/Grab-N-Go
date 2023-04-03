@@ -3,6 +3,7 @@ package com.example.grabngo.controllers;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -12,6 +13,8 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.ContextCompat;
 
 import com.example.grabngo.R;
+import com.example.grabngo.test.ChickenRice;
+import com.example.grabngo.test.SteamedChickenRice;
 
 // TODO: Unsure of some below
 // Function: For users to choose add-ons or remove ingredients from food
@@ -33,12 +36,21 @@ public class AddOnPage extends Activity {
         CheckBox check1 = findViewById(R.id.MeatCheckBox);
         CheckBox check2 = findViewById(R.id.EggCheckBox);
         CheckBox check3 = findViewById(R.id.TofuCheckBox);
-        CheckBox check4 = findViewById(R.id.CucumberCheckBox);
+        CheckBox check4 = findViewById(R.id.CucumberCheckBox); //TODO do we delete this checkBox
         CheckBox check5 = findViewById(R.id.NoAddOnCheckBox);
 
         AppCompatButton proceedbtn = findViewById(R.id.PlaceOrderButton1);
+        Intent receiveData = getIntent();
+        String stallName = receiveData.getStringExtra("stallName");
+        String timeSlot = receiveData.getStringExtra("timeSlot");
+        String foodName = receiveData.getStringExtra("foodName");
+        Log.d("TEST-ADDONPAGE", stallName + " " + timeSlot + " " + foodName);
+
+
 
         check1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (check1.isChecked()) {
@@ -106,6 +118,18 @@ public class AddOnPage extends Activity {
         proceedbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent receiveData = getIntent();
+                String stallName = receiveData.getStringExtra("stallName");
+                String timeSlot = receiveData.getStringExtra("timeSlot");
+                String foodName = receiveData.getStringExtra("foodName");
+
+
+                ChickenRice steamed1 = null;
+                if (foodName == "SteamedChickenRice") {
+                    // TODO Need to store this object somewhere - Should we use view model?
+                    steamed1 = new SteamedChickenRice.SteamedChickenRiceBuilder().setAddEgg(false).setAddTofu(true).setAddMeat(false).build();
+                }
+
                 Intent nextAdd = new Intent(view.getContext(), ConfirmAddOnPage.class);
                 view.getContext().startActivity(nextAdd);
             }

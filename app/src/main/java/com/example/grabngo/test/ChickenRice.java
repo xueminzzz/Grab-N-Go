@@ -84,7 +84,7 @@ public class ChickenRice extends FoodV2 {
     }
 
 
-    abstract static class ChickenRiceBuilder {
+    public abstract static class ChickenRiceBuilder {
         public ChickenRiceBuilder() {
         }
 
