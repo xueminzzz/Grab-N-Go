@@ -24,6 +24,8 @@ import com.example.grabngo.models.Food;
 // Java Concepts/OOP: Intent(?)
 
 public class TestStoreMenuPage extends Activity implements View.OnClickListener {
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,27 +54,9 @@ public class TestStoreMenuPage extends Activity implements View.OnClickListener 
         addon2.setOnClickListener(this);
         addon3.setOnClickListener(this);
 
-        Log.d("TEST!", "TESTING TESTING TESTING TESTING TESTING!");
 
-        // Testing FoodBuilder
-        Food chickenrice1 = new Food.FoodBuilder("Steamed Chicken Rice", 4.80)
-                .setAddMeat(true).build();
+         }
 
-        Food chickenrice2 = new Food.FoodBuilder("Roasted Chicken Rice", 5.80)
-                .setAddEgg(true).build();
-
-        Food chickenrice3 = new Food.FoodBuilder("Roasted Chicken Rice Set Meal", 9.90)
-                .build();
-
-        Log.d("Test FoddBuilder OBJECT 1", chickenrice1.getFood_name() + " " + chickenrice1.getFood_price() +
-                "\nAdd Meat? " + chickenrice1.isAddMeat() + " Add Egg? " + chickenrice1.isAddEgg() + " Add Tofu? " + chickenrice1.isAddTofu());
-
-        Log.d("Test FoddBuilder OBJECT 2", chickenrice2.getFood_name() + " " + chickenrice2.getFood_price() +
-                "\nAdd Meat? " + chickenrice2.isAddMeat() + " Add Egg? " + chickenrice2.isAddEgg() + " Add Tofu? " + chickenrice2.isAddTofu());
-
-        Log.d("Test FoddBuilder OBJECT 3", chickenrice3.getFood_name() + " " + chickenrice3.getFood_price() +
-                "\nAdd Meat? " + chickenrice3.isAddMeat() + " Add Egg? " + chickenrice3.isAddEgg() + " Add Tofu? " + chickenrice3.isAddTofu());
-    }
 
     public void onClick(View view) {
         TextView quantity1 = findViewById(R.id.MenuItem1Quantity);
@@ -84,8 +68,16 @@ public class TestStoreMenuPage extends Activity implements View.OnClickListener 
 
         int overall_count = count1 + count2 + count3;
 
-        Intent addon = new Intent(view.getContext(), AddOnPage.class);
+        // Receive data from ChooseStorePage1  of timeSLot and stallNName
+        Intent intent = getIntent();
+        String timeSlot = intent.getStringExtra("timeSlot");
+        Log.d("TEST INTENT-TestStoreMenuPage", timeSlot);
+        String stallName = intent.getStringExtra("stallName");
+        Log.d("TEST INTENT-TestStoreMenuPage", stallName);
 
+        Intent addon = new Intent(view.getContext(), AddOnPage.class);
+        addon.putExtra("stallName", stallName);
+        addon.putExtra("timeSlot", timeSlot);
         switch (view.getId()) {
             case R.id.AddButton1:
                 if (overall_count < 1) {
@@ -112,6 +104,7 @@ public class TestStoreMenuPage extends Activity implements View.OnClickListener 
                 }
                 break;
             case R.id.ArrowButton1:
+                addon.putExtra("foodName", "SteamedChickenRice");
                 view.getContext().startActivity(addon);
                 break;
             case R.id.AddButton2:
@@ -139,6 +132,7 @@ public class TestStoreMenuPage extends Activity implements View.OnClickListener 
                 }
                 break;
             case R.id.ArrowButton2:
+                addon.putExtra("foodName", "RoastedChickenRice");
                 view.getContext().startActivity(addon);
                 break;
             case R.id.AddButton3:
@@ -166,6 +160,7 @@ public class TestStoreMenuPage extends Activity implements View.OnClickListener 
                 }
                 break;
             case R.id.ArrowButton3:
+                addon.putExtra("foodName", "RoastedChickenRiceSetMeal");
                 view.getContext().startActivity(addon);
                 break;
             default:

@@ -3,12 +3,15 @@ package com.example.grabngo.controllers;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 
 import com.example.grabngo.R;
+import com.example.grabngo.test.Order;
+import com.example.grabngo.test.OrderManager;
 import com.example.grabngo.test.TestStoreMenuPage;
 
 // TODO: Unsure of some below
@@ -28,11 +31,24 @@ public class ChooseStorePage1 extends Activity {
         CardView store1 = findViewById(R.id.ChickenRiceStoreTab);
         //CardView store2 = findViewById(R.id.BanmianStoreTab);
         //CardView store3 = findViewById(R.id.MixedRiceStoreTab);
+        //Intent intent = getIntent();
+        //String timeSlot = intent.getStringExtra("timeSlot");
+        //Log.d("TEST INTENT", timeSlot);
+
+        // TODO test OrderManager
+        Order orderManager = OrderManager.getInstance().getOrder();
+
+        Log.d("TEST orderManager", orderManager.toString());
 
         store1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = getIntent();
+                String timeSlot = intent.getStringExtra("timeSlot");
+                Log.d("TEST INTENT", timeSlot);
                 Intent chickenRiceStore = new Intent(view.getContext(), TestStoreMenuPage.class);  //changed to test, change back to StoreMenuPage
+                chickenRiceStore.putExtra("stallName", "Chicken Rice Stall");
+                chickenRiceStore.putExtra("timeSlot", timeSlot);
                 view.getContext().startActivity(chickenRiceStore);
             }
         });
