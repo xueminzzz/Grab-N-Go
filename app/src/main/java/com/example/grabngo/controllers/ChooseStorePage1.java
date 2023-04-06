@@ -10,6 +10,8 @@ import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 
 import com.example.grabngo.R;
+import com.example.grabngo.test.Order;
+import com.example.grabngo.test.OrderManager;
 import com.example.grabngo.test.TestStoreMenuPage;
 
 // TODO: Unsure of some below
@@ -32,6 +34,11 @@ public class ChooseStorePage1 extends Activity {
         //Intent intent = getIntent();
         //String timeSlot = intent.getStringExtra("timeSlot");
         //Log.d("TEST INTENT", timeSlot);
+
+        // TODO test OrderManager
+        Order orderManager = OrderManager.getInstance().getOrder();
+
+        Log.d("TEST orderManager", orderManager.toString());
 
         store1.setOnClickListener(new View.OnClickListener() {
             @Override

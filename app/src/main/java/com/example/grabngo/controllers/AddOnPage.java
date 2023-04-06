@@ -13,7 +13,11 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.ContextCompat;
 
 import com.example.grabngo.R;
+import com.example.grabngo.models.Food;
 import com.example.grabngo.test.ChickenRice;
+import com.example.grabngo.test.FoodV2;
+import com.example.grabngo.test.Order;
+import com.example.grabngo.test.OrderManager;
 import com.example.grabngo.test.SteamedChickenRice;
 
 // TODO: Unsure of some below
@@ -124,11 +128,24 @@ public class AddOnPage extends Activity {
                 String foodName = receiveData.getStringExtra("foodName");
 
 
-                ChickenRice steamed1 = null;
+                //ChickenRice steamed1 = null;
                 if (foodName == "SteamedChickenRice") {
+                    Log.d("Test foodName", foodName);
                     // TODO Need to store this object somewhere - Should we use view model?
-                    steamed1 = new SteamedChickenRice.SteamedChickenRiceBuilder().setAddEgg(false).setAddTofu(true).setAddMeat(false).build();
+                    FoodV2 steamed1 = new SteamedChickenRice.SteamedChickenRiceBuilder().setAddEgg(false).setAddTofu(true).setAddMeat(false).build();
+                    OrderManager.getInstance().addFood(steamed1);
+
                 }
+                //TODO need to know which object to create
+                FoodV2 steamed1 = new SteamedChickenRice.SteamedChickenRiceBuilder().setAddEgg(false).setAddTofu(true).setAddMeat(false).build();
+                OrderManager.getInstance().addFood(steamed1);
+                Order orderManager = OrderManager.getInstance().getOrder();
+                orderManager.setOrderId(1);
+                orderManager.setUserId(22);
+                orderManager.setTimeSlot(2.40);
+                Log.d("TEST orderManager", orderManager.toString());
+
+                // Check what is current foodname etc
 
                 Intent nextAdd = new Intent(view.getContext(), ConfirmAddOnPage.class);
                 view.getContext().startActivity(nextAdd);

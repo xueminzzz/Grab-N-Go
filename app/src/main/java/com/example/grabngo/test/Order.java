@@ -55,6 +55,18 @@ public class Order {
         return totalPrice.setScale(2,BigDecimal.ROUND_HALF_UP);
     }
 
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public void setTimeSlot(double timeSlot) {
+        this.timeSlot = timeSlot;
+    }
+
     public int getOrderId() {
         return orderId;
     }
@@ -69,6 +81,12 @@ public class Order {
 
     public ArrayList<Object> getFoodOrdered() {
         return foodOrdered;
+    }
+
+    @Override
+    public String toString(){
+        String answer = "Order id : " +  getOrderId() + " Time Slot: " + getTimeSlot() + " User Id: " + getUserId() + " Food Ordered: " + getFoodOrdered().toString();
+        return answer;
     }
 
 }
