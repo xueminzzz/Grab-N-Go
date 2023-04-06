@@ -25,6 +25,4 @@ public class RoastedChickenRice extends ChickenRice{
     }
 
 
-
-
 }

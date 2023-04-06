@@ -1,5 +1,7 @@
 package com.example.grabngo.test;
 
+import java.math.BigDecimal;
+
 /** Details about concrete class ChickenRice
  * Attributes from FoodV2: foodName, foodId, basePrice, stallName
  * Additional attributes: isAddMeat, isAddEgg, isAddTofu
@@ -29,7 +31,7 @@ public class ChickenRice extends FoodV2 {
 
     private double netPrice;
 
-    public double getNetPrice() {
+    public BigDecimal getNetPrice() {
         netPrice = super.getBasePrice();
         if (this.isAddEgg()) {
             netPrice = netPrice + this.getEggPrice();
@@ -42,7 +44,8 @@ public class ChickenRice extends FoodV2 {
         if (this.isAddMeat()) {
             netPrice = netPrice + this.getMeatPrice();
         }
-        return netPrice;
+        BigDecimal netPriceBD = new BigDecimal(netPrice);
+        return netPriceBD.setScale(2, BigDecimal.ROUND_HALF_UP);
     }
 
     public double getEggPrice() {
@@ -108,7 +111,5 @@ public class ChickenRice extends FoodV2 {
         public ChickenRice build(){
             return new ChickenRice(this);
         }
-        //public ChickenRice build(){return new ChickenRice(this);}
-        //}
     }
 }
