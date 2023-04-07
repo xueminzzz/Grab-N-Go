@@ -12,12 +12,13 @@ import androidx.cardview.widget.CardView;
 import com.example.grabngo.R;
 import com.example.grabngo.test.Order;
 import com.example.grabngo.test.OrderManager;
+import com.example.grabngo.test.OrderManagerV2;
 import com.example.grabngo.test.TestStoreMenuPage;
 
 // TODO: Unsure of some below
 // Function: For users to choose stores (all are available in this page)
 // Input: TimeSlot? from extra Intent (setContentView to layout/choose_store_page_1.xml)
-// Output: TimeSlot? StallID?
+// Output: Nil
 // Sent/Read from DB: Unsure (If can, retrieve available stores?)
 // Prev Page Link: MainCustomerPage.java
 // Next Page Link: StoreMenuPage.java (Chicken Rice stall only available)
@@ -27,28 +28,14 @@ public class ChooseStorePage1 extends Activity {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choose_store_page_1);
-
         CardView store1 = findViewById(R.id.ChickenRiceStoreTab);
-        //CardView store2 = findViewById(R.id.BanmianStoreTab);
-        //CardView store3 = findViewById(R.id.MixedRiceStoreTab);
-        //Intent intent = getIntent();
-        //String timeSlot = intent.getStringExtra("timeSlot");
-        //Log.d("TEST INTENT", timeSlot);
-
-        // TODO test OrderManager
-        Order orderManager = OrderManager.getInstance().getOrder();
-
-        Log.d("TEST orderManager", orderManager.toString());
+        OrderManagerV2 ordermanagerv2 = OrderManagerV2.getInstance();
+        Log.d("ChooseStorePage1-onCreate", ordermanagerv2.toString());
 
         store1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = getIntent();
-                String timeSlot = intent.getStringExtra("timeSlot");
-                Log.d("TEST INTENT", timeSlot);
                 Intent chickenRiceStore = new Intent(view.getContext(), TestStoreMenuPage.class);  //changed to test, change back to StoreMenuPage
-                chickenRiceStore.putExtra("stallName", "Chicken Rice Stall");
-                chickenRiceStore.putExtra("timeSlot", timeSlot);
                 view.getContext().startActivity(chickenRiceStore);
             }
         });

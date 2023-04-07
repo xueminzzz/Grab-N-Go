@@ -11,9 +11,10 @@ public class OrderManager {
     private List<FoodV2> foods;
     private Order order;
 
+
     private OrderManager(){
         foods = new ArrayList<>();
-        order = new Order();
+         order = new Order();
     }
 
     public static OrderManager getInstance(){

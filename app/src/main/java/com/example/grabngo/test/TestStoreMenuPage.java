@@ -67,17 +67,12 @@ public class TestStoreMenuPage extends Activity implements View.OnClickListener 
         int count3 = Integer.valueOf(quantity3.getText().toString());
 
         int overall_count = count1 + count2 + count3;
+        OrderManagerV2 ordermanagerv2 = OrderManagerV2.getInstance();
+        Log.d("TestStoreMenuPage -onClick", ordermanagerv2.toString());
 
-        // Receive data from ChooseStorePage1  of timeSLot and stallNName
-        Intent intent = getIntent();
-        String timeSlot = intent.getStringExtra("timeSlot");
-        Log.d("TEST INTENT-TestStoreMenuPage", timeSlot);
-        String stallName = intent.getStringExtra("stallName");
-        Log.d("TEST INTENT-TestStoreMenuPage", stallName);
 
         Intent addon = new Intent(view.getContext(), AddOnPage.class);
-        addon.putExtra("stallName", stallName);
-        addon.putExtra("timeSlot", timeSlot);
+
         switch (view.getId()) {
             case R.id.AddButton1:
                 if (overall_count < 1) {
@@ -104,6 +99,7 @@ public class TestStoreMenuPage extends Activity implements View.OnClickListener 
                 }
                 break;
             case R.id.ArrowButton1:
+                Log.d("TestStoreMenuPage -ArrowButton1", ordermanagerv2.toString());
                 addon.putExtra("foodName", "SteamedChickenRice");
                 view.getContext().startActivity(addon);
                 break;

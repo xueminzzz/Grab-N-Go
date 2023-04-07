@@ -15,6 +15,15 @@ public class SteamedChickenRice extends ChickenRice {
             return new SteamedChickenRice(this);
         }
     }
+
+    @Override
+    public String toString() {
+        return "SteamedChickenRice " +
+                "\n Add meat? " + this.isAddMeat() +
+                "\n Add Egg? " + this.isAddEgg() +
+                "\n Add Tofu? " + this.isAddTofu() +
+                "\n Net price: " + this.getNetPrice();
+    }
 }
 
 
