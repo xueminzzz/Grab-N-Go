@@ -12,9 +12,9 @@ import androidx.annotation.Nullable;
 
 import com.example.grabngo.R;
 import com.example.grabngo.controllers.AddOnPage;
-import com.example.grabngo.models.Food;
 
-// TODO: Unsure of some below
+// THIS IS UPDATED PAGE FOR "STORE MENU PAGE"
+// TODO can make this alot shorter by having a helper function
 // Function: For users to choose food item from selected store
 // Input: TimeSlot? StallID? (setContentView to layout/store_menu_page.xml
 // Output: TimeSlot? StallID? FoodID? (redirect page)
@@ -67,8 +67,8 @@ public class TestStoreMenuPage extends Activity implements View.OnClickListener 
         int count3 = Integer.valueOf(quantity3.getText().toString());
 
         int overall_count = count1 + count2 + count3;
-        OrderManagerV2 ordermanagerv2 = OrderManagerV2.getInstance();
-        Log.d("TestStoreMenuPage -onClick", ordermanagerv2.toString());
+        Order ordermanager = Order.getInstance();
+        Log.d("TestStoreMenuPage -onClick", ordermanager.toString());
 
 
         Intent addon = new Intent(view.getContext(), AddOnPage.class);
@@ -99,7 +99,7 @@ public class TestStoreMenuPage extends Activity implements View.OnClickListener 
                 }
                 break;
             case R.id.ArrowButton1:
-                Log.d("TestStoreMenuPage -ArrowButton1", ordermanagerv2.toString());
+                Log.d("TestStoreMenuPage -ArrowButton1", ordermanager.toString());
                 addon.putExtra("foodName", "SteamedChickenRice");
                 view.getContext().startActivity(addon);
                 break;

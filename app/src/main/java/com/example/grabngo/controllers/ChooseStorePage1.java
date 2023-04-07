@@ -11,8 +11,6 @@ import androidx.cardview.widget.CardView;
 
 import com.example.grabngo.R;
 import com.example.grabngo.test.Order;
-import com.example.grabngo.test.OrderManager;
-import com.example.grabngo.test.OrderManagerV2;
 import com.example.grabngo.test.TestStoreMenuPage;
 
 // TODO: Unsure of some below
@@ -29,8 +27,8 @@ public class ChooseStorePage1 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choose_store_page_1);
         CardView store1 = findViewById(R.id.ChickenRiceStoreTab);
-        OrderManagerV2 ordermanagerv2 = OrderManagerV2.getInstance();
-        Log.d("ChooseStorePage1-onCreate", ordermanagerv2.toString());
+        Order order = Order.getInstance();
+        Log.d("ChooseStorePage1-onCreate", order.toString());
 
         store1.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -14,8 +14,8 @@ import androidx.core.content.ContextCompat;
 
 import com.example.grabngo.R;
 import com.example.grabngo.test.FoodFactory;
-import com.example.grabngo.test.FoodV2;
-import com.example.grabngo.test.OrderManagerV2;
+import com.example.grabngo.test.Food;
+import com.example.grabngo.test.Order;
 import com.example.grabngo.test.SteamedChickenRice;
 
 // TODO: Unsure of some below
@@ -31,7 +31,7 @@ import com.example.grabngo.test.SteamedChickenRice;
 // Link to resource: https://m2.material.io/components/checkboxes#behavior
 public class AddOnPage extends Activity {
 
-    private FoodV2 food;
+    private Food food;
     private boolean meat;
     private boolean egg;
     private boolean tofu;
@@ -96,80 +96,16 @@ public class AddOnPage extends Activity {
             public void onClick(View view) {
 
                 //TODO need to know which object to create
-                // FoodV2 steamed1 = new SteamedChickenRice.SteamedChickenRiceBuilder().setAddEgg(false).setAddTofu(true).setAddMeat(false).build();
-                OrderManagerV2 ordermanagerv2 = OrderManagerV2.getInstance();
+                // Food steamed1 = new SteamedChickenRice.SteamedChickenRiceBuilder().setAddEgg(false).setAddTofu(true).setAddMeat(false).build();
+                Order order = Order.getInstance();
                 food = FoodFactory.createFoodWithAddOns(foodName, meat, egg,tofu);
-                if (food instanceof SteamedChickenRice){
-                    SteamedChickenRice steamedchickenrice = (SteamedChickenRice)food;
-                    Log.d("AddOnPage-onClick", food.toString());
-                }
-                ordermanagerv2.addFood(food);
-                Log.d("AddOnPage-onClick", ordermanagerv2.toString());
+                order.addFood(food);
+                Log.d("AddOnPage-onClick", order.toString());
                 Intent nextAdd = new Intent(view.getContext(), ConfirmAddOnPage.class);
                 view.getContext().startActivity(nextAdd);
             }
         });
     }
-
-
-
-
-        /**
-        meatCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
-
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (meatCheckBox.isChecked()) {
-                    proceedbtn.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.button_enabled));
-                    proceedbtn.setEnabled(true);
-                } else if (!eggCheckBox.isChecked() && !tofuCheckBox.isChecked() &&  !noCheckBox.isChecked()) {
-                    proceedbtn.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.button_disabled));
-                    proceedbtn.setEnabled(false);
-                }
-            }
-        });
-
-        eggCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (eggCheckBox.isChecked()) {
-                    proceedbtn.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.button_enabled));
-                    proceedbtn.setEnabled(true);
-                } else if (!meatCheckBox.isChecked() && !tofuCheckBox.isChecked() && !noCheckBox.isChecked()) {
-                    proceedbtn.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.button_disabled));
-                    proceedbtn.setEnabled(false);
-                }
-            }
-        });
-
-        tofuCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (tofuCheckBox.isChecked()) {
-                    proceedbtn.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.button_enabled));
-                    proceedbtn.setEnabled(true);
-                } else if (!meatCheckBox.isChecked() && !eggCheckBox.isChecked()  && !noCheckBox.isChecked()) {
-                    proceedbtn.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.button_disabled));
-                    proceedbtn.setEnabled(false);
-                }
-            }
-        });
-
-
-        noCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (noCheckBox.isChecked()) {
-                    proceedbtn.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.button_enabled));
-                    proceedbtn.setEnabled(true);
-                } else if (!meatCheckBox.isChecked() && !eggCheckBox.isChecked() && !tofuCheckBox.isChecked()) {
-                    proceedbtn.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.button_disabled));
-                    proceedbtn.setEnabled(false);
-                }
-            }
-        });
-         */
 
 
         private void updateProceedButton(AppCompatButton proceedbtn, boolean meat, boolean egg, boolean tofu, boolean noCheckBox){

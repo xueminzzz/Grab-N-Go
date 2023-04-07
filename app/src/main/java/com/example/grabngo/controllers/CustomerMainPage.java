@@ -8,8 +8,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.example.grabngo.R;
-import com.example.grabngo.test.OrderManager;
-import com.example.grabngo.test.OrderManagerV2;
+import com.example.grabngo.test.Order;
 
 // TODO: Unsure of some below
 // Function: For users to choose which timeslot to order for
@@ -34,7 +33,7 @@ public class CustomerMainPage extends AppCompatActivity {
         ImageButton timeslot2 = (ImageButton) findViewById(R.id.Time1PM);
         ImageButton timeslot3 = (ImageButton) findViewById(R.id.Time130PM);
         ImageButton timeslot4 = (ImageButton) findViewById(R.id.Time2PM);
-        OrderManagerV2 ordermanagerv2 = OrderManagerV2.getInstance();
+        Order ordermanagerv2 = Order.getInstance();
 
         timeslot1.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -4,12 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 
 import com.example.grabngo.R;
+import com.example.grabngo.test.Order;
 
 // TODO: Unsure of some below
 // Function: For users to view their food cart
@@ -21,6 +21,7 @@ import com.example.grabngo.R;
 // Java Concepts/OOP: Intent(?) Anything to do with the Order object?
 
 public class ViewCartPage extends Activity {
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,9 @@ public class ViewCartPage extends Activity {
         finalConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //onClick i want to push data to firebase
+                Order ordermanager = Order.getInstance();
+                //FirebaseDB.addOrder(ordermanagerv2);
                 Intent finalcheck = new Intent(view.getContext(), OrderConfirmationPage.class);
                 view.getContext().startActivity(finalcheck);
             }

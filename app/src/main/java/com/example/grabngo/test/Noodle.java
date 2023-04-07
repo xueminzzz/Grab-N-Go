@@ -2,7 +2,7 @@ package com.example.grabngo.test;
 
 import java.math.BigDecimal;
 
-public class Noodle extends FoodV2{
+public class Noodle extends Food {
     // builder attributes
     private boolean isAddNoodle;
     private boolean isAddEgg;

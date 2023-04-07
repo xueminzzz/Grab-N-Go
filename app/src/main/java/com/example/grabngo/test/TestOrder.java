@@ -1,6 +1,7 @@
 package com.example.grabngo.test;
 
 public class TestOrder {
+    /**
     public static void main(String[] args) {
         ChickenRice steamed1 = new SteamedChickenRice.SteamedChickenRiceBuilder().setAddEgg(false).setAddTofu(true).setAddMeat(false).build();
         ChickenRice roasted1 = new RoastedChickenRice.RoastedChickenRiceBuilder().setAddEgg(true).setAddTofu(false).setAddMeat(false).build();
@@ -46,4 +47,6 @@ public class TestOrder {
             }
         }
     }
+
+     **/
 }

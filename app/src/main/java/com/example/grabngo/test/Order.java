@@ -1,92 +1,81 @@
-/* Details about concrete class Orders
- * Function: store user's order using addOrder method and retrieve information about the order such as
- *           orderId, userId, timeSlot, totalPrice and foodOrdered using getter methods
- * Arguments needed: int orderId, int UserId, double timeSlot
- * timeSlot: 12.0 == 12.00pm, 12.5 == 12.30pm, 13.0 == 1.00pm, 14.0 == 2.00pm
- * Attributes: int orderId, int userId, double timeSlot, double totalPrice,s ArrayList foodOrdered
- * Outputs: you can retrieve the totalPrice
- *
- * Some things still absent:
- *   1. currently can only get the base price of the food (e.g. chicken rice would be $4, no add on price)
-*/
-
 package com.example.grabngo.test;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
+/**What the Order class do:
+ * It is a singleton class, means that there can only be ONE instance of Order each time a user logins in
+ * We append the food items with addFood(Food) object
+ * The things still needed is
+ * 1. TODO Need to set UserID based on their sign in
+ * 2. TODO Need to set OrderID based on the next order ID from firebase? Or do we just do it when we push to firebase
+ */
 public class Order {
+
+    private static Order instance = null;
+    private ArrayList<Object> foodOrdered;
+    private BigDecimal totalPrice;
     private int orderId;
 
     private int userId;
 
     private double timeSlot;
 
-    private BigDecimal totalPrice = new BigDecimal(0);
-
-    private ArrayList<Object> foodOrdered = new ArrayList<Object>();
-
-    public Order() {
+    private Order(){
+        foodOrdered = new ArrayList<>();
+        totalPrice = BigDecimal.ZERO;
         this.orderId = 0;
         this.userId = 0;
         this.timeSlot = 0.0;
     }
 
-    public Order(int orderId, int userId, double timeSlot) {
-        this.orderId = orderId;
-        this.userId = userId;
-        this.timeSlot = timeSlot;
+
+    public static Order getInstance(){
+        if (instance == null){
+            instance = new Order();
+        }
+        return instance;
     }
 
-    public void addOrder(Object order) {
-        if (order instanceof ChickenRice) {
-            ChickenRice subObj = (ChickenRice) order;
+    public void resetOrder(){ //this is to ensure new Order instance created for next order
+        instance = null;
+    }
+
+    public void addFood(Object food){
+        if (food instanceof ChickenRice) {
+            ChickenRice subObj = (ChickenRice) food;
             foodOrdered.add(subObj);
             totalPrice = totalPrice.add(subObj.getNetPrice());
         }
-        if (order instanceof Noodle) {
-            Noodle subObj = (Noodle) order;
+        if (food instanceof Noodle) {
+            Noodle subObj = (Noodle) food;
             foodOrdered.add(subObj);
             totalPrice = totalPrice.add(subObj.getNetPrice());
         }
     }
 
-    public BigDecimal getTotalPrice() {
-        return totalPrice.setScale(2,BigDecimal.ROUND_HALF_UP);
-    }
+    public ArrayList<Object> getFoodOrdered() {return foodOrdered;}
+    public void setFoodOrdered(ArrayList<Object> foodOrdered) {this.foodOrdered = foodOrdered;}
+    public BigDecimal getTotalPrice() {return totalPrice.setScale(2,BigDecimal.ROUND_HALF_UP);}
+    public void setTotalPrice(BigDecimal totalPrice) {this.totalPrice = totalPrice;}
+    public int getOrderId() {return orderId;}
+    public void setOrderId(int orderId) {this.orderId = orderId;}
+    public int getUserId() {return userId;}
+    public void setUserId(int userId) {this.userId = userId;}
+    public double getTimeSlot() {return timeSlot;}
+    public void setTimeSlot(double timeSlot) {this.timeSlot = timeSlot;}
 
-    public void setOrderId(int orderId) {
-        this.orderId = orderId;
-    }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
 
-    public void setTimeSlot(double timeSlot) {
-        this.timeSlot = timeSlot;
-    }
 
-    public int getOrderId() {
-        return orderId;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public double getTimeSlot() {
-        return timeSlot;
-    }
-
-    public ArrayList<Object> getFoodOrdered() {
-        return foodOrdered;
-    }
 
     @Override
     public String toString(){
-        String answer = "Order id : " +  getOrderId() + " Time Slot: " + getTimeSlot() + " User Id: " + getUserId() + " Food Ordered: " + getFoodOrdered().toString();
+        String answer = "Order ID: " + getOrderId() +
+                " \nUser ID: " + getUserId() +
+                " \nTime Slot " + getTimeSlot() +
+                " \nFood Ordered: " + getFoodOrdered().toString() +
+                " \nTotal Price: " + getTotalPrice();
         return answer;
     }
-
 }
