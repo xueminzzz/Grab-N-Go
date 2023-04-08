@@ -3,7 +3,7 @@ package com.example.grabngo.test;
 import java.math.BigDecimal;
 
 /** Details about concrete class ChickenRice
- * Attributes from FoodV2: foodName, foodId, basePrice, stallName
+ * Attributes from Food: foodName, foodId, basePrice, stallName
  * Additional attributes: isAddMeat, isAddEgg, isAddTofu
  *
  * NOTE:
@@ -11,14 +11,14 @@ import java.math.BigDecimal;
  *      2. added a method to calculate the net price of the food item
  *
  * Constructor is from ChickenRiceBuilder
- * The relationship with other classes is as follows FoodV2 <-- ChickenRice <-- SteamedChickenRice/RoastedChickenRice
+ * The relationship with other classes is as follows Food <-- ChickenRice <-- SteamedChickenRice/RoastedChickenRice
  * Notation: superclass <-- subclass
  *
  * Java concept: Builder class
  *
  */
 
-public class ChickenRice extends FoodV2 {
+public class ChickenRice extends Food {
 
     // Builder attributes
     private boolean isAddMeat;

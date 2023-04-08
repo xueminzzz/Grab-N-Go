@@ -12,9 +12,9 @@ import androidx.annotation.Nullable;
 
 import com.example.grabngo.R;
 import com.example.grabngo.controllers.AddOnPage;
-import com.example.grabngo.models.Food;
 
-// TODO: Unsure of some below
+// THIS IS UPDATED PAGE FOR "STORE MENU PAGE"
+// TODO can make this alot shorter by having a helper function
 // Function: For users to choose food item from selected store
 // Input: TimeSlot? StallID? (setContentView to layout/store_menu_page.xml
 // Output: TimeSlot? StallID? FoodID? (redirect page)
@@ -67,17 +67,12 @@ public class TestStoreMenuPage extends Activity implements View.OnClickListener 
         int count3 = Integer.valueOf(quantity3.getText().toString());
 
         int overall_count = count1 + count2 + count3;
+        Order ordermanager = Order.getInstance();
+        Log.d("TestStoreMenuPage -onClick", ordermanager.toString());
 
-        // Receive data from ChooseStorePage1  of timeSLot and stallNName
-        Intent intent = getIntent();
-        String timeSlot = intent.getStringExtra("timeSlot");
-        Log.d("TEST INTENT-TestStoreMenuPage", timeSlot);
-        String stallName = intent.getStringExtra("stallName");
-        Log.d("TEST INTENT-TestStoreMenuPage", stallName);
 
         Intent addon = new Intent(view.getContext(), AddOnPage.class);
-        addon.putExtra("stallName", stallName);
-        addon.putExtra("timeSlot", timeSlot);
+
         switch (view.getId()) {
             case R.id.AddButton1:
                 if (overall_count < 1) {
@@ -104,6 +99,7 @@ public class TestStoreMenuPage extends Activity implements View.OnClickListener 
                 }
                 break;
             case R.id.ArrowButton1:
+                Log.d("TestStoreMenuPage -ArrowButton1", ordermanager.toString());
                 addon.putExtra("foodName", "SteamedChickenRice");
                 view.getContext().startActivity(addon);
                 break;

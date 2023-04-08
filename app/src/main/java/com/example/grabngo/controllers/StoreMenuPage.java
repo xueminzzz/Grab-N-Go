@@ -3,7 +3,6 @@ package com.example.grabngo.controllers;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -11,7 +10,6 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.example.grabngo.R;
-import com.example.grabngo.models.Food;
 
 // TODO: Unsure of some below
 // Function: For users to choose food item from selected store
