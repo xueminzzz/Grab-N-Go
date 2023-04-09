@@ -1,9 +1,11 @@
 package com.example.grabngo.controllers;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.content.Intent;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
 import android.view.View.OnClickListener;
@@ -26,6 +28,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+
 public class OrdersforSpecifiedTimePage1 extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,20 +40,93 @@ public class OrdersforSpecifiedTimePage1 extends Activity {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ordersRef = database.getReference("Order");
+        //TextView OrderName1 = (TextView) findViewById(R.id.OrderName1) ;
 
+        TextView[] orderNameTextViews = new TextView[] {(TextView) findViewById(R.id.OrderName1), (TextView) findViewById(R.id.OrderName2), (TextView) findViewById(R.id.OrderName3), (TextView) findViewById(R.id.OrderName4), (TextView) findViewById(R.id.OrderName5), (TextView) findViewById(R.id.OrderName6), (TextView) findViewById(R.id.OrderName7), (TextView) findViewById(R.id.OrderName8), (TextView) findViewById(R.id.OrderName9), (TextView) findViewById(R.id.OrderName10)};
+        TextView[] orderQuantityTextViews = new TextView[] {(TextView) findViewById(R.id.OrderQuantity1), (TextView) findViewById(R.id.OrderQuantity2), (TextView) findViewById(R.id.OrderQuantity3), (TextView) findViewById(R.id.OrderQuantity4), (TextView) findViewById(R.id.OrderQuantity5), (TextView) findViewById(R.id.OrderQuantity6), (TextView) findViewById(R.id.OrderQuantity7), (TextView) findViewById(R.id.OrderQuantity8), (TextView) findViewById(R.id.OrderQuantity9), (TextView) findViewById(R.id.OrderQuantity10)};
+        TextView[] orderPriceTextViews = new TextView[] {(TextView) findViewById(R.id.OrderPrice1), (TextView) findViewById(R.id.OrderPrice2), (TextView) findViewById(R.id.OrderPrice3), (TextView) findViewById(R.id.OrderPrice4), (TextView) findViewById(R.id.OrderPrice5), (TextView) findViewById(R.id.OrderPrice6), (TextView) findViewById(R.id.OrderPrice7), (TextView) findViewById(R.id.OrderPrice8), (TextView) findViewById(R.id.OrderPrice9), (TextView) findViewById(R.id.OrderPrice10)};
+        CardView[] orderCardViews = new CardView[] {(CardView) findViewById(R.id.OrderDetailsTab1), (CardView) findViewById(R.id.OrderDetailsTab2),(CardView) findViewById(R.id.OrderDetailsTab3),(CardView) findViewById(R.id.OrderDetailsTab4), (CardView) findViewById(R.id.OrderDetailsTab5),(CardView) findViewById(R.id.OrderDetailsTab6),(CardView) findViewById(R.id.OrderDetailsTab7),(CardView) findViewById(R.id.OrderDetailsTab8),(CardView) findViewById(R.id.OrderDetailsTab9),(CardView) findViewById(R.id.OrderDetailsTab10)};
 
-        CardView order1 = (CardView) findViewById(R.id.OrderDetailsTab1);
+//        CardView order1 = (CardView) findViewById(R.id.OrderDetailsTab1);
 //        LinearLayout mOrderList;
-//        mOrderList = (LinearLayout) findViewById(R.id.);
+//        mOrderList = (LinearLayout) findViewById(R.id.OrdersforSpecifiedTimePage1);
+        String orderid = getIntent().getStringExtra("id");   //addoncode
 
         Query query = ordersRef.orderByChild("timeslot").equalTo("1230");
-        query.addValueEventListener(new ValueEventListener() {
+        //Query query2 = ordersRef.orderByChild("stall_name").equalTo("Chicken Rice");
+        //Query query = query.orderByChild("list_of_food/stall_name").equalTo("Chicken Rice");
+         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 int count = (int) dataSnapshot.getChildrenCount(); // count the number of orders
                 TextView ordersCountTextView = (TextView) findViewById(R.id.NumberofOrders);
                 ordersCountTextView.setText(String.valueOf("TOTAL ORDERS: "+count)); // set the value to the UI
-            }
+
+                // Loop through the orders in the "orders" node
+                int i = 1;
+//                final int j = i;
+                for (DataSnapshot orderSnapshot : dataSnapshot.getChildren()) {
+                    // Get the order details
+                    String orderId = orderSnapshot.getKey();
+                    double orderPrice = orderSnapshot.child("total_price").getValue(double.class);
+//                    TextView orderNameTextViewtry= orderNameTextViews[2];
+//                    orderNameTextViewtry.setText(orderid);
+//                    TextView orderNameTextViewtry2= orderNameTextViews[3];
+//                    orderNameTextViewtry2.setText(orderId);
+
+
+                    // Update the corresponding TextView with the order details
+                    TextView orderNameTextView = orderNameTextViews[i-1];
+                    orderNameTextView.setText("Order " + i);
+                    TextView orderPriceTextView = orderPriceTextViews[i-1];
+                    orderPriceTextView.setText("$" + orderPrice);
+                    CardView orderCardView = orderCardViews[i-1];
+                    if (orderId.equals(orderid)) {
+                        // Set background color to grey
+                        orderCardView.setBackgroundColor(Color.DKGRAY);
+                        // Make the CardView unclickable
+                        //orderCardView.setClickable(false);
+                        //orderCardView.setClickable(false);
+                        orderCardView.setOnClickListener(null);
+                    }
+                    else{
+                        orderCardView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent = new Intent(OrdersforSpecifiedTimePage1.this, CompleteOrderPage.class);
+                                intent.putExtra("id", orderId);
+                                intent.putExtra("totalprice", String.valueOf(orderPrice));
+                                startActivity(intent);
+                            }
+                        });
+                    }
+                    // Increment i for the next order
+                    i++;
+
+
+                }
+                    // Inflate the card view layout
+//                    LayoutInflater inflater = LayoutInflater.from(OrdersforSpecifiedTimePage1.this);
+//                    View cardView = inflater.inflate(R.layout.orders_for_specified_time_page_1, mOrderList, false);
+////                    cardView.setText
+//
+//                    // Add the card view to the linear layout
+//                    mOrderList.addView(cardView);
+
+
+//              int orderQuantity;
+//                for (DataSnapshot orderSnapshot : dataSnapshot.getChildren()){
+//                    int orderQuantity = (int) orderSnapshot.getChildrenCount();
+//                    String orderName = orderSnapshot.child("food_name").getValue(String.class);
+//                    //int orderQuantity = orderSnapshot.child("orderQuantity").getValue(Integer.class);
+////                    double price = orderSnapshot.child("base_price").getValue(double.class);
+
+
+
+
+
+                }
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -55,16 +134,16 @@ public class OrdersforSpecifiedTimePage1 extends Activity {
             }
         });
 
-        order1.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-
-                Intent i = new Intent(OrdersforSpecifiedTimePage1.this, CompleteOrderPage.class);
-                startActivity(i);
-
-            }
-        });
+//        order1.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View view) {
+//
+//                Intent i = new Intent(OrdersforSpecifiedTimePage1.this, CompleteOrderPage.class);
+//                startActivity(i);
+//
+//            }
+//        });
 
 
     }
