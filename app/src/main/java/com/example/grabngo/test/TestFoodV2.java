@@ -1,7 +1,7 @@
 package com.example.grabngo.test;
 
 /** Details about TestFoodV2
- * This test files utilizes the following classes: FoodV2, ChickenRice, SteamedChickenRice, RoastedChickenRice
+ * This test files utilizes the following classes: Food, ChickenRice, SteamedChickenRice, RoastedChickenRice
  * Purpose: To test being able to create the objects of SteamedChickenRice and RoastedChickenRice
  * Java concepts: Programming to a supertype of "ChickenRice" instead of "SteamedChickenRice" etc
  * What we expect to see: Objects that is customised based on our add on ingredients

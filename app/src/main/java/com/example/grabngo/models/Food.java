@@ -1,76 +1,47 @@
-package com.example.grabngo.models;
+package com.example.grabngo.test;
 
-public class Food {
+
+import java.util.HashMap;
+
+/** Details about Food
+ * No inputs or outputs
+ * Attributes: foodName, foodId, basePrice, stallName
+ * The relationship with other classes is as follows Food <-- ChickenRice <-- SteamedChickenRice/RoastedChickenRice
+ * Notation: superclass <-- subclass
+ * Concepts used: OOP abstract class
+ */
+public abstract class Food {
 
     // required parameters
-    private String food_name;
-    private double food_price;
+    private String foodName;
+    private int foodId;
+    private double basePrice;
+    private String stallName;
 
-    // optional parameters
-    private boolean isAddMeat;
-    private boolean isAddEgg;
-    private boolean isAddTofu;
+    public Food(){}
 
-    public String getFood_name() {
-        return food_name;
+    public Food(String foodName, int foodId, double basePrice, String stallName) {
+        this.foodName = foodName;
+        this.foodId = foodId;
+        this.basePrice = basePrice;
+        this.stallName = stallName;
     }
 
-    public double getFood_price() {
-        return food_price;
-    }
 
-    public boolean isAddMeat() {
-        return isAddMeat;
-    }
+    public String getFoodName() {return foodName;}
 
-    public boolean isAddEgg() {
-        return isAddEgg;
-    }
+    public void setFoodName(String foodName) {this.foodName = foodName;}
 
-    public boolean isAddTofu() {
-        return isAddTofu;
-    }
+    public int getFoodId() {return foodId;}
 
-    private Food(FoodBuilder builder) {
-        this.food_name = builder.food_name;
-        this.food_price = builder.food_price;
-        this.isAddMeat = builder.isAddMeat;
-        this.isAddEgg = builder.isAddEgg;
-        this.isAddTofu = builder.isAddTofu;
-    }
+    public void setFoodId(int foodId) {this.foodId = foodId;}
 
-    // Builder design pattern
-    public static class FoodBuilder {
-        private String food_name;
-        private double food_price;
+    public double getBasePrice() {return basePrice;}
 
-        // optional parameters
-        private boolean isAddMeat;
-        private boolean isAddEgg;
-        private boolean isAddTofu;
+    public void setBasePrice(double basePrice) {this.basePrice = basePrice;}
 
-        public FoodBuilder(String name, double price) {
-            this.food_name = name;
-            this.food_price = price;
-        }
+    public String getStallName() {return stallName;}
 
-        public FoodBuilder setAddMeat(boolean isAddMeat) {
-            this.isAddMeat = isAddMeat;
-            return this;
-        }
+    public void setStallName(String stallName) {this.stallName = stallName;}
 
-        public FoodBuilder setAddEgg(boolean isAddEgg) {
-            this.isAddEgg = isAddEgg;
-            return this;
-        }
-
-        public FoodBuilder setAddTofu(boolean isAddTofu) {
-            this.isAddTofu = isAddTofu;
-            return this;
-        }
-
-        public Food build() {
-            return new Food(this);
-        }
-    }
 }

@@ -8,11 +8,12 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.example.grabngo.R;
+import com.example.grabngo.test.Order;
 
 // TODO: Unsure of some below
 // Function: For users to choose which timeslot to order for
 // Input: None (setContentView to layout/activity_choose_one.xml
-// Output: TimeSlot? (redirect page)
+// Output: setTimeSlot for order
 // Sent/Read from DB: None
 // Prev Page Link: Customerlogin.java
 // Next Page Link: ChooseStorePage1/2.java
@@ -32,15 +33,14 @@ public class CustomerMainPage extends AppCompatActivity {
         ImageButton timeslot2 = (ImageButton) findViewById(R.id.Time1PM);
         ImageButton timeslot3 = (ImageButton) findViewById(R.id.Time130PM);
         ImageButton timeslot4 = (ImageButton) findViewById(R.id.Time2PM);
+        Order ordermanagerv2 = Order.getInstance();
 
         timeslot1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //TODO change to reference to string file
-
-
+                ordermanagerv2.setTimeSlot(12.30);
                 Intent all_avail = new Intent(view.getContext(), ChooseStorePage1.class);
-                all_avail.putExtra("timeSlot", "12.30PM");
                 view.getContext().startActivity(all_avail);
             }
         });
@@ -48,8 +48,8 @@ public class CustomerMainPage extends AppCompatActivity {
         timeslot2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ordermanagerv2.setTimeSlot(1.00);
                 Intent all_avail = new Intent(view.getContext(), ChooseStorePage1.class);
-                all_avail.putExtra("timeSlot", "1PM");
                 view.getContext().startActivity(all_avail);
             }
         });
@@ -57,8 +57,8 @@ public class CustomerMainPage extends AppCompatActivity {
         timeslot3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ordermanagerv2.setTimeSlot(1.30);
                 Intent all_avail = new Intent(view.getContext(), ChooseStorePage2.class);
-                all_avail.putExtra("timeSlot", "1.30PM");
                 view.getContext().startActivity(all_avail);
             }
         });
@@ -66,8 +66,8 @@ public class CustomerMainPage extends AppCompatActivity {
         timeslot4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ordermanagerv2.setTimeSlot(2.00);
                 Intent all_avail = new Intent(view.getContext(), ChooseStorePage2.class);
-                all_avail.putExtra("timeSlot", "2PM");
                 view.getContext().startActivity(all_avail);
             }
         });
