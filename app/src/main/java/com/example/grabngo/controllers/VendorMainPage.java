@@ -6,17 +6,15 @@ import android.os.Bundle;
 
 import com.example.grabngo.R;
 
-// TODO: Unsure of some below
-// TODO: Edit comment to reflect Function, Input, Output,
-//  Sent/Read from DB, Link to Prev or Next Page, Java Concepts Used
-//  Example below!
-// Function: For users to choose whether they would like to enter as vendor or customer
-// Input: None (setContentView to layout/activity_choose_one.xml
-// Output: None (redirect page)
-// Sent/Read from DB: None
-// Prev Page Link: MainMenu.java
-// Next Page Link: Vendorlogin/VendorRegistration/Customerlogin/CustomerRegistration
-// Java Concepts/OOP: Intent(?)
+// TODO: Integrate with HY and Michelle
+/** Function: For users to view the main page for Vendors
+ *  Input: None (setContentView to layout/main_vendor_page.xml)
+ *  Output: None
+ *  Sent/Read from DB: None
+ *  Prev Page Link: Vendorlogin.java
+ *  Next Page Link: UNSURE look at integration on Monday
+ *  Java Concepts/OOP: Intent
+ */
 
 public class VendorMainPage extends AppCompatActivity {
 

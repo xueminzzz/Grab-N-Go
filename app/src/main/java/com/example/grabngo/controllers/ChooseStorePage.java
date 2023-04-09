@@ -10,16 +10,16 @@ import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 
 import com.example.grabngo.R;
-import com.example.grabngo.test.Order;
+import com.example.grabngo.models.Order;
 
-// TODO: Unsure of some below
-// Function: For users to choose stores (all are available in this page)
-// Input: TimeSlot? from extra Intent (setContentView to layout/choose_store_page.xml)
-// Output: Nil
-// Sent/Read from DB: Unsure (If can, retrieve available stores?)
-// Prev Page Link: MainCustomerPage.java
-// Next Page Link: StoreMenuPage.java (Chicken Rice and Ban Mian stall available)
-// Java Concepts/OOP: Intent(?)
+/** Function: For users to view stalls available to order from
+ *  Input: Order singleton instance (setContentView to layout/choose_store_page.xml)
+ *  Output: None
+ *  Sent/Read from DB: None
+ *  Prev Page Link: CustomerMainPage.java
+ *  Next Page Link: CRStoreMenuPage/BMStoreMenuPage.java
+ *  Java Concepts/OOP: Intent
+ */
 
 public class ChooseStorePage extends Activity {
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,14 +27,15 @@ public class ChooseStorePage extends Activity {
         setContentView(R.layout.choose_store_page);
         CardView store1 = findViewById(R.id.ChickenRiceStoreTab);
         CardView store2 = findViewById(R.id.BanmianStoreTab);
+
+        // DEBUGGING PURPOSES
         Order order = Order.getInstance();
         Log.d("ChooseStorePage-onCreate", order.toString());
 
         store1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent chooseStore = new Intent(view.getContext(), StoreMenuPage.class);  //changed to test, change back to StoreMenuPage
-                chooseStore.putExtra("storeName", "CR");
+                Intent chooseStore = new Intent(view.getContext(), CRStoreMenuPage.class);
                 view.getContext().startActivity(chooseStore);
             }
         });
@@ -42,8 +43,7 @@ public class ChooseStorePage extends Activity {
         store2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent chooseStore = new Intent(view.getContext(), StoreMenuPage.class);  //changed to test, change back to StoreMenuPage
-                chooseStore.putExtra("storeName", "BM");
+                Intent chooseStore = new Intent(view.getContext(), BMStoreMenuPage.class);
                 view.getContext().startActivity(chooseStore);
             }
         });

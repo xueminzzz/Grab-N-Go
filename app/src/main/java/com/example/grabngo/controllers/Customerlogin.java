@@ -7,29 +7,33 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.grabngo.R;
+import com.example.grabngo.models.Order;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-// TODO: Unsure (ask Radhi)
-// TODO: Edit comment to reflect Function, Input, Output,
-//  Sent/Read from DB, Link to Prev or Next Page, Java Concepts Used
-//  Example below!
-// Function: For users to choose whether they would like to enter as vendor or customer
-// Input: None (setContentView to layout/activity_choose_one.xml
-// Output: None (redirect page)
-// Sent/Read from DB: None
-// Prev Page Link: MainMenu.java
-// Next Page Link: Vendorlogin/VendorRegistration/Customerlogin/CustomerRegistration
-// Java Concepts/OOP: Intent(?)
+/** Function: For users to login as a Customer
+ *  Input: Order singleton instance (setContentView to layout/activity_customerlogin.xml)
+ *  Output: None (sets Order.setUserId and Order.setOrderId)
+ *  Sent/Read from DB: FirebaseAuthentication (FAuth)
+ *  Prev Page Link: ChooseOne.java
+ *  Next Page Link: CustomerRegistration/CustomerMainPage.java
+ *  Java Concepts/OOP: Intent, Singleton DP (Order)
+ */
 
 public class Customerlogin extends AppCompatActivity {
 
@@ -46,7 +50,7 @@ public class Customerlogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customerlogin);
 
-
+        Order ordermanagerv2 = Order.getInstance();
 
         try {
             email = (TextInputLayout) findViewById(R.id.Lemail);
@@ -78,6 +82,23 @@ public class Customerlogin extends AppCompatActivity {
                                     mDialog.dismiss();
                                     if (FAuth.getCurrentUser().isEmailVerified()) {
                                         Toast.makeText(Customerlogin.this, "You are logged in", Toast.LENGTH_SHORT).show();
+                                        // Set userid and orderid in Order instance upon login
+                                        ordermanagerv2.setUserId(FAuth.getCurrentUser().getUid());
+                                        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+                                        rootRef.child("Order").orderByValue().limitToLast(1).addListenerForSingleValueEvent(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                                for(DataSnapshot ds : snapshot.getChildren()){
+                                                    ordermanagerv2.setOrderId(Integer.valueOf(ds.getKey().replace("order",""))+1);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError error) {
+                                                Log.d("ERROR", "cannot get order id");
+                                            }
+                                        });
+
                                         Intent z = new Intent(Customerlogin.this, CustomerMainPage.class);
                                         startActivity(z);
                                         finish();

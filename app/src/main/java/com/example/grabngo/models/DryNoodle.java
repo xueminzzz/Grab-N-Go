@@ -1,16 +1,16 @@
 package com.example.grabngo.models;
 
-public class Laksa extends Noodle {
-    public Laksa(LaksaBuilder laksaBuilder) {
-        super(laksaBuilder);
-        this.setFoodName("Laksa");
-        this.setFoodId(5);
-        this.setBasePrice(5.00);
+public class DryNoodle extends Noodle {
+    public DryNoodle(DryNoodleBuilder dryNoodleBuilder) {
+        super(dryNoodleBuilder);
+        this.setFoodName("Dry Noodle");
+        this.setFoodId(4);
+        this.setBasePrice(4.20);
     }
 
-    static class LaksaBuilder extends NoodleBuilder {
-        public Laksa build(){
-            return new Laksa(this);
+    public static class DryNoodleBuilder extends Noodle.NoodleBuilder {
+        public DryNoodle build(){
+            return new DryNoodle(this);
         }
     }
     @Override
@@ -20,11 +20,10 @@ public class Laksa extends Noodle {
 
     @Override
     public String toString() {
-        return "\nLaksa " +
+        return "\nBanmianDryNoodle " +
                 "\n Net price: " + this.getNetPrice() +
                 "\n Add Noodle? " + this.isAddNoodle() +
                 "\n Add Egg? " + this.isAddEgg() +
                 "\n Add CheeseTofu? " + this.isAddCheeseTofu();
     }
-
 }

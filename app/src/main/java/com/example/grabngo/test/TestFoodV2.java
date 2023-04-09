@@ -1,5 +1,11 @@
 package com.example.grabngo.test;
 
+import com.example.grabngo.models.ChickenRice;
+import com.example.grabngo.models.DryNoodle;
+import com.example.grabngo.models.Noodle;
+import com.example.grabngo.models.RoastedChickenRice;
+import com.example.grabngo.models.SteamedChickenRice;
+
 /** Details about TestFoodV2
  * This test files utilizes the following classes: Food, ChickenRice, SteamedChickenRice, RoastedChickenRice
  * Purpose: To test being able to create the objects of SteamedChickenRice and RoastedChickenRice

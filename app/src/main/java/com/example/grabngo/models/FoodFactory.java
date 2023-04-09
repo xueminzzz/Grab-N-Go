@@ -1,4 +1,11 @@
-package com.example.grabngo.test;
+package com.example.grabngo.models;
+
+import com.example.grabngo.models.DryNoodle;
+import com.example.grabngo.models.FishballNoodle;
+import com.example.grabngo.models.Food;
+import com.example.grabngo.models.Laksa;
+import com.example.grabngo.models.RoastedChickenRice;
+import com.example.grabngo.models.SteamedChickenRice;
 
 /**What the FoodFactory class do
  * It creates Food objects based on the input of foodName
@@ -13,8 +20,11 @@ public class FoodFactory {
             case "SteamedChickenRice":
                 return new SteamedChickenRice.SteamedChickenRiceBuilder().build();
 
-            case "RoastedChickenRice": case "RoastedChickenRiceSetMeal" :
+            case "RoastedChickenRice":
                 return new RoastedChickenRice.RoastedChickenRiceBuilder().build();
+
+            case "RoastedChickenRiceSetMeal":
+                return new RoastedChickenRiceSetMeal.RoastedChickenRiceSetMealBuilder().build();
 
             case "DryNoodle":
             return new DryNoodle.DryNoodleBuilder().build();
@@ -35,9 +45,11 @@ public class FoodFactory {
             case "SteamedWhiteChickenRice":
                 return new SteamedChickenRice.SteamedChickenRiceBuilder().setAddMeat(isAdd1).setAddEgg(isAdd2).setAddTofu(isAdd3).build();
 
-            case "RoastedChickenRice": case "RoastedChickenRiceSetMeal" :
+            case "RoastedChickenRice":
                 return new RoastedChickenRice.RoastedChickenRiceBuilder().setAddMeat(isAdd1).setAddEgg(isAdd2).setAddTofu(isAdd3).build();
 
+            case "RoastedChickenRiceSetMeal" :
+                return new RoastedChickenRiceSetMeal.RoastedChickenRiceSetMealBuilder().setAddMeat(isAdd1).setAddEgg(isAdd2).setAddTofu(isAdd3).build();
             case "BanmianDryNoodle":
                 return new DryNoodle.DryNoodleBuilder().setAddNoodle(isAdd1).setAddEgg(isAdd2).setAddCheeseTofu(isAdd3).build();
 

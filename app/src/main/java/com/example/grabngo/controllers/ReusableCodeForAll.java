@@ -4,14 +4,14 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 
-// TODO: Unsure (ask Radhi)
-// Function: For users to choose whether they would like to enter as vendor or customer
-// Input: None (setContentView to layout/activity_choose_one.xml
-// Output: None (redirect page)
-// Sent/Read from DB: None
-// Prev Page Link: MainMenu.java
-// Next Page Link: Vendorlogin/VendorRegistration/Customerlogin/CustomerRegistration
-// Java Concepts/OOP: Intent(?)
+/** Function: For displaying of dialog boxes (alerts)
+ *  Input: None
+ *  Output: None
+ *  Sent/Read from DB: None
+ *  Prev Page Link: None
+ *  Next Page Link: None
+ *  Java Concepts/OOP: None
+ */
 public class ReusableCodeForAll {
 
     public static void ShowAlert(Context context,String title,String message)

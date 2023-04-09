@@ -9,22 +9,18 @@ import android.widget.ImageView;
 
 import com.example.grabngo.R;
 
-// TODO: Unsure (ask Radhi)
-// TODO: Edit comment to reflect Function, Input, Output,
-//  Sent/Read from DB, Link to Prev or Next Page, Java Concepts Used
-//  Example below!
-// Function: For users to choose whether they would like to enter as vendor or customer
-// Input: None (setContentView to layout/activity_choose_one.xml
-// Output: None (redirect page)
-// Sent/Read from DB: None
-// Prev Page Link: None
-// Next Page Link: MainMenu.java
-// Java Concepts/OOP: Intent(?)
+/** Function: For starting up and loading of application
+ *  Input: None (setContentView to layout/activity_main.xml)
+ *  Output: None
+ *  Sent/Read from DB: None
+ *  Prev Page Link: None (Already at beginning of app)
+ *  Next Page Link: MainMenu.java
+ *  Java Concepts/OOP: Intent
+ */
 
 public class MainActivity extends AppCompatActivity {
 
     ImageView imageView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

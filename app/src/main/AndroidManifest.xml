@@ -23,15 +23,14 @@
         <activity
             android:name=".controllers.AddOnPage"
             android:exported="false" />
-        <!-- Change below back to StoreMenuPage -->
         <activity
-            android:name=".test.TestStoreMenuPage"
+            android:name=".controllers.BMStoreMenuPage"
             android:exported="false" />
         <activity
-            android:name=".controllers.ChooseStorePage2"
+            android:name=".controllers.CRStoreMenuPage"
             android:exported="false" />
         <activity
-            android:name=".controllers.ChooseStorePage1"
+            android:name=".controllers.ChooseStorePage"
             android:exported="false" />
         <activity
             android:name=".controllers.VendorMainPage"

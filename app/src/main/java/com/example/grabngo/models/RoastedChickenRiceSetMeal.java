@@ -5,17 +5,17 @@ package com.example.grabngo.models;
  * The relationship with other classes is as follows Food <-- ChickenRice <-- SteamedChickenRice/RoastedChickenRice
  *  Notation: superclass <-- subclass
  */
-public class RoastedChickenRice extends ChickenRice {
-    public RoastedChickenRice(RoastedChickenRiceBuilder roastedChickenRiceBuilder) {
-        super(roastedChickenRiceBuilder);
-        this.setFoodName("Roasted Chicken Rice");
-        this.setFoodId(2);
-        this.setBasePrice(5.00);
+public class RoastedChickenRiceSetMeal extends ChickenRice {
+    public RoastedChickenRiceSetMeal(RoastedChickenRiceSetMealBuilder roastedChickenRiceSetMealBuilder) {
+        super(roastedChickenRiceSetMealBuilder);
+        this.setFoodName("Roasted Chicken Rice Set Meal");
+        this.setFoodId(3);
+        this.setBasePrice(7.00);
     }
 
-    public static class RoastedChickenRiceBuilder extends ChickenRiceBuilder {
-        public RoastedChickenRice build(){
-            return new RoastedChickenRice(this);
+    public static class RoastedChickenRiceSetMealBuilder extends ChickenRiceBuilder {
+        public RoastedChickenRiceSetMeal build(){
+            return new RoastedChickenRiceSetMeal(this);
         }
     }
     @Override
