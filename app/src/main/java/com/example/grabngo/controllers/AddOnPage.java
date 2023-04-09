@@ -7,115 +7,131 @@ import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
-import androidx.core.content.ContextCompat;
 
 import com.example.grabngo.R;
-import com.example.grabngo.test.FoodFactory;
-import com.example.grabngo.test.Food;
-import com.example.grabngo.test.Order;
-import com.example.grabngo.test.SteamedChickenRice;
+import com.example.grabngo.models.FoodFactory;
+import com.example.grabngo.models.Food;
+import com.example.grabngo.models.Order;
 
-// TODO: Unsure of some below
-// Function: For users to choose add-ons or remove ingredients from food
-// Input: StallID?, FoodID? TimeSlot? from extra Intent (setContentView to layout/add_on_page.xml
-// Output: StallID?, FoodID?, TimeSlot?, Add-OnsList? (If using FoodBuilder, list of "boolean states" {-1, 0, 1} - -1 indicate remove, 0 indicate no change, 1 indicate add-on to food)
-// Sent/Read from DB: Unsure (If can, retrieve eligible add-ons for food based off FoodID?)
-// Prev Page Link: MainMenu.java
-// Next Page Link: Vendorlogin/VendorRegistration/Customerlogin/CustomerRegistration
-// Java Concepts/OOP: Intent(?)
+/** Function: For users to choose add-ons to food
+ *  Input: String foodName, String foodPrice, Order singleton instance, Food factory and builder (setContentView to layout/add_on_page.xml)
+ *  Output: None (append Food objects from factory and builder into Order.foodOrdered)
+ *  Sent/Read from DB: None
+ *  Prev Page Link: CRStoreMenuPage/BMStoreMenuPage.java
+ *  Next Page Link: ConfirmAddOnPage.java
+ *  Java Concepts/OOP: Intent, Singleton DP (Order),
+ *                             Factory DP (Food :
+ *                                         ChickenRice <- SteamedChickenRice/RoastedChickenRice/RoastedChickenRiceSetMeal
+ *                                         Noodle <- DryNoodle/Laksa/FishballNoodle)
+ *                             Builder DP (ChickenRiceBuilder <- SteamedChickenRiceBuilder/RoastedChickenRiceBuilder/RoastedChickenRiceSetMealBuilder
+ *                                         NoodleBuilder <- DryNoodleBuilder/LaksaBuilder/FishballNoodleBuilder)
+ */
 
-// TODO: BASIC CHECKBOX FUNCTIONALITY: Add indeterminate state for removing ingredients (minus sign in checkbox)
-// Link to resource: https://m2.material.io/components/checkboxes#behavior
 public class AddOnPage extends Activity {
-
-    private Food food;
-    private boolean meat;
-    private boolean egg;
-    private boolean tofu;
-    private boolean nocheck; //TODO Can consider deleting this checkbox, then allow user to click proceed
-
-
+    private boolean addon1;
+    private boolean addon2;
+    private boolean addon3;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_on_page);
 
-        CheckBox meatCheckBox = findViewById(R.id.MeatCheckBox);
-        CheckBox eggCheckBox = findViewById(R.id.EggCheckBox);
-        CheckBox tofuCheckBox = findViewById(R.id.TofuCheckBox);
-        CheckBox noCheckBox = findViewById(R.id.NoAddOnCheckBox);
-        meat = meatCheckBox.isChecked();
-        egg = eggCheckBox.isChecked();
-        tofu = tofuCheckBox.isChecked();
-        nocheck = noCheckBox.isChecked();
+        String receivedName = getIntent().getStringExtra("foodName");
+        String receivedPrice = getIntent().getStringExtra("foodPrice");
 
-        AppCompatButton proceedbtn = findViewById(R.id.PlaceOrderButton1);
-        Intent receiveData = getIntent();
-        String foodName = receiveData.getStringExtra("foodName");
-        Log.d("AddOnPage-onCreate", "FoodName is: " + foodName);
+        // DEBUGGING PURPOSES
+        Order order = Order.getInstance();
+        Log.d("AddonPage-onCreate", order.toString());
 
+        // CHANGE VIEW TO REFLECT FOOD CHOICE
+        TextView name = findViewById(R.id.FoodName);
+        name.setText(receivedName);
+        TextView price = findViewById(R.id.FoodPrice);
+        price.setText(receivedPrice);
 
-        meatCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        // CHANGE VIEW TO REFLECT ADDONS + PRICES TIED TO FOOD
+        TextView addon1Text = findViewById(R.id.AddOn1);
+        TextView addon2Text = findViewById(R.id.AddOn2);
+        TextView addon3Text = findViewById(R.id.AddOn3);
+        TextView addon1Price = findViewById(R.id.AddOn1Price);
+        TextView addon2Price = findViewById(R.id.AddOn2Price);
+        TextView addon3Price = findViewById(R.id.AddOn3Price);
+
+        switch (receivedName.replaceAll(" ", "")) {
+            case "RoastedChickenRice" : case "SteamedWhiteChickenRice" : case "RoastedChickenRiceSetMeal" :
+                addon1Text.setText("Meat");
+                addon2Text.setText("Egg");
+                addon3Text.setText("Tofu");
+                addon1Price.setText(R.string.crmenu_addon_1_price);
+                addon2Price.setText(R.string.crmenu_addon_2_price);
+                addon3Price.setText(R.string.crmenu_addon_3_price);
+                break;
+
+            case "BanmianDryNoodle" : case "FishballNoodle" : case "Laksa" :
+                addon1Text.setText("Noodle");
+                addon2Text.setText("Egg");
+                addon3Text.setText("Cheese Tofu");
+                addon1Price.setText(R.string.bmmenu_addon_1_price);
+                addon2Price.setText(R.string.bmmenu_addon_2_price);
+                addon3Price.setText(R.string.bmmenu_addon_3_price);
+                break;
+        }
+
+        // CHECKBOX HANDLING
+        CheckBox addonCheckBox1 = findViewById(R.id.AddOn1CheckBox);
+        CheckBox addonCheckBox2 = findViewById(R.id.AddOn2CheckBox);
+        CheckBox addonCheckBox3 = findViewById(R.id.AddOn3CheckBox);
+        addon1 = addonCheckBox1.isChecked();
+        addon2 = addonCheckBox2.isChecked();
+        addon3 = addonCheckBox3.isChecked();
+
+        AppCompatButton proceedbtn = findViewById(R.id.AddOnProceed);
+
+        addonCheckBox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                meat = b;
-                updateProceedButton(proceedbtn, meat, egg,tofu,nocheck);
+                addon1 = b;
             }
         });
 
-        eggCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        addonCheckBox2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                egg = b;
-                updateProceedButton(proceedbtn, meat, egg,tofu,nocheck);
+                addon2 = b;
             }
         });
 
-        tofuCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        addonCheckBox3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                tofu = b;
-                updateProceedButton(proceedbtn, meat, egg,tofu,nocheck);
-            }
-        });
-
-        noCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                nocheck = b;
-                updateProceedButton(proceedbtn, meat, egg,tofu,nocheck);
+                addon3 = b;
             }
         });
 
         proceedbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                //TODO need to know which object to create
-                // Food steamed1 = new SteamedChickenRice.SteamedChickenRiceBuilder().setAddEgg(false).setAddTofu(true).setAddMeat(false).build();
+                // Add Food to Order
                 Order order = Order.getInstance();
-                food = FoodFactory.createFoodWithAddOns(foodName, meat, egg,tofu);
+                Food food = FoodFactory.createFoodWithAddOns(receivedName.replaceAll(" ", ""), addon1, addon2, addon3);
                 order.addFood(food);
-                Log.d("AddOnPage-onClick", order.toString());
+
+                // DEBUGGING PURPOSES
+                Log.d("Order", order.toString());
+
+                // Pass data only for changing page layout (NOT firebase database)
+                boolean addonOptions[] = {addon1, addon2, addon3};
                 Intent nextAdd = new Intent(view.getContext(), ConfirmAddOnPage.class);
+                nextAdd.putExtra("foodName", receivedName);
+                nextAdd.putExtra("foodPrice", receivedPrice);
+                nextAdd.putExtra("addOns", addonOptions);
                 view.getContext().startActivity(nextAdd);
             }
         });
-    }
-
-
-        private void updateProceedButton(AppCompatButton proceedbtn, boolean meat, boolean egg, boolean tofu, boolean noCheckBox){
-            if (meat || egg || tofu || noCheckBox){
-                proceedbtn.setBackground((ContextCompat.getDrawable(getApplicationContext(), R.drawable.button_enabled)));
-                proceedbtn.setEnabled(true);
-            }
-            else{
-                proceedbtn.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.button_disabled));
-                proceedbtn.setEnabled(false);
-            }
     }
 }

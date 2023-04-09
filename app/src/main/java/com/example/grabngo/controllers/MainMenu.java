@@ -12,14 +12,14 @@ import android.widget.ImageView;
 
 import com.example.grabngo.R;
 
-// TODO: Unsure (ask Radhi)
-// Function: For users to choose whether they would like to signin or register
-// Input: Unsure (setContentView to layout/activity_main_menu.xml
-// Output: Unsure (redirect page)
-// Sent/Read from DB: Unsure
-// Prev Page Link: MainActivity.java
-// Next Page Link: ChooseOne.java
-// Java Concepts/OOP: Intent(?)
+/** Function: For users to choose signing in or registering as new user
+ *  Input: None (setContentView to layout/activity_main_menu.xml)
+ *  Output: None
+ *  Sent/Read from DB: None
+ *  Prev Page Link: MainActivity.java
+ *  Next Page Link: ChooseOne.java
+ *  Java Concepts/OOP: Intent
+ */
 
 public class MainMenu extends AppCompatActivity {
 

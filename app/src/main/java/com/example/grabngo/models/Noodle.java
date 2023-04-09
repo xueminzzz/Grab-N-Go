@@ -1,4 +1,4 @@
-package com.example.grabngo.test;
+package com.example.grabngo.models;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -63,7 +63,7 @@ public class Noodle extends Food {
         return isAddCheeseTofu;
     }
 
-    abstract static class NoodleBuilder {
+    public abstract static class NoodleBuilder {
         public NoodleBuilder() {
         }
 

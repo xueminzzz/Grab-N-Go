@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/signup_btn_background"
-    tools:context=".controllers.StoreMenuPage">
+    tools:context=".controllers.CRStoreMenuPage">
 
     <!-- This page is after choose_store_page_1 or choose_store_page_2 -->
     <!-- Customers will first choose to either add or minus the quantity -->
@@ -37,7 +37,7 @@
                 android:layout_height="82dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="50dp"
-                android:text="@string/store_name"
+                android:text="@string/store_name1"
                 android:textColor="#000000"
                 android:textSize="35sp"
                 android:textStyle="bold" />
@@ -120,7 +120,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="175dp"
                     android:layout_marginTop="15dp"
-                    android:text="@string/menu_item_1_name"
+                    android:text="@string/crmenu_item_1_name"
                     android:textColor="#000000"
                     android:textSize="15dp" />
 
@@ -131,7 +131,7 @@
                     android:layout_marginLeft="175dp"
                     android:layout_marginTop="55dp"
                     android:textColor="#000000"
-                    android:text="@string/menu_item_1_price" />
+                    android:text="@string/crmenu_item_1_price" />
 
                 <TextView
                     android:id="@+id/MenuItem1Quantity"
@@ -141,7 +141,7 @@
                     android:layout_marginTop="69dp"
                     android:textColor="#000000"
                     android:textSize="17dp"
-                    android:text="@string/menu_item_quantity" />
+                    android:text="@string/crmenu_item_quantity" />
 
                 <ImageButton
                     android:id="@+id/AddButton1"
@@ -203,7 +203,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="175dp"
                     android:layout_marginTop="15dp"
-                    android:text="@string/menu_item_2_name"
+                    android:text="@string/crmenu_item_2_name"
                     android:textColor="#000000"
                     android:textSize="15dp" />
 
@@ -214,7 +214,7 @@
                     android:layout_marginLeft="175dp"
                     android:layout_marginTop="35dp"
                     android:textColor="#000000"
-                    android:text="@string/menu_item_2_price" />
+                    android:text="@string/crmenu_item_2_price" />
 
                 <TextView
                     android:id="@+id/MenuItem2Quantity"
@@ -224,7 +224,7 @@
                     android:layout_marginTop="69dp"
                     android:textColor="#000000"
                     android:textSize="17dp"
-                    android:text="@string/menu_item_quantity" />
+                    android:text="@string/crmenu_item_quantity" />
 
                 <ImageButton
                     android:id="@+id/AddButton2"
@@ -299,7 +299,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="175dp"
                     android:layout_marginTop="15dp"
-                    android:text="@string/menu_item_3_name"
+                    android:text="@string/crmenu_item_3_name"
                     android:textColor="#000000"
                     android:textSize="15dp" />
 
@@ -310,7 +310,7 @@
                     android:layout_marginLeft="175dp"
                     android:layout_marginTop="55dp"
                     android:textColor="#000000"
-                    android:text="@string/menu_item_3_price" />
+                    android:text="@string/crmenu_item_3_price" />
 
                 <TextView
                     android:id="@+id/MenuItem3Quantity"
@@ -320,7 +320,7 @@
                     android:layout_marginTop="69dp"
                     android:textColor="#000000"
                     android:textSize="17dp"
-                    android:text="@string/menu_item_quantity" />
+                    android:text="@string/crmenu_item_quantity" />
 
                 <ImageButton
                     android:id="@+id/AddButton3"

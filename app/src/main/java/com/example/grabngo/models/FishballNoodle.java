@@ -1,6 +1,4 @@
-package com.example.grabngo.test;
-
-import java.util.HashMap;
+package com.example.grabngo.models;
 
 public class FishballNoodle extends Noodle {
     public FishballNoodle(FishballNoodleBuilder fishballNoodleBuilder) {
@@ -21,6 +19,7 @@ public class FishballNoodle extends Noodle {
         super.setFoodName(foodName);
     }
 
+    @Override
     public String toString() {
         return "\nFishball Noodle " +
                 "\n Net price: " + this.getNetPrice() +

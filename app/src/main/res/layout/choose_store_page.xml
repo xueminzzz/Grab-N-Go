@@ -5,15 +5,14 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/signup_btn_background"
-    tools:context=".controllers.ChooseStorePage2">
+    tools:context=".controllers.ChooseStorePage">
 
     <!-- This page is after main_customer_page -->
     <!-- Stores that are not available at that time will be greyed out and cannot be selected -->
     <!-- After choosing a store, customers will be directed to the store_menu_page_1 -->
 
     <LinearLayout
-
-        android:id="@+id/ChooseStorePage2"
+        android:id="@+id/ChooseStorePage"
         android:layout_width="416dp"
         android:layout_height="650dp"
         android:background="@drawable/background_customer_page"
@@ -27,7 +26,6 @@
         app:layout_constraintVertical_bias="1.0">
 
         <RelativeLayout
-
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -163,7 +161,7 @@
                 android:layout_marginTop="370dp"
                 app:cardBackgroundColor="@color/logo_background"
                 app:cardCornerRadius="10dp"
-                app:cardElevation="0dp">
+                app:cardElevation="10dp">
 
                 <TextView
                     android:id="@+id/BanmianStoreName"
@@ -203,10 +201,10 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:src="@drawable/banmian"
-                    app:layout_constraintBottom_toBottomOf="@id/BanmianStoreTab"
-                    app:layout_constraintEnd_toStartOf="@id/BanmianStoreTab"
-                    app:layout_constraintStart_toStartOf="@id/BanmianStoreTab"
-                    app:layout_constraintTop_toTopOf="@id/BanmianStoreTab" />
+                    app:layout_constraintBottom_toBottomOf="@id/ChickenRiceStoreTab"
+                    app:layout_constraintEnd_toStartOf="@id/ChickenRiceStoreTab"
+                    app:layout_constraintStart_toStartOf="@id/ChickenRiceStoreTab"
+                    app:layout_constraintTop_toTopOf="@id/ChickenRiceStoreTab" />
 
             </androidx.cardview.widget.CardView>
 
@@ -217,9 +215,9 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginTop="490dp"
-                app:cardBackgroundColor="@color/translucent_gray2"
                 app:cardCornerRadius="10dp"
-                app:cardElevation="10dp">
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/translucent_gray2">
 
                 <TextView
                     android:id="@+id/MixedRiceStoreName"

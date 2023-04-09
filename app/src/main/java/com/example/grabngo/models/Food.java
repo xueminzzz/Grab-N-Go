@@ -1,4 +1,4 @@
-package com.example.grabngo.test;
+package com.example.grabngo.models;
 
 
 import java.util.HashMap;

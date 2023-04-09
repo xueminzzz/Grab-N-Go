@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="50dp"
-                android:text="Roasted Chicken Set Meal"
+                android:text="Undefined"
                 android:textColor="#000000"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -48,181 +48,158 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="100dp"
                 android:text="Price"
                 android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:layout_below="@+id/FoodName"/>
 
             <TextView
                 android:id="@+id/FoodPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="120dp"
-                android:text="$5.00"
+                android:text="Undefined"
                 android:textColor="#000000"
                 android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:layout_below="@+id/FixedText3"/>
 
             <TextView
                 android:id="@+id/FixedText4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="150dp"
                 android:text="Choice of Add On"
                 android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:layout_below="@+id/FoodPrice"/>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/MeatAddOnTab"
+                android:id="@+id/AddOn1TabFinal"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
-                android:layout_marginTop="200dp"
-                android:layout_marginBottom="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
                 app:cardBackgroundColor="@color/logo_background"
                 app:cardCornerRadius="10dp"
-                app:cardElevation="10dp">
+                app:cardElevation="10dp"
+                android:layout_below="@+id/FixedText4">
 
                 <TextView
-                    android:id="@+id/Meat"
+                    android:id="@+id/AddOn1Final"
                     android:layout_width="179dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="15dp"
-                    android:text="Meat"
+                    android:text="Undefined"
                     android:textColor="#000000"
                     android:textSize="15dp" />
 
                 <TextView
-                    android:id="@+id/MeatAddOnPrice"
+                    android:id="@+id/AddOn1PriceFinal"
                     android:layout_width="179dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="240dp"
                     android:layout_marginTop="15dp"
-                    android:text="+$0.8"
+                    android:text="Undefined"
                     android:textColor="#000000"
                     android:textSize="15dp" />
 
-                <CheckBox
-                    android:id="@+id/MeatCheckBox"
-                    android:layout_width="179dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="230dp" />
-
                 <ImageView
-                    android:id="@+id/Tick"
+                    android:id="@+id/ConfirmedFinal1"
                     android:layout_width="19dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="310dp"
                     android:layout_marginTop="11dp"
-                    android:src="@drawable/tick" />
+                    android:src="@drawable/tick"
+                    android:visibility="gone"/>
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/EggAddOnTab"
+                android:id="@+id/AddOn2TabFinal"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
-                android:layout_marginTop="260dp"
+                android:layout_marginBottom="15dp"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp"
-                app:cardBackgroundColor="@color/logo_background">
+                app:cardBackgroundColor="@color/logo_background"
+                android:layout_below="@+id/AddOn1TabFinal">
 
                 <TextView
-                    android:id="@+id/Egg"
+                    android:id="@+id/AddOn2Final"
                     android:layout_width="179dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="15dp"
-                    android:text="Egg"
+                    android:text="Undefined"
                     android:textSize="15dp"
                     android:textColor="#000000" />
 
                 <TextView
-                    android:id="@+id/EggAddOnPrice"
+                    android:id="@+id/AddOn2PriceFinal"
                     android:layout_width="179dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="240dp"
                     android:layout_marginTop="15dp"
-                    android:text="+$0.8"
+                    android:text="Undefined"
                     android:textSize="15dp"
                     android:textColor="#000000" />
 
-                <CheckBox android:id="@+id/EggCheckBox"
-                    android:layout_width="179dp"
+                <ImageView
+                    android:id="@+id/ConfirmedFinal2"
+                    android:layout_width="19dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="230dp"/>
+                    android:layout_marginLeft="310dp"
+                    android:layout_marginTop="11dp"
+                    android:src="@drawable/tick"
+                    android:visibility="gone"/>
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/TofuAddOnTab"
+                android:id="@+id/AddOn3TabFinal"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
-                android:layout_marginTop="320dp"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp"
-                app:cardBackgroundColor="@color/logo_background">
+                app:cardBackgroundColor="@color/logo_background"
+                android:layout_below="@+id/AddOn2TabFinal">
 
                 <TextView
-                    android:id="@+id/Tofu"
+                    android:id="@+id/AddOn3Final"
                     android:layout_width="179dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="15dp"
-                    android:text="Tofu"
+                    android:text="Undefined"
                     android:textSize="15dp"
                     android:textColor="#000000" />
 
                 <TextView
-                    android:id="@+id/TofuAddOnPrice"
+                    android:id="@+id/AddOn3PriceFinal"
                     android:layout_width="179dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="240dp"
                     android:layout_marginTop="15dp"
-                    android:text="+$0.8"
+                    android:text="Undefined"
                     android:textSize="15dp"
                     android:textColor="#000000" />
 
-                <CheckBox android:id="@+id/TofuCheckBox"
-                    android:layout_width="179dp"
+                <ImageView
+                    android:id="@+id/ConfirmedFinal3"
+                    android:layout_width="19dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="230dp"/>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/NoAddOnTab"
-                android:layout_width="350dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginTop="380dp"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="10dp"
-                app:cardBackgroundColor="@color/logo_background">
-
-                <TextView
-                    android:id="@+id/NoAddOn"
-                    android:layout_width="179dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="15dp"
-                    android:text="No Add-On"
-                    android:textSize="15dp"
-                    android:textColor="#000000" />
-
-                <CheckBox android:id="@+id/NoAddOnCheckBox"
-                    android:layout_width="179dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="230dp"/>
+                    android:layout_marginLeft="310dp"
+                    android:layout_marginTop="11dp"
+                    android:src="@drawable/tick"
+                    android:visibility="gone"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -230,8 +207,8 @@
                 android:id="@+id/ProceedButton2"
                 android:layout_width="313dp"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/NoAddOnTab"
-                android:layout_alignEnd="@+id/NoAddOnTab"
+                android:layout_alignStart="@+id/AddOn3Tab"
+                android:layout_alignEnd="@+id/AddOn3Tab"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="40dp"
                 android:layout_marginEnd="40dp"
@@ -278,8 +255,8 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="-20dp"
                         android:text="Continue Shopping"
-                        android:textStyle="bold"
                         android:textColor="#000000"
+                        android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent" />
 
@@ -290,8 +267,8 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="25dp"
                         android:text="View Cart"
-                        android:textStyle="bold"
                         android:textColor="#000000"
+                        android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent" />
 

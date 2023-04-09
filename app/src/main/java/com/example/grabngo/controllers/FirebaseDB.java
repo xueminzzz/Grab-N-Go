@@ -1,14 +1,25 @@
-package com.example.grabngo.test;
+package com.example.grabngo.controllers;
 
 import android.util.Log;
 
+import com.example.grabngo.models.ChickenRice;
+import com.example.grabngo.models.Noodle;
+import com.example.grabngo.models.Order;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 
 import java.util.HashMap;
 
-// Order is the updated class. I've changed the getter methods' names in the code below only
+/** Function: For communicating with Firebase database
+ *  Input: Order singleton instance
+ *  Output: None
+ *  Sent/Read from DB: DatabaseReference.setValue (pushOrder sends Order to DB)
+ *  Prev Page Link: None
+ *  Next Page Link: None
+ *  Java Concepts/OOP: None
+ */
+
 public class FirebaseDB {
     private static DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
