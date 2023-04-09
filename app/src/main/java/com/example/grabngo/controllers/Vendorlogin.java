@@ -80,7 +80,7 @@ public class Vendorlogin extends AppCompatActivity {
                                     if (FAuth.getCurrentUser().isEmailVerified()) {
                                         mDialog.dismiss();
                                         Toast.makeText(Vendorlogin.this, "You are logged in", Toast.LENGTH_SHORT).show();
-                                        Intent z = new Intent(Vendorlogin.this, VendorMainPage.class);
+                                        Intent z = new Intent(Vendorlogin.this, ChooseStall.class);
                                         startActivity(z);
                                         finish();
 
