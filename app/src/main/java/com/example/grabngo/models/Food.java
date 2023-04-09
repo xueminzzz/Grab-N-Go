@@ -1,6 +1,8 @@
 package com.example.grabngo.test;
 
 
+import java.util.HashMap;
+
 /** Details about Food
  * No inputs or outputs
  * Attributes: foodName, foodId, basePrice, stallName
@@ -41,4 +43,5 @@ public abstract class Food {
     public String getStallName() {return stallName;}
 
     public void setStallName(String stallName) {this.stallName = stallName;}
+
 }

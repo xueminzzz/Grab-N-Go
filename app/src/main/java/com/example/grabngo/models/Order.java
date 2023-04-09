@@ -6,10 +6,7 @@ import java.util.ArrayList;
 /**What the Order class do:
  * It is a singleton class, means that there can only be ONE instance of Order each time a user logins in
  * We append the food items with addFood(Food) object
- * The things still needed is
- * 1. TODO Need to set UserID based on their sign in
- * 2. TODO Need to set OrderID based on the next order ID from firebase? Or do we just do it when we push to firebase
- */
+*/
 public class Order {
 
     private static Order instance = null;
@@ -17,7 +14,7 @@ public class Order {
     private BigDecimal totalPrice;
     private int orderId;
 
-    private int userId;
+    private String userId;
 
     private double timeSlot;
 
@@ -25,7 +22,7 @@ public class Order {
         foodOrdered = new ArrayList<>();
         totalPrice = BigDecimal.ZERO;
         this.orderId = 0;
-        this.userId = 0;
+        this.userId = "";
         this.timeSlot = 0.0;
     }
 
@@ -60,15 +57,11 @@ public class Order {
     public void setTotalPrice(BigDecimal totalPrice) {this.totalPrice = totalPrice;}
     public int getOrderId() {return orderId;}
     public void setOrderId(int orderId) {this.orderId = orderId;}
-    public int getUserId() {return userId;}
-    public void setUserId(int userId) {this.userId = userId;}
+    public String getUserId() {return userId;}
+    public void setUserId(String userId) {this.userId = userId;}
     public double getTimeSlot() {return timeSlot;}
     public void setTimeSlot(double timeSlot) {this.timeSlot = timeSlot;}
-
-
-
-
-
+    
     @Override
     public String toString(){
         String answer = "Order ID: " + getOrderId() +

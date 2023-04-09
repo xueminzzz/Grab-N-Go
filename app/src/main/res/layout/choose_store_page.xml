@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/signup_btn_background"
-    tools:context=".controllers.ChooseStorePage1">
+    tools:context=".controllers.ChooseStorePage2">
 
     <!-- This page is after main_customer_page -->
     <!-- Stores that are not available at that time will be greyed out and cannot be selected -->
@@ -13,7 +13,7 @@
 
     <LinearLayout
 
-        android:id="@+id/ChooseStorePage1"
+        android:id="@+id/ChooseStorePage2"
         android:layout_width="416dp"
         android:layout_height="650dp"
         android:background="@drawable/background_customer_page"
@@ -163,7 +163,7 @@
                 android:layout_marginTop="370dp"
                 app:cardBackgroundColor="@color/logo_background"
                 app:cardCornerRadius="10dp"
-                app:cardElevation="10dp">
+                app:cardElevation="0dp">
 
                 <TextView
                     android:id="@+id/BanmianStoreName"
@@ -217,7 +217,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginTop="490dp"
-                app:cardBackgroundColor="@color/logo_background"
+                app:cardBackgroundColor="@color/translucent_gray2"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp">
 
@@ -250,6 +250,16 @@
                     android:text="8:00AM - 6:30PM"
                     android:textColor="#000000"
                     android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/FixedText8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginLeft="175dp"
+                    android:text="Unavailable"
+                    android:textSize="12dp"
+                    android:textColor="@color/red"/>
 
                 <ImageView
                     android:id="@+id/MixedRiceImage"
