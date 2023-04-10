@@ -15,31 +15,6 @@ import com.example.grabngo.models.SteamedChickenRice;
  */
 public class FoodFactory {
 
-    public static Food createFood(String foodName){
-        switch(foodName){
-            case "SteamedChickenRice":
-                return new SteamedChickenRice.SteamedChickenRiceBuilder().build();
-
-            case "RoastedChickenRice":
-                return new RoastedChickenRice.RoastedChickenRiceBuilder().build();
-
-            case "RoastedChickenRiceSetMeal":
-                return new RoastedChickenRiceSetMeal.RoastedChickenRiceSetMealBuilder().build();
-
-            case "DryNoodle":
-            return new DryNoodle.DryNoodleBuilder().build();
-
-            case "FishballNoodle":
-                return new FishballNoodle.FishballNoodleBuilder().build();
-
-            case "Laksa":
-                return new Laksa.LaksaBuilder().build();
-
-            default:
-                throw new IllegalArgumentException("Invalid food name: " + foodName);
-    }
-    }
-
     public static Food createFoodWithAddOns(String foodName, boolean isAdd1, boolean isAdd2, boolean isAdd3){
         switch(foodName){
             case "SteamedWhiteChickenRice":
