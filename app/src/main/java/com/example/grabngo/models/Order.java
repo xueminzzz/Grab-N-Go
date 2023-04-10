@@ -34,9 +34,7 @@ public class Order {
         return instance;
     }
 
-    public void resetOrder(){ //this is to ensure new Order instance created for next order
-        instance = null;
-    }
+
 
     public void addFood(Object food){
         if (food instanceof ChickenRice) {
