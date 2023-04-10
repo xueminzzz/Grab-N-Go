@@ -34,7 +34,31 @@ public class CompleteOrderPageAdapter extends RecyclerView.Adapter<CompleteOrder
         OrderDetails orderDetails = orderDetailsList.get(position);
         holder.foodNameTextView.setText(orderDetails.getfoodName());
         Log.d("RecyclerView", "onCreateViewHolder" + orderDetails.getfoodName());
-        holder.foodPriceTextView.setText("$" + orderDetails.getfoodPrice());
+
+        // set basePrice <- for now...
+        Double basePrice = 0.0;
+        switch(orderDetails.getfoodName()) {
+            case "Steamed Chicken Rice":
+                basePrice = 5.00;
+                break;
+            case "Roasted Chicken Rice":
+                basePrice = 5.00;
+                break;
+            case "Roasted Chicken Rice Set Meal":
+                basePrice = 7.00;
+                break;
+            case "Dry Noodle":
+                basePrice = 4.20;
+                break;
+            case "Laksa":
+                basePrice = 5.00;
+                break;
+            case "Fishball Noodle":
+                basePrice = 2.70;
+                break;
+        }
+
+        holder.foodPriceTextView.setText("$" + String.format("%.2f", basePrice));
         Log.d("RecyclerView", "onCreateViewHolder" + orderDetails.getfoodName());
 
         if (orderDetails.getaddMeat() != null){
@@ -84,7 +108,7 @@ public class CompleteOrderPageAdapter extends RecyclerView.Adapter<CompleteOrder
             if (orderDetails.getaddCheeseTofu()) {
                 holder.addCheeseTofuTextView.setText("Add CheeseTofu");
                 holder.addCheeseTofuTextView.setVisibility(View.VISIBLE);
-                holder.addCheeseTofuPriceTextView.setText("$0.80");
+                holder.addCheeseTofuPriceTextView.setText("$0.60");
             } else {
                 holder.addCheeseTofuTextView.setVisibility(View.GONE);
                 holder.addCheeseTofuPriceTextView.setVisibility(View.GONE);
@@ -98,7 +122,7 @@ public class CompleteOrderPageAdapter extends RecyclerView.Adapter<CompleteOrder
             if (orderDetails.getaddNoodles()) {
                 holder.addNoodlesTextView.setText("Add Noodles");
                 holder.addNoodlesTextView.setVisibility(View.VISIBLE);
-                holder.addNoodlesPriceTextView.setText("$0.80");
+                holder.addNoodlesPriceTextView.setText("$0.50");
             } else {
                 holder.addNoodlesTextView.setVisibility(View.GONE);
                 holder.addNoodlesPriceTextView.setVisibility(View.GONE);
@@ -107,8 +131,6 @@ public class CompleteOrderPageAdapter extends RecyclerView.Adapter<CompleteOrder
             holder.addNoodlesTextView.setVisibility(View.GONE);
             holder.addNoodlesPriceTextView.setVisibility(View.GONE);
         }
-
-        // holder.totalPriceTextView.setText("$ " + orderDetails.getTotalPrice());
     }
 
     @Override
@@ -117,8 +139,6 @@ public class CompleteOrderPageAdapter extends RecyclerView.Adapter<CompleteOrder
     }
 
     public class CompletePageOrderViewHolder extends RecyclerView.ViewHolder {
-
-        // TextView orderNumberTextView;
         TextView foodNameTextView;
         TextView foodPriceTextView;
         TextView addMeatTextView;
@@ -137,8 +157,6 @@ public class CompleteOrderPageAdapter extends RecyclerView.Adapter<CompleteOrder
 
         public CompletePageOrderViewHolder(View itemView) {
             super(itemView);
-
-            // orderNumberTextView = itemView.findViewById(R.id.OrderNumber);
             foodNameTextView = itemView.findViewById(R.id.FoodName1);
             foodPriceTextView = itemView.findViewById(R.id.FoodPrice1);
             addMeatTextView = itemView.findViewById(R.id.AddOn1);
@@ -151,7 +169,6 @@ public class CompleteOrderPageAdapter extends RecyclerView.Adapter<CompleteOrder
             addCheeseTofuPriceTextView = itemView.findViewById(R.id.AddOnPrice4);
             addNoodlesTextView = itemView.findViewById(R.id.AddOn5);
             addNoodlesPriceTextView = itemView.findViewById(R.id.AddOnPrice5);
-            // totalPriceTextView = itemView.findViewById(R.id.TotalPrice);
         }
     }
 }

@@ -6,10 +6,6 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
 import android.widget.ImageButton;
-import android.view.View.OnClickListener;
-import android.app.Activity;
-import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -34,17 +30,23 @@ public class VendorMainPage extends AppCompatActivity {
     ImageButton button2PM;
     ImageView backarrow;
 
+    TextView stallname;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_vendor_page);
 
+        String stall = getIntent().getStringExtra("stallName");
+
+        stallname = (TextView) findViewById(R.id.VendorStoreName);
         button1230PM = (ImageButton) findViewById(R.id.Time1230PM);
         button1PM = (ImageButton) findViewById(R.id.Time1PM);
-        button130PM = (ImageButton) findViewById(R.id.Time130PM);
-        button2PM = (ImageButton) findViewById(R.id.Time2PM);
-
+        button130PM  = (ImageButton) findViewById(R.id.Time130PM);
+        button2PM  = (ImageButton) findViewById(R.id.Time2PM);
         backarrow = (ImageView) findViewById(R.id.BackArrowLogo);
+
+        stallname.setText(stall + " Stall");
 
         backarrow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,12 +60,10 @@ public class VendorMainPage extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-
-                Intent i = new Intent(VendorMainPage.this, OrdersforSpecifiedTimePage1.class);
+                Intent i = new Intent(VendorMainPage.this, OrdersforSpecifiedTimePage.class);
+                i.putExtra("stallName", stall);
+                i.putExtra("timeSlot", "12.30");
                 startActivity(i);
-//                Intent i = new Intent(VendorMainPage.this, Recycler_1230PM.class);
-//                startActivity(i);
-
             }
         });
 
@@ -71,10 +71,10 @@ public class VendorMainPage extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-
-                Intent i = new Intent(VendorMainPage.this, OrdersforSpecifiedTimePage1_1PM.class);
+                Intent i = new Intent(VendorMainPage.this, OrdersforSpecifiedTimePage.class);
+                i.putExtra("stallName", stall);
+                i.putExtra("timeSlot", "1.00");
                 startActivity(i);
-
             }
         });
 
@@ -82,12 +82,10 @@ public class VendorMainPage extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-
-                Intent i = new Intent(VendorMainPage.this, OrdersforSpecifiedTimePage1_130PM.class);
+                Intent i = new Intent(VendorMainPage.this, OrdersforSpecifiedTimePage.class);
+                i.putExtra("stallName", stall);
+                i.putExtra("timeSlot", "1.30");
                 startActivity(i);
-
-
-
             }
         });
 
@@ -95,14 +93,11 @@ public class VendorMainPage extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-
-                Intent i = new Intent(VendorMainPage.this, OrdersforSpecifiedTimePage1_2PM.class);
+                Intent i = new Intent(VendorMainPage.this, OrdersforSpecifiedTimePage.class);
+                i.putExtra("stallName", stall);
+                i.putExtra("timeSlot", "2.00");
                 startActivity(i);
-
-
             }
         });
-
-
     }
 }

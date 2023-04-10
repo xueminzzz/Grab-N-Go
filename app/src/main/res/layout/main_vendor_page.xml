@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/signup_btn_background"
-    tools:context=".controllers.VendorMainPage">
+    tools:context=".controllers.VendorMainPage_ChickenRice">
 
 <!-- This page is the main page vendor will view when they login -->
     <!-- There will be an auto pop-up for vendor to choose which time they would like to prepare orders for -->

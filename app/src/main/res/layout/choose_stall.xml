@@ -43,7 +43,7 @@
                 android:text="Chicken Rice Stall" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/mixedButton"
+                android:id="@+id/banmianButton"
                 android:layout_width="313dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
