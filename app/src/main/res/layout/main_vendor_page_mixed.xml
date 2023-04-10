@@ -5,15 +5,15 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/signup_btn_background"
-    tools:context=".controllers.VendorMainPage">
+    tools:context=".controllers.VendorMainPage_Mixed">
 
-<!-- This page is the main page vendor will view when they login -->
+    <!-- This page is the main page vendor will view when they login -->
     <!-- There will be an auto pop-up for vendor to choose which time they would like to prepare orders for -->
     <!-- After choosing their pick-up time vendors will be directed to the orders_for_specified_time_page_1 -->
 
     <LinearLayout
 
-        android:id="@+id/VendorMainPage"
+        android:id="@+id/VendorMainPage_Mixed"
         android:layout_width="416dp"
         android:layout_height="650dp"
         android:background="@drawable/background_customer_page"
@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="35dp"
-                android:text="Chicken Rice Stall"
+                android:text="Ban Mian Stall"
                 android:textColor="#000000"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -51,6 +51,8 @@
                 android:text="Welcome to your store page!"
                 android:textColor="#000000"
                 android:textSize="19sp" />
+
+
 
 
 
@@ -92,28 +94,28 @@
                         app:strokeColor="@color/black">
 
                         <ImageButton
-                            android:id="@+id/Time1230PM"
+                            android:id="@+id/Time1230PM_mixed"
                             android:layout_width="150dp"
                             android:layout_height="40dp"
                             android:layout_marginTop="0dp"
                             android:src="@drawable/pickup_time_selector2" />
 
                         <ImageButton
-                            android:id="@+id/Time1PM"
+                            android:id="@+id/Time1PM_mixed"
                             android:layout_width="150dp"
                             android:layout_height="40dp"
                             android:layout_marginTop="40dp"
                             android:src="@drawable/pickup_time_selector2" />
 
                         <ImageButton
-                            android:id="@+id/Time130PM"
+                            android:id="@+id/Time130PM_mixed"
                             android:layout_width="150dp"
                             android:layout_height="40dp"
                             android:layout_marginTop="80dp"
                             android:src="@drawable/pickup_time_selector2" />
 
                         <ImageButton
-                            android:id="@+id/Time2PM"
+                            android:id="@+id/Time2PM_mixed"
                             android:layout_width="150dp"
                             android:layout_height="40dp"
                             android:layout_marginTop="120dp"

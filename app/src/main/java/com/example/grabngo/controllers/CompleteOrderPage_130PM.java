@@ -30,17 +30,16 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CompleteOrderPage extends Activity {
+public class CompleteOrderPage_130PM extends Activity {
     private List<OrderDetails> orderDetailsList;
     private CompleteOrderPageAdapter adapter;
     private RecyclerView recyclerView;
     double price;
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.complete_order_page);
+        setContentView(R.layout.complete_order_page_130pm);
 
         Button completeOrderButton = findViewById(R.id.ProceedButton);
         String orderId = getIntent().getStringExtra("id");
@@ -63,7 +62,7 @@ public class CompleteOrderPage extends Activity {
         backarrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent back = new Intent(CompleteOrderPage.this, OrdersforSpecifiedTimePage1.class);
+                Intent back = new Intent(CompleteOrderPage_130PM.this, OrdersforSpecifiedTimePage1_130PM.class);
                 startActivity(back);
             }
         });
@@ -173,7 +172,8 @@ public class CompleteOrderPage extends Activity {
                 //change the value of open_order to be false
                 // ordersRef.child("open_order").setValue(false);
                 foodIdRef.child("isComplete").setValue(true);
-                Intent i = new Intent(CompleteOrderPage.this, OrdersforSpecifiedTimePage1.class);
+
+                Intent i = new Intent(CompleteOrderPage_130PM.this, OrdersforSpecifiedTimePage1_130PM.class);
                 startActivity(i);
 
             }

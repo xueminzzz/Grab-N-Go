@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GrabNGo"
         tools:targetApi="31">
-        <activity
+         <activity
             android:name=".controllers.OrderConfirmationPage"
             android:exported="false" />
         <activity
@@ -55,6 +55,64 @@
             android:exported="false" />
         <activity
             android:name=".controllers.MainMenu"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.OrdersforSpecifiedTimePage1"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name=".controllers.OrdersforSpecifiedTimePage1_1PM"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.OrdersforSpecifiedTimePage1_130PM"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.OrdersforSpecifiedTimePage1_2PM"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.CompleteOrderPage"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.CompleteOrderPage_1PM"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.CompleteOrderPage_130PM"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.CompleteOrderPage_2PM"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.OrderAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.ChooseStall"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.VendorMainPage_Mixed"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.CompleteOrderPage_Mixed"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.CompleteOrderPage_1PM_Mixed"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.CompleteOrderPage_130PM_Mixed"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.CompleteOrderPage_2PM_Mixed"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.OrdersforSpecifiedTimePage1_Mixed"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.OrdersforSpecifiedTimePage1_1PM_Mixed"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.OrdersforSpecifiedTimePage1_130PM_Mixed"
+            android:exported="false" />
+        <activity
+            android:name=".controllers.OrdersforSpecifiedTimePage1_2PM_Mixed"
             android:exported="false" />
         <activity
             android:name=".controllers.MainActivity"
