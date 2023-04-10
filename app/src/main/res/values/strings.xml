@@ -28,6 +28,7 @@
     <string name="add_on_1_price">$0.80</string>
     <string name="total_price_1">$5.00</string>
     <string name="number_of_orders_update">TOTAL ORDERS: 19</string>
+    <string name="OrderDetailsTab1">OrderDetailsTab1</string>
 
     <string-array name="Stores">
         <item>Muslim</item>

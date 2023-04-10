@@ -32,11 +32,11 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
-public class OrdersforSpecifiedTimePage2 extends Activity {
+public class OrdersforSpecifiedTimePage1_1PM_Mixed extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.orders_for_specified_time_page_2);
+        setContentView(R.layout.orders_for_specified_time_page_1_1pm_mixed);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ordersRef = database.getReference("Order");
@@ -52,7 +52,9 @@ public class OrdersforSpecifiedTimePage2 extends Activity {
 //        mOrderList = (LinearLayout) findViewById(R.id.OrdersforSpecifiedTimePage1);
         String orderid = getIntent().getStringExtra("id");   //addoncode
 
-        Query query = ordersRef.orderByChild("timeslot").equalTo("1230");
+        Query query = ordersRef.orderByChild("timeslot").equalTo("1.00");
+        //Query query2 = ordersRef.orderByChild("stall_name").equalTo("Chicken Rice");
+        //Query query = query.orderByChild("list_of_food/stall_name").equalTo("Chicken Rice");
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -66,6 +68,7 @@ public class OrdersforSpecifiedTimePage2 extends Activity {
                 for (DataSnapshot orderSnapshot : dataSnapshot.getChildren()) {
                     // Get the order details
                     String orderId = orderSnapshot.getKey();
+                    Boolean isCompleted = orderSnapshot.child("isComplete").getValue(Boolean.class);
                     double orderPrice = orderSnapshot.child("total_price").getValue(double.class);
 //                    TextView orderNameTextViewtry= orderNameTextViews[2];
 //                    orderNameTextViewtry.setText(orderid);
@@ -79,28 +82,26 @@ public class OrdersforSpecifiedTimePage2 extends Activity {
                     TextView orderPriceTextView = orderPriceTextViews[i-1];
                     orderPriceTextView.setText("$" + orderPrice);
                     CardView orderCardView = orderCardViews[i-1];
-                    orderCardView.setOnClickListener(new View.OnClickListener() {
-
-                        @Override
-                        public void onClick(View view) {
-
-                            Intent intent = new Intent(OrdersforSpecifiedTimePage2.this, CompleteOrderPage.class);
-                            intent.putExtra("id", orderId);
-                            intent.putExtra("totalprice", String.valueOf(orderPrice));
-                            startActivity(intent);
-
-                        }
-                    });
-                    // Increment i for the next order
-                    if(orderid == orderId){
-                        //TextView orderNameTextView = orderNameTextViews[i-1];
-                        orderNameTextView.setText("Order " + i);
-                        //TextView orderPriceTextView = orderPriceTextViews[i-1];
-                        orderPriceTextView.setText("$" + orderPrice);
-                        //CardView orderCardView = orderCardViews[i-1];
-                        orderCardView.setEnabled(false);
-
+                    if (orderId.equals(orderid)) {
+                        // Set background color to grey
+                        orderCardView.setBackgroundColor(Color.DKGRAY);
+                        // Make the CardView unclickable
+                        //orderCardView.setClickable(false);
+                        //orderCardView.setClickable(false);
+                        orderCardView.setOnClickListener(null);
                     }
+                    else{
+                        orderCardView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent = new Intent(OrdersforSpecifiedTimePage1_1PM_Mixed.this, CompleteOrderPage_1PM_Mixed.class);
+                                intent.putExtra("id", orderId);
+                                intent.putExtra("totalprice", String.valueOf(orderPrice));
+                                startActivity(intent);
+                            }
+                        });
+                    }
+                    // Increment i for the next order
                     i++;
 
 
@@ -148,4 +149,3 @@ public class OrdersforSpecifiedTimePage2 extends Activity {
 
     }
 }
-

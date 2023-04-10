@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/signup_btn_background"
-        tools:context=".controllers.OrdersforSpecifiedTimePage1_2PM">
+        tools:context=".controllers.OrdersforSpecifiedTimePage1_Mixed">
 
         <!-- This page is after the main_vendor_page -->
         <!-- Vendors will have to click into each order which then directs them to the complete_order page -->
@@ -46,7 +46,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
                         android:layout_marginTop="35dp"
-                        android:text="Chicken Rice Stall"
+                        android:text="Ban Mian Stall"
                         android:textColor="#000000"
                         android:textSize="30sp"
                         android:textStyle="bold" />
@@ -57,7 +57,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
                         android:layout_marginTop="75dp"
-                        android:text="SLOT: 2.00PM"
+                        android:text="@string/timeslot"
                         android:textColor="#315815"
                         android:textSize="14sp" />
 

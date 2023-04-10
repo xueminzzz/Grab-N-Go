@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Order {
+    private String foodname;
+    private double base_price;
     private int order_id;
     private Date order_time;
     private int order_amount;
@@ -14,7 +16,9 @@ public class Order {
     public Order() {
     }
 
-    public Order(int order_id, Date order_time, int order_amount, int order_timeslot, boolean activate_lunchbox, ArrayList food_list) {
+    public Order(String foodname, double base_price, int order_id, Date order_time, int order_amount, int order_timeslot, boolean activate_lunchbox, ArrayList food_list) {
+        this.foodname = foodname;
+        this.base_price = base_price;
         this.order_id = order_id;
         this.order_time = order_time;
         this.order_amount = order_amount;
@@ -70,5 +74,21 @@ public class Order {
 
     public void setFood_list(ArrayList food_list) {
         this.food_list = food_list;
+    }
+
+    public String getFoodname() {
+        return foodname;
+    }
+
+    public void setFoodname(String foodname) {
+        this.foodname = foodname;
+    }
+
+    public double getBase_price() {
+        return base_price;
+    }
+
+    public void setBase_price(double base_price) {
+        this.base_price = base_price;
     }
 }

@@ -16,351 +16,503 @@
         <!-- This page is after the main_vendor_page -->
         <!-- Vendors will have to click into each order which then directs them to the complete_order page -->
 
-        <LinearLayout
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            android:id="@+id/OrdersforSpecifiedTimePage1_1PM"
-            android:layout_width="416dp"
-            android:layout_height="650dp"
-            android:background="@drawable/background_customer_page"
-            android:orientation="vertical"
-            android:padding="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0">
+            <LinearLayout
 
-            <RelativeLayout
+                android:id="@+id/OrdersforSpecifiedTimePage1"
+                android:layout_width="416dp"
+                android:layout_height="650dp"
+                android:background="@drawable/background_customer_page"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0">
 
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                <RelativeLayout
 
-                <TextView
-                    android:id="@+id/VendorStoreName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="35dp"
-                    android:text="@string/vendor_store_name"
-                    android:textColor="#000000"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/TimeSlot"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="75dp"
-                    android:text="SLOT: 13:00PM"
-                    android:textColor="#315815"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/NumberofOrders"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="92dp"
-                    android:text="@string/number_of_orders"
-                    android:textColor="#315815"
-                    android:textSize="14sp" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/SearchTab"
-                    android:layout_width="350dp"
-                    android:layout_height="48dp"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="120dp"
-                    android:layout_marginEnd="24dp"
-                    android:background="@drawable/search_button"
-                    android:paddingStart="10dp"
-                    android:paddingTop="8dp"
-                    android:paddingEnd="230dp"
-                    android:paddingBottom="8dp"
-                    android:text="Search..."
-                    android:textAlignment="center"
-                    android:textColor="@color/translucent_gray2"
-                    android:textSize="12sp" />
-
-                <ImageView
-                    android:id="@+id/SearchIcon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignStart="@+id/SearchTab"
-                    android:layout_alignTop="@+id/SearchTab"
-                    android:layout_alignEnd="@+id/SearchTab"
-                    android:layout_alignBottom="@+id/SearchTab"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="317dp"
-                    android:layout_marginBottom="10dp"
-                    android:contentDescription="search icon"
-                    app:layout_constraintBottom_toBottomOf="@id/SearchTab"
-                    app:layout_constraintEnd_toStartOf="@id/SearchTab"
-                    app:layout_constraintStart_toStartOf="@id/SearchTab"
-                    app:layout_constraintTop_toTopOf="@id/SearchTab"
-                    app:srcCompat="@drawable/search_icon" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/OrderDetailsTab1"
-                    android:layout_width="350dp"
-                    android:layout_height="100dp"
-                    android:layout_below="@+id/SearchTab"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginEnd="24dp"
-                    app:cardBackgroundColor="@color/logo_background"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="10dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/OrderName1"
+                        android:id="@+id/VendorStoreName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/order_name_1"
-                        android:textColor="#000000" />
-
-                    <TextView
-                        android:id="@+id/OrderQuantity1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="200dp"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/order_quantity_1"
-                        android:textColor="#000000" />
-
-                    <TextView
-                        android:id="@+id/OrderPrice1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="270dp"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/order_price_1"
-                        android:textColor="#000000" />
-
-                    <TextView
-                        android:id="@+id/AddOn1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        android:layout_marginTop="25dp"
-                        android:text="@string/add_on_1"
+                        android:layout_marginTop="35dp"
+                        android:text="Chicken Rice Stall"
                         android:textColor="#000000"
-                        android:textSize="12dp" />
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/OrderDetailsTab2"
-                    android:layout_width="350dp"
-                    android:layout_height="100dp"
-                    android:layout_below="@+id/OrderDetailsTab1"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginEnd="24dp"
-                    app:cardBackgroundColor="@color/logo_background"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="10dp">
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/OrderName2"
+                        android:id="@+id/TimeSlot"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/order_name_2"
-                        android:textColor="#000000" />
+                        android:layout_marginTop="75dp"
+                        android:text="SLOT: 1.00PM"
+                        android:textColor="#315815"
+                        android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/OrderQuantity2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="200dp"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/order_quantity_1"
-                        android:textColor="#000000" />
-
-                    <TextView
-                        android:id="@+id/OrderPrice2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="270dp"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/order_price_1"
-                        android:textColor="#000000" />
-
-                    <TextView
-                        android:id="@+id/AddOn2"
+                        android:id="@+id/NumberofOrders"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
-                        android:layout_marginTop="25dp"
-                        android:text="@string/add_on_2"
-                        android:textColor="#000000"
-                        android:textSize="12dp" />
+                        android:layout_marginTop="92dp"
+                        android:text="@string/number_of_orders"
+                        android:textColor="#315815"
+                        android:textSize="14sp" />
 
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/OrderDetailsTab3"
-                    android:layout_width="350dp"
-                    android:layout_height="100dp"
-                    android:layout_below="@+id/OrderDetailsTab2"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginEnd="24dp"
-                    app:cardBackgroundColor="@color/logo_background"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="10dp">
-
-                    <TextView
-                        android:id="@+id/OrderName3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/OrderDetailsTab1"
+                        android:layout_width="350dp"
+                        android:layout_height="100dp"
+                        android:layout_below="@+id/NumberofOrders"
                         android:layout_marginStart="24dp"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/order_name_3"
-                        android:textColor="#000000" />
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="24dp"
+                        app:cardBackgroundColor="@color/logo_background"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp"
+                        android:onClick="onClicktrue" >
 
-                    <TextView
-                        android:id="@+id/OrderQuantity3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="200dp"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/order_quantity_3"
-                        android:textColor="#000000" />
+                        <TextView
+                            android:id="@+id/OrderName1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
 
-                    <TextView
-                        android:id="@+id/OrderPrice3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="270dp"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/order_price_3"
-                        android:textColor="#000000" />
+                        <TextView
+                            android:id="@+id/OrderQuantity1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="200dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
 
-                    <TextView
-                        android:id="@+id/AddOn3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        <TextView
+                            android:id="@+id/OrderPrice1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="270dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/OrderDetailsTab2"
+                        android:layout_width="350dp"
+                        android:layout_height="100dp"
+                        android:layout_below="@+id/OrderDetailsTab1"
                         android:layout_marginStart="24dp"
-                        android:layout_marginTop="25dp"
-                        android:text="@string/add_on_1"
-                        android:textColor="#000000"
-                        android:textSize="12dp" />
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="24dp"
+                        app:cardBackgroundColor="@color/logo_background"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp"
+                        android:onClick="onClicktrue">
 
-                </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:id="@+id/OrderName2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/OrderDetailsTabtry"
-                    android:layout_width="350dp"
-                    android:layout_height="100dp"
-                    android:layout_below="@+id/OrderDetailsTab3"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginEnd="24dp"
-                    app:cardBackgroundColor="@color/logo_background"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="10dp">
+                        <TextView
+                            android:id="@+id/OrderQuantity2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="200dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
 
-                    <TextView
-                        android:id="@+id/OrderNametry"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        <TextView
+                            android:id="@+id/OrderPrice2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="270dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/OrderDetailsTab3"
+                        android:layout_width="350dp"
+                        android:layout_height="100dp"
+                        android:layout_below="@+id/OrderDetailsTab2"
                         android:layout_marginStart="24dp"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/order_name_3"
-                        android:textColor="#000000" />
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="24dp"
+                        app:cardBackgroundColor="@color/logo_background"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp"
+                        android:onClick="onClicktrue">
 
-                    <TextView
-                        android:id="@+id/OrderQuantitytry"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="200dp"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/order_quantity_3"
-                        android:textColor="#000000" />
+                        <TextView
+                            android:id="@+id/OrderName3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
 
-                    <TextView
-                        android:id="@+id/OrderPricetry"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="270dp"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/order_price_3"
-                        android:textColor="#000000" />
+                        <TextView
+                            android:id="@+id/OrderQuantity3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="200dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
 
-                    <TextView
-                        android:id="@+id/AddOntry"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        <TextView
+                            android:id="@+id/OrderPrice3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="270dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/OrderDetailsTab4"
+                        android:layout_width="350dp"
+                        android:layout_height="100dp"
+                        android:layout_below="@+id/OrderDetailsTab3"
                         android:layout_marginStart="24dp"
-                        android:layout_marginTop="25dp"
-                        android:text="@string/add_on_1"
-                        android:textColor="#000000"
-                        android:textSize="12dp" />
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="24dp"
+                        app:cardBackgroundColor="@color/logo_background"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp"
+                        android:onClick="onClicktrue">
 
-                </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:id="@+id/OrderName4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/OrderDetailsTabtry2"
-                    android:layout_width="350dp"
-                    android:layout_height="100dp"
-                    android:layout_below="@+id/OrderDetailsTabtry"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginEnd="24dp"
-                    app:cardBackgroundColor="@color/logo_background"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="10dp">
+                        <TextView
+                            android:id="@+id/OrderQuantity4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="200dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
 
-                    <TextView
-                        android:id="@+id/OrderNametry2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        <TextView
+                            android:id="@+id/OrderPrice4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="270dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/OrderDetailsTab5"
+                        android:layout_width="350dp"
+                        android:layout_height="100dp"
+                        android:layout_below="@+id/OrderDetailsTab4"
                         android:layout_marginStart="24dp"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/order_name_3"
-                        android:textColor="#000000" />
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="24dp"
+                        app:cardBackgroundColor="@color/logo_background"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp"
+                        android:onClick="onClicktrue">
 
-                    <TextView
-                        android:id="@+id/OrderQuantitytry2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="200dp"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/order_quantity_3"
-                        android:textColor="#000000" />
+                        <TextView
+                            android:id="@+id/OrderName5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
 
-                    <TextView
-                        android:id="@+id/OrderPricetry2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="270dp"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/order_price_3"
-                        android:textColor="#000000" />
+                        <TextView
+                            android:id="@+id/OrderQuantity5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="200dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
 
-                    <TextView
-                        android:id="@+id/AddOntry2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        <TextView
+                            android:id="@+id/OrderPrice5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="270dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/OrderDetailsTab6"
+                        android:layout_width="350dp"
+                        android:layout_height="100dp"
+                        android:layout_below="@+id/OrderDetailsTab5"
                         android:layout_marginStart="24dp"
-                        android:layout_marginTop="25dp"
-                        android:text="@string/add_on_1"
-                        android:textColor="#000000"
-                        android:textSize="12dp" />
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="24dp"
+                        app:cardBackgroundColor="@color/logo_background"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp"
+                        android:onClick="onClicktrue">
 
-                </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:id="@+id/OrderName6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
 
-            </RelativeLayout>
+                        <TextView
+                            android:id="@+id/OrderQuantity6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="200dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/OrderPrice6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="270dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
 
 
-        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/OrderDetailsTab7"
+                        android:layout_width="350dp"
+                        android:layout_height="100dp"
+                        android:layout_below="@+id/OrderDetailsTab6"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="24dp"
+                        app:cardBackgroundColor="@color/logo_background"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp"
+                        android:onClick="onClicktrue">
+
+                        <TextView
+                            android:id="@+id/OrderName7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/OrderQuantity7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="200dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/OrderPrice7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="270dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/OrderDetailsTab8"
+                        android:layout_width="350dp"
+                        android:layout_height="100dp"
+                        android:layout_below="@+id/OrderDetailsTab7"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="24dp"
+                        app:cardBackgroundColor="@color/logo_background"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp"
+                        android:onClick="onClicktrue">
+
+                        <TextView
+                            android:id="@+id/OrderName8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/OrderQuantity8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="200dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/OrderPrice8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="270dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/OrderDetailsTab9"
+                        android:layout_width="350dp"
+                        android:layout_height="100dp"
+                        android:layout_below="@+id/OrderDetailsTab8"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="24dp"
+                        app:cardBackgroundColor="@color/logo_background"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp"
+                        android:onClick="onClicktrue">
+
+                        <TextView
+                            android:id="@+id/OrderName9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/OrderQuantity9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="200dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/OrderPrice9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="270dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/OrderDetailsTab10"
+                        android:layout_width="350dp"
+                        android:layout_height="100dp"
+                        android:layout_below="@+id/OrderDetailsTab9"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="24dp"
+                        app:cardBackgroundColor="@color/logo_background"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp"
+                        android:onClick="onClicktrue">
+
+                        <TextView
+                            android:id="@+id/OrderName10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/OrderQuantity10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="200dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/OrderPrice10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="270dp"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="#000000" />
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
 
 
         <ImageView

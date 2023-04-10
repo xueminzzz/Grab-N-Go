@@ -37,7 +37,7 @@ import java.util.HashMap;
 // Java Concepts/OOP: Intent(?)
 public class VendorRegistration extends AppCompatActivity {
 
-    TextInputLayout Fname, Lname, Email, Pass, cfpass;
+    TextInputLayout Fname, Lname, Email, Pass, cfpass; //stallname;
     Button signup, Emaill;
     FirebaseAuth FAuth;
     DatabaseReference databaseReference;
@@ -47,6 +47,7 @@ public class VendorRegistration extends AppCompatActivity {
     String emailid;
     String password;
     String confirmpassword;
+//    String Sname;
     String role = "Vendor";
 
     @SuppressLint("MissingInflatedId")
@@ -60,6 +61,7 @@ public class VendorRegistration extends AppCompatActivity {
         Email = (TextInputLayout) findViewById(R.id.Email);
         Pass = (TextInputLayout) findViewById(R.id.Pwd);
         cfpass = (TextInputLayout) findViewById(R.id.Cpass);
+//        stallname = (TextInputLayout) findViewById(R.id.Stallname);
 
         signup = (Button) findViewById(R.id.registervendorbtn);
         Emaill = (Button) findViewById(R.id.signinemailvendorbtn);
@@ -77,6 +79,7 @@ public class VendorRegistration extends AppCompatActivity {
                 emailid = Email.getEditText().getText().toString().trim();
                 password = Pass.getEditText().getText().toString().trim();
                 confirmpassword = cfpass.getEditText().getText().toString().trim();
+//                Sname = stallname.getEditText().getText().toString().trim();
 
 
                 if (isValid()) {
@@ -104,6 +107,7 @@ public class VendorRegistration extends AppCompatActivity {
                                         hashMappp.put("EmailID", emailid);
                                         hashMappp.put("Fname", fname);
                                         hashMappp.put("Lname", lname);
+//                                        hashMappp.put("Lname", Sname);
                                         hashMappp.put("Password", password);
 
                                         firebaseDatabase.getInstance().getReference("Vendor")
@@ -186,9 +190,11 @@ public class VendorRegistration extends AppCompatActivity {
         Pass.setError("");
         cfpass.setErrorEnabled(false);
         cfpass.setError("");
+//        stallname.setErrorEnabled(false);
+//        stallname.setError("");
 
 
-        boolean isValidname = false, isValidemail = false, isvalidpassword = false, isvalidconfirmpassword = false, isvalid = false, isvalidlname = false;
+        boolean isValidname = false, isValidemail = false, isvalidpassword = false, isvalidconfirmpassword = false, isvalid = false, isvalidlname = false;// isValidstallname = false;
         if (TextUtils.isEmpty(fname)) {
             Fname.setErrorEnabled(true);
             Fname.setError("Firstname is required");
@@ -201,6 +207,12 @@ public class VendorRegistration extends AppCompatActivity {
         } else {
             isvalidlname = true;
         }
+//        if (TextUtils.isEmpty(Sname)) {
+//            stallname.setErrorEnabled(true);
+//            stallname.setError("Stall name is required");
+//        } else {
+//            isValidstallname = true;
+//        }
         if (TextUtils.isEmpty(emailid)) {
             Email.setErrorEnabled(true);
             Email.setError("Email is required");
@@ -237,7 +249,7 @@ public class VendorRegistration extends AppCompatActivity {
         }
 
 
-        isvalid = (isValidname && isvalidlname && isValidemail && isvalidconfirmpassword && isvalidpassword) ? true : false;
+        isvalid = (isValidname && isvalidlname && isValidemail && isvalidconfirmpassword && isvalidpassword) ? true : false;  //&& isValidstallname
         return isvalid;
     }
 

@@ -26,52 +26,52 @@ import com.example.grabngo.R;
 // Next Page Link: Vendorlogin/VendorRegistration/Customerlogin/CustomerRegistration
 // Java Concepts/OOP: Intent(?)
 
-public class VendorMainPage extends AppCompatActivity {
-    ImageButton button1230PM;
-    ImageButton button1PM;
-    ImageButton button130PM;
-    ImageButton button2PM;
+public class VendorMainPage_Mixed extends AppCompatActivity {
+    ImageButton button1230PM_mixed;
+    ImageButton button1PM_mixed;
+    ImageButton button130PM_mixed;
+    ImageButton button2PM_mixed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_vendor_page);
+        setContentView(R.layout.main_vendor_page_mixed);
 
-        button1230PM = (ImageButton) findViewById(R.id.Time1230PM);
-        button1PM = (ImageButton) findViewById(R.id.Time1PM);
-        button130PM = (ImageButton) findViewById(R.id.Time130PM);
-        button2PM = (ImageButton) findViewById(R.id.Time2PM);
+        button1230PM_mixed = (ImageButton) findViewById(R.id.Time1230PM_mixed);
+        button1PM_mixed  = (ImageButton) findViewById(R.id.Time1PM_mixed);
+        button130PM_mixed  = (ImageButton) findViewById(R.id.Time130PM_mixed);
+        button2PM_mixed  = (ImageButton) findViewById(R.id.Time2PM_mixed);
 
-        button1230PM.setOnClickListener(new View.OnClickListener() {
+        button1230PM_mixed .setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(VendorMainPage.this, OrdersforSpecifiedTimePage1.class);
-                startActivity(i);
-//                Intent i = new Intent(VendorMainPage.this, Recycler_1230PM.class);
+//                Intent i = new Intent(VendorMainPage.this, OrdersforSpecifiedTimePage1.class);
 //                startActivity(i);
-
-            }
-        });
-
-        button1PM.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-
-                Intent i = new Intent(VendorMainPage.this, OrdersforSpecifiedTimePage1_1PM.class);
+                Intent i = new Intent(VendorMainPage_Mixed.this, OrdersforSpecifiedTimePage1_Mixed.class);
                 startActivity(i);
 
             }
         });
 
-        button130PM.setOnClickListener(new View.OnClickListener() {
+        button1PM_mixed .setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(VendorMainPage.this, OrdersforSpecifiedTimePage1_130PM.class);
+                Intent i = new Intent(VendorMainPage_Mixed.this, OrdersforSpecifiedTimePage1_1PM_Mixed.class);
+                startActivity(i);
+
+            }
+        });
+
+        button130PM_mixed .setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(VendorMainPage_Mixed.this, OrdersforSpecifiedTimePage1_130PM_Mixed.class);
                 startActivity(i);
 
 
@@ -79,12 +79,12 @@ public class VendorMainPage extends AppCompatActivity {
             }
         });
 
-        button2PM.setOnClickListener(new View.OnClickListener() {
+        button2PM_mixed .setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(VendorMainPage.this, OrdersforSpecifiedTimePage1_2PM.class);
+                Intent i = new Intent(VendorMainPage_Mixed.this, OrdersforSpecifiedTimePage1_2PM_Mixed.class);
                 startActivity(i);
 
 
