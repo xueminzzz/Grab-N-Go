@@ -102,6 +102,7 @@ public class Noodle extends Food {
         packaged_data.put("addNoodles", this.isAddNoodle());
         packaged_data.put("addEgg", this.isAddEgg());
         packaged_data.put("addCheeseTofu",  this.isAddCheeseTofu());
+        packaged_data.put("isComplete", this.getIsComplete());
 
         return packaged_data;
     }
