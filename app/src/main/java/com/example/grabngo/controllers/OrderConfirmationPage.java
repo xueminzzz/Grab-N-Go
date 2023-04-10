@@ -22,7 +22,6 @@ import com.example.grabngo.models.Order;
  *  Java Concepts/OOP: Intent, Singleton DP (Order)
  */
 
-// TODO: Make the floats look prettier in xml (timeslot, price)
 public class OrderConfirmationPage extends Activity {
 
     RecyclerView recyclerView;
@@ -44,8 +43,8 @@ public class OrderConfirmationPage extends Activity {
 
         TextView timeSlot = findViewById(R.id.PickUpTime);
         TextView totalPrice = findViewById(R.id.TotalPrice);
-        timeSlot.setText("Pick up time: "+String.valueOf(ordermanagerv2.getTimeSlot()));
-        totalPrice.setText(String.valueOf(ordermanagerv2.getTotalPrice()));
+        timeSlot.setText("Pick up time: "+String.format("%.2f", ordermanagerv2.getTimeSlot()) + "PM");
+        totalPrice.setText(String.format("%.2f", ordermanagerv2.getTotalPrice()));
 
         // FOR DEBUGGING PURPOSE
         Log.d("OrderConfirmation-onCreate", ordermanagerv2.toString());

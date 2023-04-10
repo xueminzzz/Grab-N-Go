@@ -18,12 +18,15 @@ public class Order {
 
     private double timeSlot;
 
+    private boolean isComplete;
+
     private Order(){
         foodOrdered = new ArrayList<>();
         totalPrice = BigDecimal.ZERO;
         this.orderId = 0;
         this.userId = "";
         this.timeSlot = 0.0;
+        this.isComplete = false;
     }
 
 
@@ -61,14 +64,17 @@ public class Order {
     public void setUserId(String userId) {this.userId = userId;}
     public double getTimeSlot() {return timeSlot;}
     public void setTimeSlot(double timeSlot) {this.timeSlot = timeSlot;}
-    
+    public boolean getIsComplete() {return this.isComplete;}
+    public void setIsComplete(boolean status) {this.isComplete = status;}
+
     @Override
     public String toString(){
         String answer = "Order ID: " + getOrderId() +
                 " \nUser ID: " + getUserId() +
                 " \nTime Slot " + getTimeSlot() +
                 " \nFood Ordered: " + getFoodOrdered().toString() +
-                " \nTotal Price: " + getTotalPrice();
+                " \nTotal Price: " + getTotalPrice() +
+                " \nOrder Complete ? " + getIsComplete();
         return answer;
     }
 }

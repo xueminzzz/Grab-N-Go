@@ -53,7 +53,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.Viewholder> 
         if (foodlist.get(position) instanceof ChickenRice) {
             holder.OrderFoodName.setText(((ChickenRice) foodlist.get(position)).getFoodName());
             holder.OrderStoreName.setText(((ChickenRice) foodlist.get(position)).getStallName());
-            holder.OrderFoodPrice.setText(String.valueOf(((ChickenRice) foodlist.get(position)).getNetPrice().floatValue()));
+            holder.OrderFoodPrice.setText(String.format("%.2f", ((ChickenRice) foodlist.get(position)).getNetPrice().floatValue()));
 
             if (((ChickenRice) foodlist.get(position)).isAddMeat()) {
                 addOns += "Add Meat\n";
@@ -68,7 +68,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.Viewholder> 
         } else if (foodlist.get(position) instanceof Noodle) {
             holder.OrderFoodName.setText(((Noodle) foodlist.get(position)).getFoodName());
             holder.OrderStoreName.setText(((Noodle) foodlist.get(position)).getStallName());
-            holder.OrderFoodPrice.setText(String.valueOf(((Noodle) foodlist.get(position)).getNetPrice().floatValue()));
+            holder.OrderFoodPrice.setText(String.format("%.2f", ((Noodle) foodlist.get(position)).getNetPrice().floatValue()));
 
             if (((Noodle) foodlist.get(position)).isAddNoodle()) {
                 addOns += "Add Noodle\n";

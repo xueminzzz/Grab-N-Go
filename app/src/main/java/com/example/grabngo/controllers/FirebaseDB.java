@@ -27,6 +27,7 @@ public class FirebaseDB {
         Log.d("Time Slot", String.valueOf(order.getTimeSlot()));
         Log.d("User ID", String.valueOf(order.getUserId()));
         Log.d("Total Price", String.valueOf(order.getTotalPrice().floatValue()));
+        Log.d("Is Complete?", String.valueOf(order.getIsComplete()));
 
         for (int i = 0; i < order.getFoodOrdered().size(); i++) {
             Object food_item = order.getFoodOrdered().get(i);
@@ -40,6 +41,7 @@ public class FirebaseDB {
         remaining_data.put("timeslot", String.format("%.2f", order.getTimeSlot()));
         remaining_data.put("user_id", order.getUserId());
         remaining_data.put("total_price", order.getTotalPrice().doubleValue());
+        remaining_data.put("isComplete", order.getIsComplete());
 
         mDatabase.child("Order").child("order"+order.getOrderId()).setValue(remaining_data);
 

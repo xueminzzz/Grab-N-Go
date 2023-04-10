@@ -47,31 +47,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="100dp"
                 android:text="Price"
                 android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:layout_below="@id/FoodName"/>
 
             <TextView
                 android:id="@+id/FoodPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="120dp"
                 android:text="Undefined"
                 android:textColor="#000000"
                 android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:layout_below="@+id/FixedText3"/>
 
             <TextView
                 android:id="@+id/FixedText4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="150dp"
                 android:text="Choice of Add On"
                 android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:layout_below="@+id/FoodPrice"/>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/AddOn1Tab"
@@ -79,11 +79,12 @@
                 android:layout_height="50dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
-                android:layout_marginTop="200dp"
-                android:layout_marginBottom="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
                 app:cardBackgroundColor="@color/logo_background"
                 app:cardCornerRadius="10dp"
-                app:cardElevation="10dp">
+                app:cardElevation="10dp"
+                android:layout_below="@+id/FixedText4">
 
                 <TextView
                     android:id="@+id/AddOn1"
@@ -109,7 +110,8 @@
                     android:id="@+id/AddOn1CheckBox"
                     android:layout_width="179dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="230dp" />
+                    android:layout_marginTop="9dp"
+                    android:layout_marginLeft="300dp"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -119,10 +121,11 @@
                 android:layout_height="50dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
-                android:layout_marginTop="260dp"
+                android:layout_marginBottom="15dp"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp"
-                app:cardBackgroundColor="@color/logo_background">
+                app:cardBackgroundColor="@color/logo_background"
+                android:layout_below="@+id/AddOn1Tab">
 
                 <TextView
                     android:id="@+id/AddOn2"
@@ -147,7 +150,8 @@
                 <CheckBox android:id="@+id/AddOn2CheckBox"
                     android:layout_width="179dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="230dp"/>
+                    android:layout_marginTop="9dp"
+                    android:layout_marginLeft="300dp"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -157,10 +161,10 @@
                 android:layout_height="50dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
-                android:layout_marginTop="320dp"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp"
-                app:cardBackgroundColor="@color/logo_background">
+                app:cardBackgroundColor="@color/logo_background"
+                android:layout_below="@+id/AddOn2Tab">
 
                 <TextView
                     android:id="@+id/AddOn3"
@@ -182,10 +186,12 @@
                     android:textSize="15dp"
                     android:textColor="#000000" />
 
-                <CheckBox android:id="@+id/AddOn3CheckBox"
-                    android:layout_width="179dp"
+                <CheckBox
+                    android:id="@+id/AddOn3CheckBox"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="230dp"/>
+                    android:layout_marginTop="9dp"
+                    android:layout_marginLeft="300dp"/>
 
             </androidx.cardview.widget.CardView>
 
