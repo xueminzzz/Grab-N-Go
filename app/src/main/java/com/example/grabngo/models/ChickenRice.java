@@ -124,6 +124,7 @@ public class ChickenRice extends Food {
         packaged_data.put("addMeat", this.isAddMeat());
         packaged_data.put("addEgg", this.isAddEgg());
         packaged_data.put("addTofu",  this.isAddTofu());
+        packaged_data.put("isComplete", this.getIsComplete());
 
         return packaged_data;
     }

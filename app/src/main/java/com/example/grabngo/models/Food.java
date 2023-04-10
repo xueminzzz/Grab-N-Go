@@ -18,6 +18,8 @@ public abstract class Food {
     private double basePrice;
     private String stallName;
 
+    private boolean isComplete;
+
     public Food(){}
 
     public Food(String foodName, int foodId, double basePrice, String stallName) {
@@ -25,6 +27,7 @@ public abstract class Food {
         this.foodId = foodId;
         this.basePrice = basePrice;
         this.stallName = stallName;
+        this.isComplete = false;
     }
 
 
@@ -43,5 +46,9 @@ public abstract class Food {
     public String getStallName() {return stallName;}
 
     public void setStallName(String stallName) {this.stallName = stallName;}
+
+    public boolean getIsComplete() {return isComplete;}
+
+    public void setIsComplete(boolean status) {this.isComplete = status;}
 
 }
