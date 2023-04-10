@@ -27,13 +27,12 @@
 
         <TextView
             android:id="@+id/FoodPrice1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/order_price_1"
-            android:textSize="18dp"
-            android:textColor="#000"
-            app:layout_constraintTop_toBottomOf="@id/FoodName1"
-            app:layout_constraintStart_toStartOf="parent"/>
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="20dp"
+            android:text="Undefined"
+            app:layout_constraintBaseline_toBaselineOf="@id/FoodName1"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
         <TextView
             android:id="@+id/AddOnText1"
@@ -44,7 +43,7 @@
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@id/FoodPrice1"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"/>
 
         <TextView
             android:id="@+id/AddOn1"
@@ -55,6 +54,7 @@
             android:ellipsize="end"
             android:textColor="#000000"
             android:textSize="20dp"
+            android:layout_below="@+id/AddOnText1"
             app:layout_constraintTop_toBottomOf="@id/AddOnText1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/AddOnPrice1"/>

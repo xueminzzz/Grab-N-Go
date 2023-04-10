@@ -15,17 +15,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.grabngo.R;
-import com.example.grabngo.models.Order;
+import com.example.grabngo.models.ChickenRice;
 import com.example.grabngo.models.OrderDetails;
+import com.example.grabngo.models.SteamedChickenRice;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.StorageTask;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +42,8 @@ public class CompleteOrderPage extends Activity {
         Button completeOrderButton = findViewById(R.id.ProceedButton);
         String orderId = getIntent().getStringExtra("id");
         String foodId = getIntent().getStringExtra("foodid");
+        String stall = getIntent().getStringExtra("stallName");
+        String time = getIntent().getStringExtra("timeSlot");
 
         orderDetailsList = new ArrayList<>();
         Log.d("CompleteOrderPage", "orderDetailsList initialized");
@@ -63,7 +62,7 @@ public class CompleteOrderPage extends Activity {
         backarrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent back = new Intent(CompleteOrderPage.this, OrdersforSpecifiedTimePage1.class);
+                Intent back = new Intent(CompleteOrderPage.this, OrdersforSpecifiedTimePage.class);
                 startActivity(back);
             }
         });
@@ -76,9 +75,6 @@ public class CompleteOrderPage extends Activity {
         DatabaseReference foodIdRef = foodsRef.child(foodId);
         Log.d("orderid", "onDataChange: " + orderId);
 
-
-        // query parameters, retrieving only timeslot 12.30 from the database
-        // Query query = ordersRef.orderByChild("timeslot").equalTo("1230");
         orderIdRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -93,93 +89,84 @@ public class CompleteOrderPage extends Activity {
                 Log.d("childCount", "onDataChange: " + dataSnapshot.child("list_of_food").getChildrenCount());
                 for (DataSnapshot foodNumberSnapshot : dataSnapshot.child("list_of_food").getChildren()) {
                     String stallName = foodNumberSnapshot.child("stall_name").getValue(String.class); // Retrieve stall_name from Firebase
-                    if (stallName.equals("Chicken Rice")) {
+                    if (stallName.equals(stall)) {
                         String foodName = foodNumberSnapshot.child("food_name").getValue(String.class);
                         Log.d("foodname", "onDataChange: " + foodName);
 
-                        // order1 is base_price, but order 1351 is food_price
                         Double foodPrice = foodNumberSnapshot.child("food_price").getValue(Double.class);
-                        Log.d("baseprice", "onDataChange: " + foodPrice);
-                        price += foodPrice;
+                        Log.d("netprice", "onDataChange: " + foodPrice);
 
-                        // get addMeat
-                        Boolean addMeat = foodNumberSnapshot.child("addMeat").getValue(Boolean.class);
-                        Double addMeatPrice = 1.00;
-                        if (addMeat != null) {
-                            Log.d("isAddMeat", "onDataChange: " + addMeat);
-                        } else {
-                            Log.d("isAddMeat", "onDataChange: addMeat is null");
+                        if (stallName.equals(stall)) {
+
+                            // get addMeat
+                            Boolean addMeat = foodNumberSnapshot.child("addMeat").getValue(Boolean.class);
+                            if (addMeat != null) {
+                                Log.d("isAddMeat", "onDataChange: " + addMeat);
+                            } else {
+                                Log.d("isAddMeat", "onDataChange: addMeat is null");
+                            }
+
+                            // get addEgg
+                            Boolean addEgg = foodNumberSnapshot.child("addEgg").getValue(Boolean.class);
+                            if (addEgg != null) {
+                                Log.d("isAddEgg", "onDataChange: " + addEgg);
+                            } else {
+                                Log.d("isAddEgg", "onDataChange: addEgg is null");
+                            }
+
+                            // get addTofu
+                            Boolean addTofu = foodNumberSnapshot.child("addTofu").getValue(Boolean.class);
+                            if (addTofu != null) {
+                                Log.d("isAddTofu", "onDataChange: " + addTofu);
+                            } else {
+                                Log.d("isAddTofu", "onDataChange: addTofu is null");
+                            }
+
+
+                            // get addCheeseTofu
+                            Boolean addCheeseTofu = foodNumberSnapshot.child("addCheeseTofu").getValue(Boolean.class);
+                            if (addCheeseTofu != null) {
+                                Log.d("isAddMeat", "onDataChange: " + addCheeseTofu);
+                            } else {
+                                Log.d("isAddCheeseTofu", "onDataChange: addCheeseTofu is null");
+                            }
+
+                            // get addNoodles
+                            Boolean addNoodles = foodNumberSnapshot.child("addNoodles").getValue(Boolean.class);
+                            if (addNoodles != null) {
+                                Log.d("isAddNoodles", "onDataChange: " + addNoodles);
+                            } else {
+                                Log.d("isAddNoodles ", "onDataChange: addNoodles  is null");
+                            }
+
+                            OrderDetails orderDetails = new OrderDetails(foodName, foodPrice, addMeat, addEgg, addTofu, addCheeseTofu, addNoodles);
+                            orderDetailsList.add(orderDetails);
+
                         }
-
-                        // get addEgg
-                        Boolean addEgg = foodNumberSnapshot.child("addEgg").getValue(Boolean.class);
-                        Double addEggPrice = 0.80;
-                        if (addEgg != null) {
-                            Log.d("isAddEgg", "onDataChange: " + addEgg);
-                        } else {
-                            Log.d("isAddEgg", "onDataChange: addEgg is null");
-                        }
-
-                        // get addTofu
-                        Boolean addTofu = foodNumberSnapshot.child("addTofu").getValue(Boolean.class);
-                        Double addTofuPrice = 0.40;
-                        if (addTofu != null) {
-                            Log.d("isAddTofu", "onDataChange: " + addTofu);
-                        } else {
-                            Log.d("isAddTofu", "onDataChange: addTofu is null");
-                        }
-
-                        // get addCheeseTofu
-                        Boolean addCheeseTofu = foodNumberSnapshot.child("addCheeseTofu").getValue(Boolean.class);
-                        Double addCheeseTofuPrice = 0.80;
-                        if (addCheeseTofu != null) {
-                            Log.d("isAddMeat", "onDataChange: " + addCheeseTofu);
-                        } else {
-                            Log.d("isAddCheeseTofu", "onDataChange: addCheeseTofu is null");
-                        }
-
-                        // get addNoodles
-                        Boolean addNoodles = foodNumberSnapshot.child("addNoodles").getValue(Boolean.class);
-                        Double addNoodlesPrice = 0.80;
-                        if (addNoodles != null) {
-                            Log.d("isAddNoodles", "onDataChange: " + addNoodles);
-                        } else {
-                            Log.d("isAddNoodles ", "onDataChange: addNoodles  is null");
-                        }
-
-                        OrderDetails orderDetails = new OrderDetails(foodName, foodPrice, addMeat, addEgg, addTofu, addCheeseTofu, addNoodles);
-                        orderDetailsList.add(orderDetails);
-
+                        // get totalPrice
+                        TextView totalPriceTextView = findViewById(R.id.TotalPrice);
+                        totalPriceTextView.setText("$ " + String.format("%.2f", foodPrice));
+                        Log.d("totalprice", "onDataChange: " + price);
                     }
-                    // get totalPrice
-                    // Double totalPrice = dataSnapshot.child("total_price").getValue(Double.class);
-                    TextView totalPriceTextView = findViewById(R.id.TotalPrice);
-                    totalPriceTextView.setText("$ " + price);
-                    Log.d("totalprice", "onDataChange: " + price);
-
                 }
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Log.e("Firebase", "Error retrieving orders", error.toException());
             };
-
-
         });
         completeOrderButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
                 //change the value of open_order to be false
-                // ordersRef.child("open_order").setValue(false);
                 foodIdRef.child("isComplete").setValue(true);
-                Intent i = new Intent(CompleteOrderPage.this, OrdersforSpecifiedTimePage1.class);
+                Intent i = new Intent(CompleteOrderPage.this, OrdersforSpecifiedTimePage.class);
+                i.putExtra("stallName", stall);
+                i.putExtra("timeSlot", time);
                 startActivity(i);
 
             }
         });
-
-
-
     }
 }
