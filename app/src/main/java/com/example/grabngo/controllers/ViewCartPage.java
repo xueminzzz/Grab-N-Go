@@ -46,8 +46,8 @@ public class ViewCartPage extends AppCompatActivity {
 
         TextView timeSlot = findViewById(R.id.PickUpTime);
         TextView totalPrice = findViewById(R.id.TotalPrice);
-        timeSlot.setText("Pick up time: "+String.valueOf(ordermanagerv2.getTimeSlot()));
-        totalPrice.setText(String.valueOf(ordermanagerv2.getTotalPrice()));
+        timeSlot.setText("Pick up time: "+String.format("%.2f", ordermanagerv2.getTimeSlot())+"PM");
+        totalPrice.setText(String.format("%.2f", ordermanagerv2.getTotalPrice()));
 
         AppCompatButton finalConfirm = findViewById(R.id.placeOrderButton);
         finalConfirm.setOnClickListener(new View.OnClickListener() {
