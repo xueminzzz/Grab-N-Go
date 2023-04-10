@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".controllers.CompleteOrderPage">
+    tools:context=".controllers.CompleteOrderPage_130PM">
 
     <!-- This page is after vendors click into a specific order in orders_for_specified_time_page_1 -->
     <!-- Once vendors finish preparing the order, the will click on complete order -->

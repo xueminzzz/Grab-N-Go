@@ -33,11 +33,11 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
-public class OrdersforSpecifiedTimePage1 extends Activity {
+public class OrdersforSpecifiedTimePage1_130PM extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.orders_for_specified_time_page_1);
+        setContentView(R.layout.orders_for_specified_time_page_1_130pm);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ordersRef = database.getReference("Order");
@@ -53,42 +53,39 @@ public class OrdersforSpecifiedTimePage1 extends Activity {
 //        mOrderList = (LinearLayout) findViewById(R.id.OrdersforSpecifiedTimePage1);
         ImageView backarrow = (ImageView) findViewById(R.id.BackArrowLogo);
 
-        backarrow.setOnClickListener(new OnClickListener() {
+        backarrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent back = new Intent(OrdersforSpecifiedTimePage1.this, VendorMainPage.class);
+                Intent back = new Intent(OrdersforSpecifiedTimePage1_130PM.this, VendorMainPage.class);
                 startActivity(back);
             }
         });
         String orderid = getIntent().getStringExtra("id");   //addoncode
 
-
-        Query query = ordersRef.orderByChild("timeslot").equalTo("12.30");
+        Query query = ordersRef.orderByChild("timeslot").equalTo("1.30");
         //Query query2 = ordersRef.orderByChild("stall_name").equalTo("Chicken Rice");
         //Query query = query.orderByChild("list_of_food/stall_name").equalTo("Chicken Rice");
-         query.addValueEventListener(new ValueEventListener() {
+        query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
+                int count = (int) dataSnapshot.getChildrenCount(); // count the number of orders
+                TextView ordersCountTextView = (TextView) findViewById(R.id.NumberofOrders);
+                ordersCountTextView.setText(String.valueOf("TOTAL ORDERS: "+count)); // set the value to the UI
 
                 // Loop through the orders in the "orders" node
                 int i = 1;
 //                final int j = i;
                 for (DataSnapshot orderSnapshot : dataSnapshot.getChildren()) {
-                    int count = (int) dataSnapshot.getChildrenCount(); // count the number of orders
                     // Get the order details
                     String orderId = orderSnapshot.getKey();
+
                     double orderPrice = orderSnapshot.child("total_price").getValue(double.class);
                     for (DataSnapshot foodSnapshot : orderSnapshot.child("list_of_food").getChildren()){
-
                         String foodId = foodSnapshot.getKey();
                         Boolean isCompleted = foodSnapshot.child("isComplete").getValue(Boolean.class);
                         String stall_name = foodSnapshot.child("stall_name").getValue(String.class);
                         Log.d("isCompleted", String.valueOf(isCompleted));
                         if(stall_name.equals("Chicken Rice")){
-
-                            TextView ordersCountTextView = (TextView) findViewById(R.id.NumberofOrders);
-                            ordersCountTextView.setText(String.valueOf("TOTAL ORDERS: "+count)); // set the value to the UI
                             // Update the corresponding TextView with the order details
                             TextView orderNameTextView = orderNameTextViews[i-1];
                             orderNameTextView.setText("Order " + i);
@@ -101,10 +98,10 @@ public class OrdersforSpecifiedTimePage1 extends Activity {
                                 orderCardView.setOnClickListener(null);
                             }
                             else{
-                                orderCardView.setOnClickListener(new OnClickListener() {
+                                orderCardView.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
-                                        Intent intent = new Intent(OrdersforSpecifiedTimePage1.this, CompleteOrderPage.class);
+                                        Intent intent = new Intent(OrdersforSpecifiedTimePage1_130PM.this, CompleteOrderPage_130PM.class);
                                         intent.putExtra("id", orderId);
                                         intent.putExtra("foodid", foodId);
                                         intent.putExtra("totalprice", String.valueOf(orderPrice));
@@ -119,9 +116,8 @@ public class OrdersforSpecifiedTimePage1 extends Activity {
                         }
 
                     }
-
                 }
-                    // Inflate the card view layout
+                // Inflate the card view layout
 //                    LayoutInflater inflater = LayoutInflater.from(OrdersforSpecifiedTimePage1.this);
 //                    View cardView = inflater.inflate(R.layout.orders_for_specified_time_page_1, mOrderList, false);
 ////                    cardView.setText
@@ -141,7 +137,7 @@ public class OrdersforSpecifiedTimePage1 extends Activity {
 
 
 
-                }
+            }
 
 
             @Override
@@ -150,9 +146,16 @@ public class OrdersforSpecifiedTimePage1 extends Activity {
             }
         });
 
-
-
-
+//        order1.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View view) {
+//
+//                Intent i = new Intent(OrdersforSpecifiedTimePage1.this, CompleteOrderPage.class);
+//                startActivity(i);
+//
+//            }
+//        });
 
 
     }

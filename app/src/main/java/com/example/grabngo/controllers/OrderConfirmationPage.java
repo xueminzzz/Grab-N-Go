@@ -50,3 +50,4 @@ public class OrderConfirmationPage extends Activity {
         Log.d("OrderConfirmation-onCreate", ordermanagerv2.toString());
     }
 }
+

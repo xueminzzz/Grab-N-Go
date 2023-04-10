@@ -30,17 +30,16 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CompleteOrderPage extends Activity {
+public class CompleteOrderPage_1PM_Mixed extends Activity {
     private List<OrderDetails> orderDetailsList;
     private CompleteOrderPageAdapter adapter;
     private RecyclerView recyclerView;
     double price;
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.complete_order_page);
+        setContentView(R.layout.complete_order_page_1pm_mixed);
 
         Button completeOrderButton = findViewById(R.id.ProceedButton);
         String orderId = getIntent().getStringExtra("id");
@@ -63,7 +62,7 @@ public class CompleteOrderPage extends Activity {
         backarrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent back = new Intent(CompleteOrderPage.this, OrdersforSpecifiedTimePage1.class);
+                Intent back = new Intent(CompleteOrderPage_1PM_Mixed.this, OrdersforSpecifiedTimePage1_1PM_Mixed.class);
                 startActivity(back);
             }
         });
@@ -93,7 +92,7 @@ public class CompleteOrderPage extends Activity {
                 Log.d("childCount", "onDataChange: " + dataSnapshot.child("list_of_food").getChildrenCount());
                 for (DataSnapshot foodNumberSnapshot : dataSnapshot.child("list_of_food").getChildren()) {
                     String stallName = foodNumberSnapshot.child("stall_name").getValue(String.class); // Retrieve stall_name from Firebase
-                    if (stallName.equals("Chicken Rice")) {
+                    if (stallName.equals("Noodles")) {
                         String foodName = foodNumberSnapshot.child("food_name").getValue(String.class);
                         Log.d("foodname", "onDataChange: " + foodName);
 
@@ -173,7 +172,8 @@ public class CompleteOrderPage extends Activity {
                 //change the value of open_order to be false
                 // ordersRef.child("open_order").setValue(false);
                 foodIdRef.child("isComplete").setValue(true);
-                Intent i = new Intent(CompleteOrderPage.this, OrdersforSpecifiedTimePage1.class);
+
+                Intent i = new Intent(CompleteOrderPage_1PM_Mixed.this, OrdersforSpecifiedTimePage1_1PM_Mixed.class);
                 startActivity(i);
 
             }
