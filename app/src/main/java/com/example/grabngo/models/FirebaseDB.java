@@ -1,4 +1,4 @@
-package com.example.grabngo.controllers;
+package com.example.grabngo.models;
 
 import android.util.Log;
 

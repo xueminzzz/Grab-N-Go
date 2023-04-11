@@ -23,6 +23,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+/** Function: For users to view stall orders in specified timeslot
+ *  Input: String stallName, String timeSlot (setContentView to layout/orders_for_specified_time_page.xml)
+ *  Output: String id, String foodid, String totalprice, String stallName, String timeSlot
+ *  Sent/Read from DB: DataSnapshot (retrieve order details including isComplete status to update view - greyed off)
+ *  Prev Page Link: VendorMainPage.java
+ *  Next Page Link: CompleteOrderPage.java
+ *  Java Concepts/OOP: Intents
+ */
+
 public class OrdersforSpecifiedTimePage extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {

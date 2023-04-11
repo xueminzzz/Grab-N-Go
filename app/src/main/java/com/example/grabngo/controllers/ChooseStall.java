@@ -10,6 +10,15 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import com.example.grabngo.R;
 
+/** Function: For users to choose stall to view orders
+ *  Input: None (setContentView to layout/choose_stall.xml)
+ *  Output: String stallName (Intent extras)
+ *  Sent/Read from DB: None
+ *  Prev Page Link: Vendorlogin.java
+ *  Next Page Link: VendorMainPage.java
+ *  Java Concepts/OOP: Intent
+ */
+
 public class ChooseStall extends Activity {
 
     @Override

@@ -27,6 +27,15 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+/** Function: For users to view order details and mark as complete
+ *  Input: String id, String foodid, String stallName, String timeSlot (setContentView to layout/complete_order_page.xml)
+ *  Output: String stallName, String timeSlot (Intent extras)
+ *  Sent/Read from DB: DataSnapshot (set isComplete to true and retrieve order details)
+ *  Prev Page Link: OrdersforSpecifiedTimePage.java
+ *  Next Page Link: OrdersforSpecifiedTimePage.java
+ *  Java Concepts/OOP: Intent
+ */
+
 public class CompleteOrderPage extends Activity {
     private List<OrderDetails> orderDetailsList;
     private CompleteOrderPageAdapter adapter;
@@ -66,7 +75,6 @@ public class CompleteOrderPage extends Activity {
                 startActivity(back);
             }
         });
-
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ordersRef = database.getReference("Order");

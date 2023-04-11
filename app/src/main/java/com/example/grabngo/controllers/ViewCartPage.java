@@ -1,6 +1,5 @@
 package com.example.grabngo.controllers;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.grabngo.R;
+import com.example.grabngo.models.FirebaseDB;
 import com.example.grabngo.models.Order;
 
 /** Function: For users to view their cart
@@ -41,7 +41,7 @@ public class ViewCartPage extends AppCompatActivity {
         recyclerView = findViewById(R.id.List);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        myAdapter = new OrderAdapter(this, ordermanagerv2);
+        myAdapter = new OrderConfirmationPageAdapter(this, ordermanagerv2);
         recyclerView.setAdapter(myAdapter);
 
         TextView timeSlot = findViewById(R.id.PickUpTime);

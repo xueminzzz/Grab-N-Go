@@ -61,7 +61,7 @@
             android:name=".controllers.CompleteOrderPage"
             android:exported="false" />
         <activity
-            android:name=".controllers.OrderAdapter"
+            android:name=".controllers.OrderConfirmationPageAdapter"
             android:exported="false" />
         <activity
             android:name=".controllers.ChooseStall"
