@@ -20,6 +20,15 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+/** Function: For users to login as a Vendor
+ *  Input: None (setContentView to layout/activity_vendorlogin.xml)
+ *  Output: None
+ *  Sent/Read from DB: FirebaseAuthentication (FAuth)
+ *  Prev Page Link: ChooseOne.java
+ *  Next Page Link: ChooseStall.java
+ *  Java Concepts/OOP: Intent
+ */
+
 // TODO: Unsure of some below
 // TODO: Edit comment to reflect Function, Input, Output,
 //  Sent/Read from DB, Link to Prev or Next Page, Java Concepts Used

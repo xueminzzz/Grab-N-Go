@@ -11,17 +11,25 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.grabngo.R;
 import com.example.grabngo.models.ChickenRice;
-import com.example.grabngo.models.Food;
 import com.example.grabngo.models.Noodle;
 import com.example.grabngo.models.Order;
 
 import java.util.ArrayList;
 
-public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.Viewholder> {
+/** Function: Adapter for OrderConfirmationPage
+ *  Input: None (set Recyclerview to inflate layout/complete_order_page_item.xml)
+ *  Output: None
+ *  Sent/Read from DB: None
+ *  Prev Page Link: None (Adapter)
+ *  Next Page Link: None (Ditto above)
+ *  Java Concepts/OOP: Adapter
+ */
+
+public class OrderConfirmationPageAdapter extends RecyclerView.Adapter<OrderConfirmationPageAdapter.Viewholder> {
 
     private ArrayList<Object> foodlist;
 
-    public OrderAdapter(Context context, Order order) {
+    public OrderConfirmationPageAdapter(Context context, Order order) {
         foodlist = order.getFoodOrdered();
     }
 

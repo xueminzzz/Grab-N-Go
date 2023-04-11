@@ -14,6 +14,15 @@ import com.example.grabngo.models.OrderDetails;
 
 import java.util.List;
 
+/** Function: Adapter for CompleteOrderPage
+ *  Input: None (set Recyclerview to inflate layout/complete_order_page_item.xml)
+ *  Output: None
+ *  Sent/Read from DB: None
+ *  Prev Page Link: None (Adapter)
+ *  Next Page Link: None (Ditto above)
+ *  Java Concepts/OOP: Adapter
+ */
+
 public class CompleteOrderPageAdapter extends RecyclerView.Adapter<CompleteOrderPageAdapter.CompletePageOrderViewHolder>{
     private List<OrderDetails> orderDetailsList;
 

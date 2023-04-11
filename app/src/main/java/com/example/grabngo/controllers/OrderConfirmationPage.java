@@ -3,7 +3,6 @@ package com.example.grabngo.controllers;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -13,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.grabngo.R;
 import com.example.grabngo.models.Order;
 
-/** Function: For showing final order by user
+/** Function: For showing final, confirmed order by user
  *  Input: Order singleton instance (setContentView to layout/order_confirmation_page.xml)
  *  Output: None
  *  Sent/Read from DB: None
@@ -38,7 +37,7 @@ public class OrderConfirmationPage extends Activity {
         recyclerView = findViewById(R.id.List);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        myAdapter = new OrderAdapter(this, ordermanagerv2);
+        myAdapter = new OrderConfirmationPageAdapter(this, ordermanagerv2);
         recyclerView.setAdapter(myAdapter);
 
         TextView timeSlot = findViewById(R.id.PickUpTime);
