@@ -41,15 +41,27 @@ public class FirebaseDB {
         remaining_data.put("user_id", order.getUserId());
         remaining_data.put("total_price", order.getTotalPrice().doubleValue());
 
-        mDatabase.child("Order").child("order"+order.getOrderId()).setValue(remaining_data);
+        if (order.getOrderId() == 0) {
+            mDatabase.child("Order").child("order1").setValue(remaining_data);
+        } else {
+            mDatabase.child("Order").child("order" + order.getOrderId()).setValue(remaining_data);
+        }
 
         for (int i = 0; i < order.getFoodOrdered().size(); i++) {
             Object food_item = order.getFoodOrdered().get(i);
 
-            if (food_item instanceof Noodle) {
-                mDatabase.child("Order").child("order"+order.getOrderId()).child("list_of_food").child("food"+i).setValue(((Noodle) food_item).getData());
-            } else if (food_item instanceof ChickenRice) {
-                mDatabase.child("Order").child("order"+order.getOrderId()).child("list_of_food").child("food"+i).setValue(((ChickenRice) food_item).getData());
+            if (order.getOrderId() == 0) {
+                if (food_item instanceof Noodle) {
+                    mDatabase.child("Order").child("order1").child("list_of_food").child("food"+i).setValue(((Noodle) food_item).getData());
+                } else if (food_item instanceof ChickenRice) {
+                    mDatabase.child("Order").child("order1").child("list_of_food").child("food"+i).setValue(((ChickenRice) food_item).getData());
+                }
+            } else {
+                if (food_item instanceof Noodle) {
+                    mDatabase.child("Order").child("order" + order.getOrderId()).child("list_of_food").child("food" + i).setValue(((Noodle) food_item).getData());
+                } else if (food_item instanceof ChickenRice) {
+                    mDatabase.child("Order").child("order" + order.getOrderId()).child("list_of_food").child("food" + i).setValue(((ChickenRice) food_item).getData());
+                }
             }
         }
     }
