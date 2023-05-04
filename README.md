@@ -11,6 +11,11 @@
 - [Michelle]  
 - [Xue Min]
 
+## Project Overview 
+SUTDents and staff often find themselves queuing up for long hours at the canteen especially during peak hours, resulting in less time to rest. How might we reduce the waiting time for food in the school canteen during these peak hours for SUTDents and staff?
+
+The Grab-N-Go mobile application allows customers to pre-order their orders through the app and collect their food at selected timeslot with no queue.Customers can select their collection time slot,food store, browse through the menu, select their desired food items, customize their order and place them. Vendors can view incoming orders according to the timeslot, prepare meals accordingly and mark them when completed with a simple tap on the screen. With Grab-N-Go, customers no longer have to queue and vendors can maximise their sales. 
+
 ## Collaborating
 
 First, clone the repository using `git clone`   
